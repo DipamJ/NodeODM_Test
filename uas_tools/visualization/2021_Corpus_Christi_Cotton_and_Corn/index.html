@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" name=”viewport” content=”width=device-width, initial-scale=1″>
+  <title>2021 Corpus Christi Cotton and Corn</title>
+  <link rel="stylesheet" href="/libraries/leaflet/leaflet.css"/>
+  <link rel="stylesheet" href="/libraries/css/leaflet-panel-layers.css"/>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .container {
+          position: absolute;
+          height: auto;
+          right: 20px;
+          bottom: 1%;
+          z-index: 2;
+        }
+
+        .logo_merge {
+            width: 420px;
+            z-index: 2;
+        }
+
+        .img_title{
+          background: #444;
+          color: #f6f5f5;
+          font-size: 15px;
+          font-weight: 700;
+          padding: 8px 12px;
+          z-index: 2;
+          width: 397.5px;
+        }
+
+        h3{
+          padding: 0px;
+          margin: 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+<br/>
+<div id="map"></div>
+
+<script src="/libraries/js/leaflet.js"></script>
+<script src="/libraries/js/leaflet-panel-layers.js"></script>
+<script src="/libraries/js/jquery.min.js"></script>
+<script src="/libraries/js/leaflet-ajax/dist/leaflet.ajax.js"></script>
+<script src="/libraries/js/legend.js"></script>
+<link rel="stylesheet" href="/libraries/css/legend.css"/>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-74689450-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<script>
+    var map = L.map('map', {
+        center: L.latLng([27.782608,-97.561012]),
+        zoom: 19,
+        minZoom
+    :
+    17,
+        maxZoom
+    :
+    23,
+        attributionControl
+    :
+    false
+    })
+    ;
+
+    var osm_map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        zIndex: 0
+    });
+
+    var googleHybrid = L.tileLayer('https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
+        maxZoom: 20,
+        subdomains:['mt0','mt1','mt2','mt3']
+        });
+
+      // Layers
+      var layer_20210408_cc_p4r_parking_mosaic = L.tileLayer('https://agrilife-project1.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton_and_Corn/Phantom_4_Pro/RGB/04-08-2021/20210408/RGB_Ortho/20210408_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(27.783736111111,-97.561691666667),L.latLng(27.783713888889,-97.559691666667),L.latLng(27.781288888889,-97.559725),L.latLng(27.781311111111,-97.561725),L.latLng(27.783736111111,-97.561691666667)])}); 
+var layer_20210506_cc_p4r_parking_mosaic = L.tileLayer('https://agrilife-project1.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton_and_Corn/Phantom_4_Pro/RGB/05-06-2021/20210506/RGB_Ortho/20210506_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 51, bounds: L.latLngBounds([L.latLng(27.783733333333,-97.5617),L.latLng(27.783711111111,-97.559688888889),L.latLng(27.781291666667,-97.559722222222),L.latLng(27.781313888889,-97.561730555556),L.latLng(27.783733333333,-97.5617)])}); 
+var layer_20210602_cc_p4r_parking_mosaic = L.tileLayer('https://agrilife-project1.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton_and_Corn/Phantom_4_Pro/RGB/06-02-2021/20210602/RGB_Ortho/20210602_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 52, bounds: L.latLngBounds([L.latLng(27.783730555556,-97.561688888889),L.latLng(27.783711111111,-97.559702777778),L.latLng(27.781286111111,-97.559736111111),L.latLng(27.781308333333,-97.561719444444),L.latLng(27.783730555556,-97.561688888889)])}); 
+var layer_20210408_rgb_chm = L.tileLayer('https://agrilife-project1.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton_and_Corn/Phantom_4_Pro/RGB/04-08-2021/20210408/CHM/20210408_rgb_chm/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 53, bounds: L.latLngBounds([L.latLng(27.783733333333,-97.561702777778),L.latLng(27.783711111111,-97.559702777778),L.latLng(27.781277777778,-97.559733333333),L.latLng(27.7813,-97.561733333333),L.latLng(27.783733333333,-97.561702777778)])}); 
+var layer_20210506_rgb_chm = L.tileLayer('https://agrilife-project1.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton_and_Corn/Phantom_4_Pro/RGB/05-06-2021/20210506/CHM/20210506_rgb_chm/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 54, bounds: L.latLngBounds([L.latLng(27.783733333333,-97.561702777778),L.latLng(27.783711111111,-97.559702777778),L.latLng(27.781277777778,-97.559733333333),L.latLng(27.7813,-97.561733333333),L.latLng(27.783733333333,-97.561702777778)])}); 
+var layer_20210602_rgb_chm = L.tileLayer('https://agrilife-project1.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton_and_Corn/Phantom_4_Pro/RGB/06-02-2021/20210602/CHM/20210602_rgb_chm/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 55, bounds: L.latLngBounds([L.latLng(27.783733333333,-97.561702777778),L.latLng(27.783711111111,-97.559702777778),L.latLng(27.781277777778,-97.559733333333),L.latLng(27.7813,-97.561733333333),L.latLng(27.783733333333,-97.561702777778)])}); 
+
+
+      map.addLayer(googleHybrid);
+
+    var baseLayers = [
+        {
+            name: "Open Street Map",
+            layer: osm_map
+        },
+        {
+            name: "Satellite Map",
+            layer: googleHybrid
+        },
+    ];
+
+    var overLayers = [
+        {
+	group: 'RGB',
+	layers: [
+		{
+			name: '04/08/2021',
+active: 'true',
+			layer: layer_20210408_cc_p4r_parking_mosaic
+		},
+		{
+			name: '05/06/2021',
+			layer: layer_20210506_cc_p4r_parking_mosaic
+		},
+		{
+			name: '06/02/2021',
+			layer: layer_20210602_cc_p4r_parking_mosaic
+		},
+	]
+},
+{
+	group: 'CHM',
+	layers: [
+		{
+			name: '04/08/2021',
+			layer: layer_20210408_rgb_chm
+		},
+		{
+			name: '05/06/2021',
+			layer: layer_20210506_rgb_chm
+		},
+		{
+			name: '06/02/2021',
+			layer: layer_20210602_rgb_chm
+		},
+	]
+},
+
+    ];
+
+    var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers, {collapsibleGroups: true});
+    map.addControl(panelLayers);
+
+</script>
+
+<div class="container">
+  <h3 class="img_title">West Texas Cotton UASHub is supported by</h3>
+<img alt="Sponsor" class="logo_merge" src="/resources/images/supported_words.png">
+</div>
+
+</body>
+</html>

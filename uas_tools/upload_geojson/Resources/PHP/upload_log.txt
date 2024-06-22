@@ -1,0 +1,16 @@
+10.09.2021: typeID: 8
+10.09.2021: added
+28.10.2021: typeID: 8
+28.10.2021: added
+28.10.2021: typeID: 12
+28.10.2021: added
+28.10.2021: typeID: 8
+28.10.2021: product_type: 
+28.10.2021: added
+28.10.2021: typeName: GeoJSON
+28.10.2021: added
+28.10.2021: typeName: SHAPE
+28.10.2021: added
+28.10.2021: added
+28.10.2021: added
+28.10.2021: added

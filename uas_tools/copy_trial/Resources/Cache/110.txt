@@ -1,0 +1,1 @@
+[{"Name":"\ufeffPlot col","ValueList":null},{"Name":"Grid row","ValueList":null},{"Name":"Grid col","ValueList":null},{"Name":"Plot","ValueList":null}]

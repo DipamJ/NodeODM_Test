@@ -1,0 +1,245 @@
+15.03.2021: page_url: https://test/uas_tools/visualization/mobile/2016_Corpus_Christi_Cotton_and_Sorghum/index.php
+15.03.2021: page_url: 
+15.03.2021: page_url: https://test/uas_tools/visualization/mobile/2016_Corpus_Christi_Cotton_and_Sorghum/index.php
+15.03.2021: page_url: https://test/uas_tools/visualization/mobile/2016_Corpus_Christi_Cotton_and_Sorghum/index.php
+15.03.2021: page_url: 
+15.03.2021: page_url: https://chub.gdslab.org/uas_tools/visualization/mobile/2016_Corpus_Christi_Cotton_and_Sorghum/index.php
+15.03.2021: page_url: https://chub.gdslab.org/uas_tools/visualization/mobile/2016_Corpus_Christi_Cotton_and_Sorghum/index.php
+15.03.2021: page_url: 
+16.03.2021: page_url: 3487
+16.03.2021: page_url: https://chub.gdslab.org/uas_tools/visualization/mobile/2016_Corpus_Christi_Cotton_and_Sorghum/index.php
+16.03.2021: page_url: 2016 Corpus Christi Cotton and Sorghum
+17.03.2021: layer4: var layer_plot_boundary = new L.GeoJSON.AJAX('/uas_data/uploads/products/2016_Corpus_Christi_Cotton_and_Sorghum/Phantom_4_Pro/RGB/04-27-2016/20160427/GeoJSON/plot_boundary/plot_boundary.geojson'); 
+
+17.03.2021: newName: plot_boundary_converted.geojson
+17.03.2021: layer4: var layer_plot_boundary = new L.GeoJSON.AJAX('/uas_data/uploads/products/2016_Corpus_Christi_Cotton_and_Sorghum/Phantom_4_Pro/RGB/04-27-2016/20160427/GeoJSON/plot_boundary/plot_boundary_converted.geojson'); 
+
+17.03.2021: newName: plot_boundary_converted.geojson
+17.03.2021: layer4: var layer_plot_boundary = new L.GeoJSON.AJAX('/uas_data/uploads/products/2016_Corpus_Christi_Cotton_and_Sorghum/Phantom_4_Pro/RGB/04-12-2016/20160412/GeoJSON/plot_boundary/plot_boundary_converted.geojson'); 
+
+17.03.2021: newName: plot_boundary_converted.geojson
+17.03.2021: newName: plot_boundary_converted.geojson
+17.03.2021: newName: plot_boundary_converted.geojson
+17.03.2021: newName: plot_boundary_converted.geojson
+17.03.2021: newName: plot_boundary_converted.geojson
+17.03.2021: desFolderPath: /var/www/html/uas_tools/visualization/mobile/2016_Corpus_Christi_Cotton_and_Sorghum/
+17.03.2021: viewPath https://chub.gdslab.org/uas_tools/visualization/mobile/2016_Corpus_Christi_Cotton_and_Sorghum/index.html
+17.03.2021: desFolderPath: /var/www/html/uas_tools/visualization/mobile/2016_Corpus_Christi_Cotton_and_Sorghum/
+19.03.2021: newName: plot_boundary_converted.geojson
+19.03.2021: sql: select imagery_product.* from imagery_product, flight where flight.Project = 1 and imagery_product.Flight = flight.ID and imagery_product.Status = 'Finished'  and imagery_product.Type = 8 order by Filename
+19.03.2021: sql: select imagery_product.* from imagery_product, flight where flight.Project = 1 and imagery_product.Flight = flight.ID and imagery_product.Status = 'Finished'  and imagery_product.Type = 1 order by Filename
+22.03.2021: sql: select imagery_product.* from imagery_product, flight where flight.Project = 1 and imagery_product.Flight = flight.ID and imagery_product.Status = 'Finished' and imagery_product.Type = 1 order by Filename
+22.03.2021: sql: select imagery_product.* from imagery_product, flight where flight.Project = 1 and imagery_product.Flight = flight.ID and imagery_product.Status = 'Finished' and imagery_product.Type = 8 order by Filename
+22.03.2021: sql: select imagery_product.* from imagery_product, flight where flight.Project = 1 and imagery_product.Flight = flight.ID and imagery_product.Status = 'Finished'order by Filename
+22.03.2021: sql: select imagery_product.* from imagery_product, flight where flight.Project = 1 and imagery_product.Flight = flight.ID and imagery_product.Status = 'Finished' and vector_data.Type = 8 order by Filename
+22.03.2021: sql: select imagery_product.* from imagery_product, flight where flight.Project = 1 and imagery_product.Flight = flight.ID and imagery_product.Status = 'Finished'order by Filename
+22.03.2021: sql: select imagery_product.* from imagery_product, flight where flight.Project = 1 and imagery_product.Flight = flight.ID and imagery_product.Status = 'Finished' and imagery_product.Type = 1 order by Filename
+22.03.2021: sql: select imagery_product.* from imagery_product, flight where flight.Project = 1 and imagery_product.Flight = flight.ID and imagery_product.Status = 'Finished'order by Filename
+22.03.2021: sql: select imagery_product.* from imagery_product, flight where flight.Project = 1 and imagery_product.Flight = flight.ID and imagery_product.Status = 'Finished' and imagery_product.Type = 1 order by Filename
+22.03.2021: sql: select imagery_product.* from imagery_product, flight where flight.Project = 1 and imagery_product.Flight = flight.ID and imagery_product.Status = 'Finished'order by Filename
+22.03.2021: sql: select imagery_product.* from imagery_product, flight where flight.Project = 1 and imagery_product.Flight = flight.ID and imagery_product.Status = 'Finished' and vector_data.Type = 8 LIMIT 1order by Filename
+22.03.2021: newName: plot_boundary_converted.geojson
+26.03.2021: sql: select imagery_product.*, flight.Date as Date, product_type.Type as producttype from imagery_product, flight, product_type where flight.Project = 1 and imagery_product.Flight = flight.ID and imagery_product.Type = product_type.ID and imagery_product.Status = 'Finished' order by Filename
+26.03.2021: sql: select imagery_product.*, vector_data.*, flight.Date as Date, product_type.Type as producttype from imagery_product, flight, product_type, vector_data, project where flight.Project = 1 and imagery_product.Flight = flight.ID and vector_data.Project =  project.Nameand imagery_product.Type = product_type.ID and imagery_product.Status = 'Finished' 
+26.03.2021: sql: select imagery_product.*, vector_data.*, flight.Date as Date, product_type.Type as producttype from imagery_product, flight, product_type, vector_data, project where flight.Project = 1 and imagery_product.Flight = flight.ID and vector_data.Project =  project.Name and imagery_product.Type = product_type.ID and imagery_product.Status = 'Finished' 
+26.03.2021: newName: plot_boundary_1_converted.geojson
+26.03.2021: newName: plot_boundary_1_converted.geojson
+26.03.2021: newName: plot_boundary_2_converted.geojson
+26.03.2021: newName: plot_boundary_1_converted.geojson
+26.03.2021: newName: plot_boundary_2_converted.geojson
+31.03.2021: newName: plot_boundary_1_converted.geojson
+31.03.2021: newName: plot_boundary_2_converted.geojson
+31.03.2021: newName: plot_boundary_1_converted.geojson
+31.03.2021: newName: plot_boundary_2_converted.geojson
+31.03.2021: newName: plot_boundary_1_converted.geojson
+31.03.2021: newName: plot_boundary_2_converted.geojson
+02.04.2021: newName: plot_boundary_1_converted.geojson
+02.04.2021: newName: plot_boundary_2_converted.geojson
+02.04.2021: newName: plot_boundary_1_converted.geojson
+02.04.2021: newName: plot_boundary_2_converted.geojson
+02.04.2021: newName: plot_boundary_1_converted.geojson
+02.04.2021: newName: plot_boundary_2_converted.geojson
+02.04.2021: newName: plot_boundary_1_converted.geojson
+02.04.2021: newName: plot_boundary_2_converted.geojson
+02.04.2021: newName: plot_boundary_1_converted.geojson
+02.04.2021: newName: plot_boundary_2_converted.geojson
+02.04.2021: newName: plot_boundary_1_converted.geojson
+02.04.2021: newName: plot_boundary_2_converted.geojson
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: type: 8
+05.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: Product type: R
+05.04.2021: type: 8
+05.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+05.04.2021: Product type: 
+05.04.2021: type: 8
+05.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+05.04.2021: Product type: 
+05.04.2021: type: 8
+05.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+05.04.2021: Product type: 
+05.04.2021: type: 8
+05.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+05.04.2021: Product type: 
+05.04.2021: type: 8
+05.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+05.04.2021: Product type: V
+05.04.2021: Layer: map.createPane('pane_plot_boundary_1'); 
+map.getPane('pane_plot_boundary_1').style.zIndex = 50; 
+map.getPane('pane_plot_boundary_1').style.pointerEvents = 'none'; 
+var layer_plot_boundary_1 = new L.GeoJSON.AJAX('/uas_data/uploads/products/2016_Corpus_Christi_Cotton_and_Sorghum/03/25/2021/GeoJSON/plot_boundary_1/plot_boundary_1_converted.geojson'); 
+
+05.04.2021: Product type: V
+05.04.2021: Layer: map.createPane('pane_plot_boundary5'); 
+map.getPane('pane_plot_boundary5').style.zIndex = 51; 
+map.getPane('pane_plot_boundary5').style.pointerEvents = 'none'; 
+var layer_plot_boundary5 = new L.GeoJSON.AJAX('/uas_data/uploads/products/2016_Corpus_Christi_Cotton_and_Sorghum/04/01/2021//GeoJSON/plot_boundary5/plot_boundary5_converted.geojson'); 
+
+05.04.2021: Layer: map.createPane('pane_plot_boundary_1'); 
+map.getPane('pane_plot_boundary_1').style.zIndex = 50; 
+map.getPane('pane_plot_boundary_1').style.pointerEvents = 'none'; 
+var layer_plot_boundary_1 = new L.GeoJSON.AJAX('/uas_data/uploads/products/2016_Corpus_Christi_Cotton_and_Sorghum/03/25/2021/GeoJSON/plot_boundary_1/plot_boundary_1_converted.geojson'); 
+
+05.04.2021: Layer: map.createPane('pane_plot_boundary5'); 
+map.getPane('pane_plot_boundary5').style.zIndex = 51; 
+map.getPane('pane_plot_boundary5').style.pointerEvents = 'none'; 
+var layer_plot_boundary5 = new L.GeoJSON.AJAX('/uas_data/uploads/products/2016_Corpus_Christi_Cotton_and_Sorghum/04/01/2021//GeoJSON/plot_boundary5/plot_boundary5_converted.geojson'); 
+
+05.04.2021: type: 
+05.04.2021: type: 
+05.04.2021: type: 
+05.04.2021: type: 
+05.04.2021: type: 
+05.04.2021: type: Array
+05.04.2021: type: 
+05.04.2021: type: Array
+05.04.2021: type: Array
+05.04.2021: type: Array
+05.04.2021: type: 
+05.04.2021: type: Array
+05.04.2021: Array: 1
+05.04.2021: Type: 
+05.04.2021: type: Array
+05.04.2021: type: Array
+05.04.2021: type: 
+05.04.2021: type2: 
+05.04.2021: type: 
+05.04.2021: type: 
+05.04.2021: type: 
+06.04.2021: type: 
+06.04.2021: type: 
+06.04.2021: type: 1
+06.04.2021: type: 8
+06.04.2021: SQL: select imagery_product.*, flight.Date as Date, product_type.Type as producttype from imagery_product, flight, product_type where flight.Project = 1 and imagery_product.Flight = flight.ID and imagery_product.Type = product_type.ID and imagery_product.Status = 'Finished' order by Filename
+06.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type =  
+06.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type =  
+06.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+06.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+06.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+07.04.2021: SQL: SELECT v.*, project.Name as ProjectName, t.Name as TypeName, product_type.Type as producttype from project, product_type, vector_data v inner join product_type t on v.Type = t.ID where product_type.Type = 'V' and v.Status = 'Finished' and v.Project =  project.Name  and v.Type = 8 
+21.04.2021: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Driscoll/
+21.04.2021: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Cotton_and_Corn/
+21.04.2021: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Driscoll/
+21.04.2021: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Driscoll/
+21.04.2021: $sourcePath: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Driscoll/index.html
+21.04.2021: $desPath: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Driscoll/index.html
+21.04.2021: $sourcePath: https://agrilife.uashubs.com
+21.04.2021: $sourcePath: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Driscoll/index.html
+21.04.2021: $desPath: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Driscoll/index.html
+21.04.2021: $rr: temp/2021_Corpus_Christi_Driscoll/index.html
+21.04.2021: $sourcePath: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Driscoll/index.html
+21.04.2021: $desPath: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Driscoll/index.html
+21.04.2021: $rr: temp/2021_Corpus_Christi_Driscoll/index.html
+21.04.2021: $rr2: temp/2021_Corpus_Christi_Driscoll/index.html
+21.04.2021: $sourcePath: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Driscoll/index.html
+21.04.2021: $desPath: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Driscoll/index.html
+21.04.2021: $rr: temp/2021_Corpus_Christi_Driscoll/index.html
+21.04.2021: $rr2: temp/2021_Corpus_Christi_Driscoll/index.html
+21.04.2021: $viewPath: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Driscoll/index.html
+23.06.2021: page Path: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Cotton_and_Corn/index.html
+23.06.2021: page Path: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Cotton_and_Corn/index.html
+23.06.2021: viewPath /var/www/html/uas_tools/visualization/2021_Corpus_Christi_Cotton_and_Corn/index.html
+23.06.2021: desPath /var/www/html/uas_tools/visualization/2021_Corpus_Christi_Cotton_and_Corn/index.html
+23.06.2021: page Path: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Cotton_and_Corn/index.html
+23.06.2021: root_path /var/www/html/web/
+23.06.2021: viewPath /var/www/html/uas_tools/visualization/2021_Corpus_Christi_Cotton_and_Corn/index.html
+23.06.2021: desPath /var/www/html/uas_tools/visualization/2021_Corpus_Christi_Cotton_and_Corn/index.html
+23.06.2021: page Path: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Cotton_and_Corn/index.html
+23.06.2021: root_path /var/www/html/
+23.06.2021: header_location https://agrilife.uashubs.com
+23.06.2021: desPath /var/www/html/uas_tools/visualization/2021_Corpus_Christi_Cotton_and_Corn/index.html
+23.06.2021: page Path: https://agrilife.uashubs.com/temp/2021_Corpus_Christi_Cotton_and_Corn/index.html
+23.06.2021: in desPath /var/www/html/uas_tools/visualization/2021_Corpus_Christi_Cotton_and_Corn/index.html
+23.06.2021: find root_path /var/www/html/
+23.06.2021: reeplace with header_location https://agrilife.uashubs.com/
+23.06.2021: in desPath /var/www/html/uas_tools/visualization/mobile/2021_Corpus_Christi_Cotton_and_Corn/index.html
+23.06.2021: find root_path /var/www/html/web/
+23.06.2021: reeplace with header_location https://agrilife.uashubs.com/
+23.06.2021: in desPath /var/www/html/uas_tools/visualization/mobile/2021_Corpus_Christi_Cotton_and_Corn/index.html
+23.06.2021: find root_path /var/www/html/
+23.06.2021: reeplace with header_location https://agrilife.uashubs.com/
+23.06.2021: From: /tmp/phpWnBWOo
+23.06.2021: To: /var/www/html/uas_tools/visualization_generator/Resources/PHP/../../../../../uas_data/uploads/photos/2021_Corpus_Christi_Cotton_and_Corn/QpV9r.gif
+23.06.2021: Path: /var/www/html/uas_tools/visualization_generator/Resources/PHP/../../../../../uas_data/uploads/photos/2021_Corpus_Christi_Cotton_and_Corn
+23.06.2021: From: /tmp/phpRCtX1P
+23.06.2021: To: /var/www/html/uas_tools/visualization_generator/Resources/PHP/../../../../../uas_data/uploads/photos/2021_Corpus_Christi_Cotton_and_Corn/QpV9r.gif
+23.06.2021: From: /tmp/phpxqLO3E
+23.06.2021: To: /var/www/html/uas_tools/visualization_generator/Resources/PHP/../../../../../uas_data/uploads/photos/2021_Corpus_Christi_Cotton_and_Corn/5NaRD.gif
+23.06.2021: file: Array
+23.06.2021: Path: /var/www/html/uas_tools/visualization_generator/Resources/PHP/../../../../../uas_data/uploads/photos/2021_Corpus_Christi_Cotton_and_Corn
+23.06.2021: From: /tmp/php1WLp0N
+23.06.2021: To: /var/www/html/uas_tools/visualization_generator/Resources/PHP/../../../../../uas_data/uploads/photos/2021_Corpus_Christi_Cotton_and_Corn/RfdMx.png
+23.06.2021: Path: /var/www/html/uas_tools/visualization_generator/Resources/PHP/../../../../../uas_data/uploads/photos/2021_Corpus_Christi_Cotton_and_Corn
+23.06.2021: From: /tmp/php8DKbPQ
+23.06.2021: To: /var/www/html/uas_tools/visualization_generator/Resources/PHP/../../../../../uas_data/uploads/photos/2021_Corpus_Christi_Cotton_and_Corn/APLRB.png
+23.06.2021: page_url: 2021 Corpus Christi Cotton and Corn

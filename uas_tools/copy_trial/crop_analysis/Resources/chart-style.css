@@ -1,0 +1,30 @@
+.axis path, .axis line { fill: none; stroke: rgb(0, 0, 0); shape-rendering: crispEdges; }
+.bar { fill: steelblue; }
+.bar:hover { fill: brown; }
+.max-growth-line { stroke: rgb(255, 0, 0); stroke-width: 1; stroke-dasharray: 5, 5; }
+.max-growth-text { fill: rgb(255, 0, 0); font-size: 13px; }
+.half-max-growth-line { stroke: rgb(0, 0, 255); stroke-width: 1; stroke-dasharray: 5, 5; }
+.half-max-growth-text { fill: rgb(0, 0, 255); font-size: 13px; }
+.delta-d-text { fill: rgb(0, 255, 0); font-size: 13px; }
+.d3-tip { line-height: 1; font-weight: bold; padding: 12px; background: rgba(0, 0, 0, 0.8); color: rgb(255, 255, 255); border-radius: 2px; }
+.d3-tip::after { box-sizing: border-box; display: inline; font-size: 10px; width: 100%; line-height: 1; color: rgba(0, 0, 0, 0.8); content: "▼"; position: absolute; text-align: center; }
+.d3-tip.n::after { margin: -1px 0px 0px; top: 100%; left: 0px; }
+.line { fill: none; stroke: red; stroke-width: 1.5px; }
+.chart-line { stroke: steelblue; stroke-width: 2; fill: none; }
+.second-chart-line {stroke: #FF7F50;stroke-width: 2;fill: none;}
+.third-chart-line {stroke: #7FFF00;stroke-width: 2;fill: none;}
+.add-chart-line { stroke: red; stroke-width: 1; fill: none; }
+.charts { text-align: center; width: 98%; overflow-x: auto; white-space: nowrap; }
+.chart { width: 45%; text-align: center; display: inline-block; }
+.axis { font-size: 12px; }
+.axis-label { font-size: 15px; }
+.ui-tabs-anchor { font-size: small; }
+.ui-widget { font-size: small !important; }
+.fixed-position-panel { width: 155px; text-align: left; float: left; position: fixed; padding: 5px; border: 1px solid rgb(204, 204, 204); border-radius: 7px; top: 100px; }
+.overlay { fill: none; pointer-events: all; }
+.focus circle { fill: none; stroke: black; }
+.focus-text { fill: none; stroke: black; }
+.added-line-focus-text { fill: none; stroke: red; }
+iframe, object, embed { max-width: 100%; }
+.thumbnail { max-height: 200px; }
+.genotype { width: 175px; display: inline-block; margin: 5px 10px; text-align: left; }

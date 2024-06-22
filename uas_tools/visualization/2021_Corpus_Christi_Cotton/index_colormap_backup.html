@@ -1,0 +1,2216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" name=”viewport” content=”width=device-width, initial-scale=1″>
+  <title>2021 Corpus Christi Cotton</title>
+  <link rel="stylesheet" href="/libraries/leaflet/leaflet.css"/>
+  <link rel="stylesheet" href="/libraries/css/leaflet-panel-layers.css"/>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .container {
+          position: absolute;
+          height: auto;
+          right: 20px;
+          bottom: 1%;
+          z-index: 2;
+        }
+
+        .logo_merge {
+            width: 420px;
+            z-index: 2;
+        }
+
+        .img_title{
+          background: #444;
+          color: #f6f5f5;
+          font-size: 15px;
+          font-weight: 700;
+          padding: 8px 12px;
+          z-index: 2;
+          width: 397.5px;
+        }
+
+        h3{
+          padding: 0px;
+          margin: 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+<br/>
+<div id="map"></div>
+
+<script src="/libraries/js/leaflet.js"></script>
+<script src="/libraries/js/leaflet-panel-layers.js"></script>
+<script src="/libraries/js/jquery.min.js"></script>
+<script src="/libraries/js/leaflet-ajax/dist/leaflet.ajax.js"></script>
+<script src="/libraries/js/legend.js"></script>
+<link rel="stylesheet" href="/libraries/css/legend.css"/>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-74689450-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<script>
+    var map = L.map('map', {
+        center: L.latLng([27.782608,-97.561012]),
+        zoom: 19,
+        minZoom: 17,
+        maxZoom: 23,
+        attributionControl: false});
+
+    var osm_map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        zIndex: 0
+    });
+
+    var googleHybrid = L.tileLayer('https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
+        maxZoom: 23,
+        subdomains:['mt0','mt1','mt2','mt3']
+        });
+
+        // Layers
+              var layer_20210408_cc_p4r_parking_mosaic = L.tileLayer('https://cultivarevaluation.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton/DJI_Phantom_4_RTK/RGB/04-08-2021/20210408/RGB_Ortho/20210408_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(27.783736111111,-97.561691666667),L.latLng(27.783713888889,-97.559691666667),L.latLng(27.781288888889,-97.559725),L.latLng(27.781311111111,-97.561725),L.latLng(27.783736111111,-97.561691666667)])});
+        var layer_20210420_cc_p4r_parking_mosaic = L.tileLayer('https://cultivarevaluation.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton/DJI_Phantom_4_RTK/RGB/04-20-2021/20210420/RGB_Ortho/20210420_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 51, bounds: L.latLngBounds([L.latLng(27.783725,-97.561691666667),L.latLng(27.783705555556,-97.559680555556),L.latLng(27.781280555556,-97.559711111111),L.latLng(27.7813,-97.561722222222),L.latLng(27.783725,-97.561691666667)])});
+        var layer_20210506_cc_p4r_parking_mosaic = L.tileLayer('https://cultivarevaluation.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton/DJI_Phantom_4_RTK/RGB/05-06-2021/20210506/RGB_Ortho/20210506_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 52, bounds: L.latLngBounds([L.latLng(27.783733333333,-97.5617),L.latLng(27.783711111111,-97.559688888889),L.latLng(27.781291666667,-97.559722222222),L.latLng(27.781313888889,-97.561730555556),L.latLng(27.783733333333,-97.5617)])});
+        var layer_20210514_cc_p4r_parking_mosaic = L.tileLayer('https://cultivarevaluation.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton/DJI_Phantom_4_RTK/RGB/05-14-2021/20210514/RGB_Ortho/20210514_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 53, bounds: L.latLngBounds([L.latLng(27.783741666667,-97.561688888889),L.latLng(27.783719444444,-97.559694444444),L.latLng(27.781288888889,-97.559725),L.latLng(27.781311111111,-97.561722222222),L.latLng(27.783741666667,-97.561688888889)])});
+        var layer_20210602_cc_p4r_parking_mosaic = L.tileLayer('https://cultivarevaluation.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton/DJI_Phantom_4_RTK/RGB/06-02-2021/20210602/RGB_Ortho/20210602_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 54, bounds: L.latLngBounds([L.latLng(27.783730555556,-97.561688888889),L.latLng(27.783711111111,-97.559702777778),L.latLng(27.781286111111,-97.559736111111),L.latLng(27.781308333333,-97.561719444444),L.latLng(27.783730555556,-97.561688888889)])});
+        var layer_20210614_cc_p4r_parking_mosaic = L.tileLayer('https://cultivarevaluation.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton/DJI_Phantom_4_RTK/RGB/06-14-2021/20210614/RGB_Ortho/20210614_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 55, bounds: L.latLngBounds([L.latLng(27.783736111111,-97.561683333333),L.latLng(27.783713888889,-97.559675),L.latLng(27.781286111111,-97.559708333333),L.latLng(27.781308333333,-97.561716666667),L.latLng(27.783736111111,-97.561683333333)])});
+        var layer_20210708_cc_p4r_parking_mosaic = L.tileLayer('https://cultivarevaluation.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton/DJI_Phantom_4_RTK/RGB/07-08-2021/20210708/RGB_Ortho/20210708_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 56, bounds: L.latLngBounds([L.latLng(27.783733333333,-97.561691666667),L.latLng(27.783713888889,-97.559677777778),L.latLng(27.781283333333,-97.559711111111),L.latLng(27.781302777778,-97.561725),L.latLng(27.783733333333,-97.561691666667)])});
+        var layer_20210720_cc_p4r_parking_mosaic = L.tileLayer('https://cultivarevaluation.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton/DJI_Phantom_4_RTK/RGB/07-20-2021/20210720/RGB_Ortho/20210720_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 57, bounds: L.latLngBounds([L.latLng(27.783736111111,-97.561683333333),L.latLng(27.783716666667,-97.559683333333),L.latLng(27.781291666667,-97.559713888889),L.latLng(27.781311111111,-97.561713888889),L.latLng(27.783736111111,-97.561683333333)])});
+        var layer_20210810_cc_p4r_parking_mosaic = L.tileLayer('https://cultivarevaluation.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton/DJI_Phantom_4_RTK/RGB/08-10-2021/20210810/RGB_Ortho/20210810_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 58, bounds: L.latLngBounds([L.latLng(27.783730555556,-97.5617),L.latLng(27.783708333333,-97.559675),L.latLng(27.781286111111,-97.559708333333),L.latLng(27.781308333333,-97.561730555556),L.latLng(27.783730555556,-97.5617)])});
+
+
+
+//
+// onEachFeature:popUp_cc
+//
+
+////// CANOPY COVER //////
+////// GRID //////
+///////////////////////////////////////////////////////////////////////////
+var cc_210408_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210408_grid(feature.properties.CC210408),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210412_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210412_grid(feature.properties.CC210412),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210420_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210420_grid(feature.properties.CC210420),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210429_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210429_grid(feature.properties.CC210429),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210506_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210506_grid(feature.properties.CC210506),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210514_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210514_grid(feature.properties.CC210514),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210520_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210520_grid(feature.properties.CC210520),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210524_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210524_grid(feature.properties.CC210524),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210602_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210602_grid(feature.properties.CC210602),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210609_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210609_grid(feature.properties.CC210609),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210614_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210614_grid(feature.properties.CC210614),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210623_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210623_grid(feature.properties.CC210623),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210629_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210629_grid(feature.properties.CC210629),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210708_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210708_grid(feature.properties.CC210708),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210712_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210712_grid(feature.properties.CC210712),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210720_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210720_grid(feature.properties.CC210720),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210728_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210728_grid(feature.properties.CC210728),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210810_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210810_grid(feature.properties.CC210810),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210817_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210817_grid(feature.properties.CC210817),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+///////////////////////////////////////////////////////////////////////////
+
+// ////// CANOPY HEIGHT //////
+// ////// GRID //////
+// ///////////////////////////////////////////////////////////////////////////
+var ch_210429_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_ch_grid_maturity_trial.geojson", {onEachFeature:popUp_ch, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_ch_Color_210429_grid(feature.properties.CH210429),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var ch_210506_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_ch_grid_maturity_trial.geojson", {onEachFeature:popUp_ch, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_ch_Color_210506_grid(feature.properties.CH210506),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var ch_210514_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_ch_grid_maturity_trial.geojson", {onEachFeature:popUp_ch, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_ch_Color_210514_grid(feature.properties.CH210514),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var ch_210520_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_ch_grid_maturity_trial.geojson", {onEachFeature:popUp_ch, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_ch_Color_210520_grid(feature.properties.CH210520),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var ch_210524_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_ch_grid_maturity_trial.geojson", {onEachFeature:popUp_ch, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_ch_Color_210524_grid(feature.properties.CH210524),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var ch_210602_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_ch_grid_maturity_trial.geojson", {onEachFeature:popUp_ch, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_ch_Color_210602_grid(feature.properties.CH210602),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var ch_210609_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_ch_grid_maturity_trial.geojson", {onEachFeature:popUp_ch, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_ch_Color_210609_grid(feature.properties.CH210609),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var ch_210614_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_ch_grid_maturity_trial.geojson", {onEachFeature:popUp_ch, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_ch_Color_210614_grid(feature.properties.CH210614),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var ch_210623_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_ch_grid_maturity_trial.geojson", {onEachFeature:popUp_ch, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_ch_Color_210623_grid(feature.properties.CH210623),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var ch_210629_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_ch_grid_maturity_trial.geojson", {onEachFeature:popUp_ch, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_ch_Color_210629_grid(feature.properties.CH210629),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var ch_210708_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_ch_grid_maturity_trial.geojson", {onEachFeature:popUp_ch, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_ch_Color_210708_grid(feature.properties.CH210708),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var ch_210712_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_ch_grid_maturity_trial.geojson", {onEachFeature:popUp_ch, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_ch_Color_210712_grid(feature.properties.CH210712),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var ch_210720_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_ch_grid_maturity_trial.geojson", {onEachFeature:popUp_ch, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_ch_Color_210720_grid(feature.properties.CH210720),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var ch_210728_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_ch_grid_maturity_trial.geojson", {onEachFeature:popUp_ch, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_ch_Color_210728_grid(feature.properties.CH210728),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var ch_210810_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_ch_grid_maturity_trial.geojson", {onEachFeature:popUp_ch, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_ch_Color_210810_grid(feature.properties.CH210810),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+// var ch_210817_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_ch_grid_maturity_trial.geojson", {onEachFeature:popUp_ch_210817_grid, zIndex: 101, style: function (feature){// THIRD
+// return {
+//   "color": 'black',
+//   "weight": 1,
+//   "opacity": 1,
+//   "fillColor": get_ch_Color_210817_grid(feature.properties.CH210817),// CHANGE COLOR PROPPERTIES
+//   "fillOpacity": 0.7
+// }}});
+
+// ///////////////////////////////////////////////////////////////////////////
+
+// ////// CANOPY VOLUME //////
+// ////// GRID //////
+// ///////////////////////////////////////////////////////////////////////////
+var cv_210429_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cv_grid_maturity_trial.geojson", {onEachFeature:popUp_cv, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cv_Color_210429_grid(feature.properties.CV210429),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cv_210506_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cv_grid_maturity_trial.geojson", {onEachFeature:popUp_cv, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cv_Color_210506_grid(feature.properties.CV210506),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cv_210514_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cv_grid_maturity_trial.geojson", {onEachFeature:popUp_cv, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cv_Color_210514_grid(feature.properties.CV210514),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cv_210520_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cv_grid_maturity_trial.geojson", {onEachFeature:popUp_cv, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cv_Color_210520_grid(feature.properties.CV210520),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cv_210524_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cv_grid_maturity_trial.geojson", {onEachFeature:popUp_cv, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cv_Color_210524_grid(feature.properties.CV210524),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cv_210602_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cv_grid_maturity_trial.geojson", {onEachFeature:popUp_cv, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cv_Color_210602_grid(feature.properties.CV210602),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cv_210609_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cv_grid_maturity_trial.geojson", {onEachFeature:popUp_cv, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cv_Color_210609_grid(feature.properties.CV210609),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cv_210614_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cv_grid_maturity_trial.geojson", {onEachFeature:popUp_cv, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cv_Color_210614_grid(feature.properties.CV210614),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cv_210623_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cv_grid_maturity_trial.geojson", {onEachFeature:popUp_cv, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cv_Color_210623_grid(feature.properties.CV210623),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cv_210629_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cv_grid_maturity_trial.geojson", {onEachFeature:popUp_cv, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cv_Color_210629_grid(feature.properties.CV210629),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cv_210708_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cv_grid_maturity_trial.geojson", {onEachFeature:popUp_cv, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cv_Color_210708_grid(feature.properties.CV210708),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cv_210712_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cv_grid_maturity_trial.geojson", {onEachFeature:popUp_cv, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cv_Color_210712_grid(feature.properties.CV210712),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cv_210720_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cv_grid_maturity_trial.geojson", {onEachFeature:popUp_cv, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cv_Color_210720_grid(feature.properties.CV210720),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cv_210728_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cv_grid_maturity_trial.geojson", {onEachFeature:popUp_cv, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cv_Color_210728_grid(feature.properties.CV210728),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cv_210810_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cv_grid_maturity_trial.geojson", {onEachFeature:popUp_cv, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cv_Color_210810_grid(feature.properties.CV210810),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+// var cv_210817_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cv_grid_maturity_trial.geojson", {onEachFeature:popUp_cv_210817_grid, zIndex: 101, style: function (feature){// THIRD
+// return {
+//   "color": 'black',
+//   "weight": 1,
+//   "opacity": 1,
+//   "fillColor": get_cv_Color_210817_grid(feature.properties.CV210817),// CHANGE COLOR PROPPERTIES
+//   "fillOpacity": 0.7
+// }}});
+
+// ///////////////////////////////////////////////////////////////////////////
+
+////// ExG //////
+////// GRID //////
+///////////////////////////////////////////////////////////////////////////
+var exg_210429_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_exg_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_exg, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_exg_Color_210429_grid(feature.properties.EG210429),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var exg_210506_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_exg_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_exg, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_exg_Color_210506_grid(feature.properties.EG210506),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var exg_210514_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_exg_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_exg, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_exg_Color_210514_grid(feature.properties.EG210514),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var exg_210520_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_exg_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_exg, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_exg_Color_210520_grid(feature.properties.EG210520),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var exg_210524_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_exg_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_exg, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_exg_Color_210524_grid(feature.properties.EG210524),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var exg_210602_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_exg_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_exg, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_exg_Color_210602_grid(feature.properties.EG210602),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var exg_210609_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_exg_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_exg, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_exg_Color_210609_grid(feature.properties.EG210609),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var exg_210614_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_exg_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_exg, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_exg_Color_210614_grid(feature.properties.EG210614),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var exg_210623_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_exg_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_exg, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_exg_Color_210623_grid(feature.properties.EG210623),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var exg_210629_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_exg_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_exg, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_exg_Color_210629_grid(feature.properties.EG210629),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var exg_210708_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_exg_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_exg, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_exg_Color_210708_grid(feature.properties.EG210708),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var exg_210712_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_exg_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_exg, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_exg_Color_210712_grid(feature.properties.EG210712),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var exg_210720_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_exg_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_exg, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_exg_Color_210720_grid(feature.properties.EG210720),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var exg_210728_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_exg_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_exg, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_exg_Color_210728_grid(feature.properties.EG210728),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var exg_210810_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_exg_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_exg, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_exg_Color_210810_grid(feature.properties.EG210810),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var exg_210817_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_exg_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_exg, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_exg_Color_210817_grid(feature.properties.EG210817),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+///////////////////////////////////////////////////////////////////////////
+
+      map.addLayer(googleHybrid);
+
+    var baseLayers = [
+        {
+            name: "Open Street Map",
+            layer: osm_map
+        },
+        {
+            name: "Satellite Map",
+            layer: googleHybrid
+        },
+    ];
+
+    var overLayers = [
+        {
+	group: 'RGB',
+	layers: [
+		{
+			name: '04/08/2021',
+active: 'true',
+			layer: layer_20210408_cc_p4r_parking_mosaic
+		},
+		{
+			name: '04/20/2021',
+			layer: layer_20210420_cc_p4r_parking_mosaic
+		},
+		{
+			name: '05/06/2021',
+			layer: layer_20210506_cc_p4r_parking_mosaic
+		},
+		{
+			name: '05/14/2021',
+			layer: layer_20210514_cc_p4r_parking_mosaic
+		},
+		{
+			name: '06/02/2021',
+			layer: layer_20210602_cc_p4r_parking_mosaic
+		},
+		{
+			name: '06/14/2021',
+			layer: layer_20210614_cc_p4r_parking_mosaic
+		},
+		{
+			name: '07/08/2021',
+			layer: layer_20210708_cc_p4r_parking_mosaic
+		},
+		{
+			name: '07/20/2021',
+			layer: layer_20210720_cc_p4r_parking_mosaic
+		},
+		{
+			name: '08/10/2021',
+			layer: layer_20210810_cc_p4r_parking_mosaic
+		},
+	]
+},
+
+{
+  ////// CANOPY COVER //////
+  group: 'Canopy Cover',
+  collapsed: true,
+  layers: [
+    ////// GRID //////
+    ///////////////////////////////////////////////////////////////////////////
+    {
+      name: '04/08/2021 - Grid',
+      layer: cc_210408_grid
+    },
+    {
+      name: '04/12/2021 - Grid',
+      layer: cc_210412_grid
+    },
+    {
+  		name: '04/20/2021 - Grid',
+  		layer: cc_210420_grid
+  	},
+    {
+  		name: '04/29/2021 - Grid',
+  		layer: cc_210429_grid
+  	},
+    {
+  		name: '05/06/2021 - Grid',
+  		layer: cc_210506_grid
+  	},
+    {
+      name: '05/14/2021 - Grid',
+      layer: cc_210514_grid
+    },
+    {
+      name: '05/20/2021 - Grid',
+      layer: cc_210520_grid
+    },
+    {
+      name: '05/24/2021 - Grid',
+      layer: cc_210524_grid
+    },
+    {
+      name: '06/02/2021 - Grid',
+      layer: cc_210602_grid
+    },
+    {
+      name: '06/09/2021 - Grid',
+      layer: cc_210609_grid
+    },
+    {
+      name: '06/14/2021 - Grid',
+      layer: cc_210614_grid
+    },
+    {
+      name: '06/23/2021 - Grid',
+      layer: cc_210623_grid
+    },
+    {
+      name: '06/29/2021 - Grid',
+      layer: cc_210629_grid
+    },
+    {
+      name: '07/08/2021 - Grid',
+      layer: cc_210708_grid
+    },
+    {
+      name: '07/12/2021 - Grid',
+      layer: cc_210712_grid
+    },
+    {
+      name: '07/20/2021 - Grid',
+      layer: cc_210720_grid
+    },
+    {
+      name: '07/28/2021 - Grid',
+      layer: cc_210728_grid
+    },
+    {
+      name: '08/10/2021 - Grid',
+      layer: cc_210810_grid
+    },
+    {
+      name: '08/17/2021 - Grid',
+      layer: cc_210817_grid
+    },
+    ///////////////////////////////////////////////////////////////////////////
+  ]
+  },
+
+  {
+    ////// CANOPY HEIGHT //////
+    group: 'Canopy Height',
+    collapsed: true,
+    layers: [
+      ////// GRID //////
+      ///////////////////////////////////////////////////////////////////////////
+      {
+    		name: '04/29/2021 - Grid',
+    		layer: ch_210429_grid
+    	},
+      {
+    		name: '05/06/2021 - Grid',
+    		layer: ch_210506_grid
+    	},
+      {
+        name: '05/14/2021 - Grid',
+        layer: ch_210514_grid
+      },
+      {
+        name: '05/20/2021 - Grid',
+        layer: ch_210520_grid
+      },
+      {
+        name: '05/24/2021 - Grid',
+        layer: ch_210524_grid
+      },
+      {
+        name: '06/02/2021 - Grid',
+        layer: ch_210602_grid
+      },
+      {
+        name: '06/09/2021 - Grid',
+        layer: ch_210609_grid
+      },
+      {
+        name: '06/14/2021 - Grid',
+        layer: ch_210614_grid
+      },
+      {
+        name: '06/23/2021 - Grid',
+        layer: ch_210623_grid
+      },
+      {
+        name: '06/29/2021 - Grid',
+        layer: ch_210629_grid
+      },
+      {
+        name: '07/08/2021 - Grid',
+        layer: ch_210708_grid
+      },
+      {
+        name: '07/12/2021 - Grid',
+        layer: ch_210712_grid
+      },
+      {
+        name: '07/20/2021 - Grid',
+        layer: ch_210720_grid
+      },
+      {
+        name: '07/28/2021 - Grid',
+        layer: ch_210728_grid
+      },
+      {
+        name: '08/10/2021 - Grid',
+        layer: ch_210810_grid
+      },
+      // {
+      //   name: '08/17/2021 - Grid',
+      //   layer: ch_210817_grid
+      // },
+      ///////////////////////////////////////////////////////////////////////////
+    ]
+    },
+
+    {
+      ////// CANOPY VOLUME //////
+      group: 'Canopy Volume',
+      collapsed: true,
+      layers: [
+        ////// GRID //////
+        ///////////////////////////////////////////////////////////////////////////
+        {
+          name: '04/29/2021 - Grid',
+          layer: cv_210429_grid
+        },
+        {
+          name: '05/06/2021 - Grid',
+          layer: cv_210506_grid
+        },
+        {
+          name: '05/14/2021 - Grid',
+          layer: cv_210514_grid
+        },
+        {
+          name: '05/20/2021 - Grid',
+          layer: cv_210520_grid
+        },
+        {
+          name: '05/24/2021 - Grid',
+          layer: cv_210524_grid
+        },
+        {
+          name: '06/02/2021 - Grid',
+          layer: cv_210602_grid
+        },
+        {
+          name: '06/09/2021 - Grid',
+          layer: cv_210609_grid
+        },
+        {
+          name: '06/14/2021 - Grid',
+          layer: cv_210614_grid
+        },
+        {
+          name: '06/23/2021 - Grid',
+          layer: cv_210623_grid
+        },
+        {
+          name: '06/29/2021 - Grid',
+          layer: cv_210629_grid
+        },
+        {
+          name: '07/08/2021 - Grid',
+          layer: cv_210708_grid
+        },
+        {
+          name: '07/12/2021 - Grid',
+          layer: cv_210712_grid
+        },
+        {
+          name: '07/20/2021 - Grid',
+          layer: cv_210720_grid
+        },
+        {
+          name: '07/28/2021 - Grid',
+          layer: cv_210728_grid
+        },
+        {
+          name: '08/10/2021 - Grid',
+          layer: cv_210810_grid
+        },
+        // {
+        //   name: '08/17/2021 - Grid',
+        //   layer: cv_210817_grid
+        // },
+        ///////////////////////////////////////////////////////////////////////////
+      ]
+      },
+
+{
+  ////// ExG //////
+  group: 'ExG',
+  collapsed: true,
+  layers: [
+    ////// GRID //////
+    ///////////////////////////////////////////////////////////////////////////
+    {
+      name: '04/29/2021 - Grid',
+      layer: exg_210429_grid
+    },
+    {
+      name: '05/06/2021 - Grid',
+      layer: exg_210506_grid
+    },
+    {
+      name: '05/14/2021 - Grid',
+      layer: exg_210514_grid
+    },
+    {
+      name: '05/20/2021 - Grid',
+      layer: exg_210520_grid
+    },
+    {
+      name: '05/24/2021 - Grid',
+      layer: exg_210524_grid
+    },
+    {
+      name: '06/02/2021 - Grid',
+      layer: exg_210602_grid
+    },
+    {
+      name: '06/09/2021 - Grid',
+      layer: exg_210609_grid
+    },
+    {
+      name: '06/14/2021 - Grid',
+      layer: exg_210614_grid
+    },
+    {
+      name: '06/23/2021 - Grid',
+      layer: exg_210623_grid
+    },
+    {
+      name: '06/29/2021 - Grid',
+      layer: exg_210629_grid
+    },
+    {
+      name: '07/08/2021 - Grid',
+      layer: exg_210708_grid
+    },
+    {
+      name: '07/12/2021 - Grid',
+      layer: exg_210712_grid
+    },
+    {
+      name: '07/20/2021 - Grid',
+      layer: exg_210720_grid
+    },
+    {
+      name: '07/28/2021 - Grid',
+      layer: exg_210728_grid
+    },
+    {
+      name: '08/10/2021 - Grid',
+      layer: exg_210810_grid
+    },
+    {
+      name: '08/17/2021 - Grid',
+      layer: exg_210817_grid
+    },
+    ///////////////////////////////////////////////////////////////////////////
+  ]
+  },
+
+    ];
+
+    ////// GRID //////
+    ///////////////////////////////////////////////////////////////////////////
+    function get_cc_Color_210408_grid(x) {
+      if (x < (0.2070)) {
+        return "#d7191c";  // RED
+      } else if (x >= (0.2070) && x < 0.5910) {
+        return "#fdae61"; // ORANGE
+      } else if (x >= 0.5910 && x < 1.1335) {
+        return "#ffffc0"; // YELLOW
+      } else if (x >= 1.1335 && x < 2.3446) {
+        return "#a6d96a"; // LIGHT GREEN
+      } else if (x >= 2.3446) {
+        return "#1a9641"; // DARK GREEN
+      }
+    }
+
+    function get_cc_Color_210412_grid(x) {
+      if (x < (0.64)) {
+        return "#d7191c";  // RED
+      } else if (x >= (0.64) && x < 1.62) {
+        return "#fdae61"; // ORANGE
+      } else if (x >= 1.62 && x < 2.99) {
+        return "#ffffc0"; // YELLOW
+      } else if (x >= 2.99 && x < 6.46) {
+        return "#a6d96a"; // LIGHT GREEN
+      } else if (x >= 6.46) {
+        return "#1a9641"; // DARK GREEN
+      }
+    }
+
+    function get_cc_Color_210420_grid(x) {
+      if (x < (1.90)) {
+        return "#d7191c";  // RED
+      } else if (x >= (1.90) && x < 4.34) {
+        return "#fdae61"; // ORANGE
+      } else if (x >= 4.34 && x < 8.13) {
+        return "#ffffc0"; // YELLOW
+      } else if (x >= 8.13 && x < 15.23) {
+        return "#a6d96a"; // LIGHT GREEN
+      } else if (x >= 15.23) {
+        return "#1a9641"; // DARK GREEN
+      }
+    }
+
+    function get_cc_Color_210429_grid(x) {
+      if (x < (6.31)) {
+        return "#d7191c";  // RED
+      } else if (x >= (6.31) && x < 12.69) {
+        return "#fdae61"; // ORANGE
+      } else if (x >= 12.69 && x < 24.60) {
+        return "#ffffc0"; // YELLOW
+      } else if (x >= 24.60 && x < 48.40) {
+        return "#a6d96a"; // LIGHT GREEN
+      } else if (x >= 48.40) {
+        return "#1a9641"; // DARK GREEN
+      }
+    }
+
+    function get_cc_Color_210506_grid(x) {
+    if (x < (4.36)) {
+      return "#d7191c";  // RED
+    } else if (x >= (4.36) && x < 9.35) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 9.35 && x < 14.40) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 14.40 && x < 20.15) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 20.15) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cc_Color_210514_grid(x) {
+    if (x < (10)) {
+      return "#d7191c";  // RED
+    } else if (x >= (10) && x < 19) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 19 && x < 29) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 29 && x < 38) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 38) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cc_Color_210520_grid(x) {
+    if (x < (16)) {
+      return "#d7191c";  // RED
+    } else if (x >= (16) && x < 30) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 30 && x < 43) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 43 && x < 56) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 56) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cc_Color_210524_grid(x) {
+    if (x < (24)) {
+      return "#d7191c";  // RED
+    } else if (x >= (24) && x < 42) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 42 && x < 58) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 58 && x < 73) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 73) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cc_Color_210602_grid(x) {
+    if (x < 29) {
+      return "#d7191c";  // RED
+    } else if (x >= 29 && x < 51) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 51 && x < 67) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 67 && x < 81) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 81) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cc_Color_210609_grid(x) {
+    if (x < 33) {
+      return "#d7191c";  // RED
+    } else if (x >= 33 && x < 58) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 58 && x < 76) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 76 && x < 88) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 88) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cc_Color_210614_grid(x) {
+    if (x < 27) {
+      return "#d7191c";  // RED
+    } else if (x >= 27 && x < 53) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 53 && x < 72) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 72 && x < 87) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 87) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cc_Color_210623_grid(x) {
+    if (x < 27) {
+      return "#d7191c";  // RED
+    } else if (x >= 27 && x < 53) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 53 && x < 72) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 72 && x < 87) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 87) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cc_Color_210629_grid(x) {
+    if (x < 26.7) {
+      return "#d7191c";  // RED
+    } else if (x >= 26.7 && x < 56.6) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 56.6 && x < 76.4) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 76.4 && x < 90.4) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 90.4) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cc_Color_210708_grid(x) {
+    if (x < 26.7) {
+      return "#d7191c";  // RED
+    } else if (x >= 26.7 && x < 56.6) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 56.6 && x < 76.4) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 76.4 && x < 90.4) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 90.4) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cc_Color_210712_grid(x) {
+    if (x < 25.8) {
+      return "#d7191c";  // RED
+    } else if (x >= 25.8 && x < 54.2) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 54.2 && x < 77.8) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 77.8 && x < 91.7) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 91.7) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cc_Color_210720_grid(x) {
+    if (x < 33.2) {
+      return "#d7191c";  // RED
+    } else if (x >= 33.2 && x < 60.3) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 60.3 && x < 78.6) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 78.6 && x < 91) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 91) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cc_Color_210728_grid(x) {
+    if (x < 33.6) {
+      return "#d7191c";  // RED
+    } else if (x >= 33.6 && x < 58.9) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 58.9 && x < 77.6) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 77.6 && x < 90) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 90) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cc_Color_210810_grid(x) { // Needs to be changed
+    if (x < 28) {
+      return "#d7191c";  // RED
+    } else if (x >= 28 && x < 45) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 45 && x < 59) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 59 && x < 73) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 73) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cc_Color_210817_grid(x) { // Needs to be changed
+    if (x < 1.7) {
+      return "#d7191c";  // RED
+    } else if (x >= 1.7 && x < 4.4) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 4.4 && x < 8.4) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 8.4 && x < 14.7) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 14.7) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    ///////////////////////////////////////////////////////////////////////////
+
+    ////// CANOPY HEIGHT //////
+    ////// GRID //////
+    function get_ch_Color_210429_grid(x) {
+    if (x < 0.056) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.056 && x < 0.092) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.092 && x < 0.163) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.163 && x < 0.198) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.198) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_ch_Color_210506_grid(x) {
+    if (x < 0.124) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.124 && x < 0.17) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.17 && x < 0.227) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.227 && x < 0.279) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.279) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_ch_Color_210514_grid(x) {
+    if (x < 0.122) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.122 && x < 0.259) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.259 && x < 0.335) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.335 && x < 0.402) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.402) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_ch_Color_210520_grid(x) {
+    if (x < 0.217) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.217 && x < 0.354) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.354 && x < 0.437) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.437 && x < 0.507) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.507) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_ch_Color_210524_grid(x) {
+    if (x < 0.26) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.26 && x < 0.48) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.48 && x < 0.61) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.61 && x < 0.72) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.72) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_ch_Color_210602_grid(x) {
+    if (x < 0.31) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.31 && x < 0.63) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.63 && x < 0.78) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.78 && x < 0.91) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.91) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_ch_Color_210609_grid(x) {
+    if (x < 0.49) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.49 && x < 0.83) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.83 && x < 1) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 1 && x < 1.14) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 1.14) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_ch_Color_210614_grid(x) {
+    if (x < 0.39) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.39 && x < 0.73) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.73 && x < 0.95) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.95 && x < 1.12) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 1.12) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_ch_Color_210623_grid(x) {
+    if (x < 0.39) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.39 && x < 0.73) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.73 && x < 0.95) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.95 && x < 1.12) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 1.12) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_ch_Color_210629_grid(x) {
+    if (x < 0.23) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.23 && x < 0.63) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.63 && x < 0.8) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.8 && x < 0.96) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.96) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_ch_Color_210708_grid(x) {
+    if (x < 0.23) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.23 && x < 0.63) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.63 && x < 0.8) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.8 && x < 0.96) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.96) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_ch_Color_210712_grid(x) {
+    if (x < 0.65) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.65 && x < 1.02) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 1.02 && x < 1.18) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 1.18 && x < 1.33) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 1.33) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_ch_Color_210720_grid(x) {
+    if (x < 0.68) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.68 && x < 0.94) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.94 && x < 1.07) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 1.07 && x < 1.2) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 1.2) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_ch_Color_210728_grid(x) {
+    if (x < 0.74) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.74 && x < 1.05) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 1.05 && x < 1.22) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 1.22 && x < 1.38) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 1.38) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_ch_Color_210810_grid(x) { // Needs to be changed
+    if (x < 0.5) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.5 && x < 0.84) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.84 && x < 1.02) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 1.02 && x < 1.19) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 1.19) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    // function get_ch_Color_210817_grid(x) { // Needs to be changed
+    // if (x < 46) {
+    //   return "#d7191c";  // RED
+    // } else if (x >= 46 && x < 67.7) {
+    //   return "#fdae61"; // ORANGE
+    // } else if (x >= 67.7 && x < 78.3) {
+    //   return "#ffffc0"; // YELLOW
+    // } else if (x >= 78.3 && x < 84.3) {
+    //   return "#a6d96a"; // LIGHT GREEN
+    // } else if (x >= 84.3) {
+    //   return "#1a9641"; // DARK GREEN
+    // }}
+
+    ///////////////////////////////////////////////////////////////////////////
+
+    ////// CANOPY VOLUME //////
+    ////// GRID //////
+    function get_cv_Color_210429_grid(x) {
+    if (x < 0) {
+      return "#d7191c";  // RED
+    } else if (x >= 0 && x < 0.011) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.011 && x < 0.033) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.033 && x < 0.044) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.044) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cv_Color_210506_grid(x) {
+    if (x < 0.062) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.062 && x < 0.073) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.073 && x < 0.085) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.085 && x < 0.101) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.101) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cv_Color_210514_grid(x) {
+    if (x < -0.005) {
+      return "#d7191c";  // RED
+    } else if (x >= -0.005 && x < 0.033) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.033 && x < 0.074) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.074 && x < 0.122) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.122) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cv_Color_210520_grid(x) {
+    if (x < 0.11) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.11 && x < 0.161) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.161 && x < 0.209) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.209 && x < 0.264) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.264) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cv_Color_210524_grid(x) {
+    if (x < 0.104) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.104 && x < 0.194) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.194 && x < 0.282) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.282 && x < 0.369) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.369) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cv_Color_210602_grid(x) {
+    if (x < 0.17) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.17 && x < 0.31) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.31 && x < 0.44) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.44 && x < 0.58) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.58) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cv_Color_210609_grid(x) {
+    if (x < 0.17) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.17 && x < 0.31) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.31 && x < 0.44) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.44 && x < 0.58) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.58) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cv_Color_210614_grid(x) {
+    if (x < 0.23) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.23 && x < 0.45) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.45 && x < 0.63) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.63 && x < 0.81) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.81) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cv_Color_210623_grid(x) {
+    if (x < 0.23) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.23 && x < 0.45) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.45 && x < 0.63) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.63 && x < 0.81) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.81) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cv_Color_210629_grid(x) {
+    if (x < 0.12) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.12 && x < 0.37) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.37 && x < 0.54) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.54 && x < 0.71) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.71) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cv_Color_210708_grid(x) {
+    if (x < 0.12) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.12 && x < 0.37) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.37 && x < 0.54) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.54 && x < 0.71) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.71) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cv_Color_210712_grid(x) {
+    if (x < 0.36) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.36 && x < 0.63) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.63 && x < 0.83) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.83 && x < 1.01) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 1.01) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cv_Color_210720_grid(x) {
+    if (x < 0.38) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.38 && x < 0.62) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.62 && x < 0.77) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.77 && x < 0.9) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.9) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cv_Color_210728_grid(x) {
+    if (x < 0.39) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.39 && x < 0.64) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.64 && x < 0.83) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.83 && x < 0.99) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.99) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cv_Color_210810_grid(x) { // Needs to be cvanged
+    if (x < 0.28) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.28 && x < 0.48) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.48 && x < 0.65) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.65 && x < 0.82) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.82) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    // function get_cv_Color_210817_grid(x) { // Needs to be cvanged
+    // if (x < 46) {
+    //   return "#d7191c";  // RED
+    // } else if (x >= 46 && x < 67.7) {
+    //   return "#fdae61"; // ORANGE
+    // } else if (x >= 67.7 && x < 78.3) {
+    //   return "#ffffc0"; // YELLOW
+    // } else if (x >= 78.3 && x < 84.3) {
+    //   return "#a6d96a"; // LIGHT GREEN
+    // } else if (x >= 84.3) {
+    //   return "#1a9641"; // DARK GREEN
+    // }}
+
+    ///////////////////////////////////////////////////////////////////////////
+
+    ////// EXG //////
+    ////// GRID //////
+    function get_exg_Color_210429_grid(x) {
+    if (x < 0) {
+      return "#d7191c";  // RED
+    } else if (x >= 0 && x < 0.02) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.02 && x < 0.04) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.04 && x < 0.09) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.09) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_exg_Color_210506_grid(x) {
+      if (x < 0) {
+        return "#d7191c";  // RED
+      } else if (x >= 0 && x < 0.02) {
+        return "#fdae61"; // ORANGE
+      } else if (x >= 0.02 && x < 0.04) {
+        return "#ffffc0"; // YELLOW
+      } else if (x >= 0.04 && x < 0.06) {
+        return "#a6d96a"; // LIGHT GREEN
+      } else if (x >= 0.06) {
+        return "#1a9641"; // DARK GREEN
+      }
+      }
+
+    function get_exg_Color_210514_grid(x) {
+      if (x < 0.03) {
+        return "#d7191c";  // RED
+      } else if (x >= 0.03 && x < 0.06) {
+        return "#fdae61"; // ORANGE
+      } else if (x >= 0.06 && x < 0.09) {
+        return "#ffffc0"; // YELLOW
+      } else if (x >= 0.09 && x < 0.13) {
+        return "#a6d96a"; // LIGHT GREEN
+      } else if (x >= 0.13) {
+        return "#1a9641"; // DARK GREEN
+      }
+      }
+
+    function get_exg_Color_210520_grid(x) {
+    if (x < 0.07) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.07 && x < 0.13) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.13 && x < 0.18) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.18 && x < 0.23) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.23) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_exg_Color_210524_grid(x) {
+    if (x < 0.08) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.08 && x < 0.15) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.15 && x < 0.22) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.22 && x < 0.3) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.3) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_exg_Color_210602_grid(x) {
+    if (x < 0.12) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.12 && x < 0.2) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.2 && x < 0.26) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.26 && x < 0.33) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.33) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_exg_Color_210609_grid(x) {
+    if (x < 0.122) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.122 && x < 0.21) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.21 && x < 0.275) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.275 && x < 0.338) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.338) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_exg_Color_210614_grid(x) {
+    if (x < 0.107) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.107 && x < 0.194) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.194 && x < 0.255) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.255 && x < 0.315) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.315) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_exg_Color_210623_grid(x) {
+    if (x < 0.107) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.107 && x < 0.194) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.194 && x < 0.255) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.255 && x < 0.315) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.315) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_exg_Color_210629_grid(x) {
+    if (x < 0.1) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.1 && x < 0.19) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.19 && x < 0.252) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.252 && x < 0.298) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.298) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_exg_Color_210708_grid(x) {
+    if (x < 0.1) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.1 && x < 0.19) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.19 && x < 0.252) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.252 && x < 0.298) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.298) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_exg_Color_210712_grid(x) {
+    if (x < 0.107) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.107 && x < 0.203) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.203 && x < 0.261) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.261 && x < 0.303) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.303) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_exg_Color_210720_grid(x) {
+    if (x < 0.132) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.132 && x < 0.236) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.236 && x < 0.308) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.308 && x < 0.364) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.364) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_exg_Color_210728_grid(x) {
+    if (x < 0.105) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.105 && x < 0.178) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.178 && x < 0.228) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.228 && x < 0.28) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.28) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_exg_Color_210810_grid(x) { // Needs to be exganged
+    if (x < 0.084) {
+      return "#d7191c";  // RED
+    } else if (x >= 0.084 && x < 0.13) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 0.13 && x < 0.176) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.176 && x < 0.236) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.236) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_exg_Color_210817_grid(x) { // Needs to be exganged
+    if (x < -0.019) {
+      return "#d7191c";  // RED
+    } else if (x >= -0.019 && x < -0.007) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= -0.007 && x < 0.006) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 0.006 && x < 0.025) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 0.025) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    ///////////////////////////////////////////////////////////////////////////
+
+
+////// CANOPY COVER //////
+////// ROW //////
+///////////////////////////////////////////////////////////////////////////
+// function popUp_cc(f,l) {
+// var out = [];
+// if (f.properties) {
+//   var url = "<a href=/uas_tools/crop_analysis/index.php?crop=Sorghum&year=2021&location=College%20Station";
+// 	var parameters = "";
+// 	for (var key in f.properties) {//include var to not add key to global scope
+// 	    var val = f.properties[key]
+// 			//console.log(key);
+// 	    if (typeof val === "number" && key != "FID") {val = val.toFixed(2) + " %"}
+// 	    out.push(key + ': ' + val);
+// 	    parameters += '&' + key.replace(/\ /g, '_') + '=' + val;
+// 	}
+//   url += parameters.replace(/\ /g, "%20") + " target='_blank'>Growth analysis</a>";
+//   out.push(url);
+//   l.bindPopup(out.join("<br />"));}}
+///////////////////////////////////////////////////////////////////////////
+
+String.prototype.replaceAt = function(index, replacement) {
+    return this.substr(0, index) + replacement + this.substr(index + replacement.length);
+}
+
+    ////// CANOPY COVER //////
+    ////// GRID //////
+    ///////////////////////////////////////////////////////////////////////////
+    function popUp_cc(f,l) {
+    var out = [];
+    if (f.properties) {
+      var url = "<a href=/uas_tools/crop_analysis/index.php?crop=Cotton&year=2021&location=Corpus%20Christi&sublocation=Maturity%20Trial";
+      var url1 = "<a href=/uas_tools/variety_analysis/index.php?file_name=61edc71eb824f_2021_cc_monster_trial_cc_rgb_grid_maturity_trial.csv";
+    	var parameters = "";
+    	for (var key in f.properties) {//include var to not add key to global scope
+    	    var val = f.properties[key]
+    			//console.log(key);
+          // if column is a number an the number is not from column FID
+    	    if (typeof val === "number" && key != "FID" && key != "rep" && key != "line" && key != "plot_num") {
+            //alert(key.replaceAt(0, "20")); // reeplace CC with 20
+            key = key.replaceAt(0, "20"); // reeplace CC with 20
+
+            if (val > 100){
+              val = 99.99;
+            }
+
+            val = val.toFixed(2) + " %"
+          }
+
+          // Dont show this attributes
+          if (key != "plot_num") {
+          out.push(key + ': ' + val);
+          }
+
+    	    parameters += '&' + key.replace(/\ /g, '_') + '=' + val;
+    	}
+      url += parameters.replace(/\ /g, "%20") + " target='_blank'>Growth analysis</a>";
+      url1 += parameters.replace(/\ /g, "%20") + " target='_blank'>Cultivar analysis</a>";
+      out.push(url);
+      out.push(url1);
+      l.bindPopup(out.join("<br />"));}}
+//
+
+      ////// CANOPY HEIGHT //////
+        ////// GRID //////
+        ///////////////////////////////////////////////////////////////////////////
+        function popUp_ch(f,l) {
+        var out = [];
+        if (f.properties) {
+          var url = "<a href=/uas_tools/crop_analysis/index.php?crop=Cotton&year=2021&location=Corpus%20Christi&sublocation=Maturity%20Trial";
+          var url1 = "<a href=/uas_tools/variety_analysis/index.php?file_name=61edc8a28a825_2021_cc_monster_trial_ch_grid_maturity_trial.csv";
+          var parameters = "";
+        	for (var key in f.properties) {//include var to not add key to global scope
+        	    var val = f.properties[key]
+        			//console.log(key);
+              // if column is a number an the number is not from column FID
+              if (typeof val === "number" && key != "FID" && key != "rep" && key != "line" && key != "plot_num") {
+                //alert(key.replaceAt(0, "20")); // reeplace CC with 20
+                key = key.replaceAt(0, "20"); // reeplace CC with 20
+                val = val.toFixed(2) + " m"
+              }
+
+              // Dont show this attributes
+              if (key != "plot_num") {
+              out.push(key + ': ' + val);
+              }
+
+        	    parameters += '&' + key.replace(/\ /g, '_') + '=' + val;
+        	}
+          url += parameters.replace(/\ /g, "%20") + " target='_blank'>Growth analysis</a>";
+          url1 += parameters.replace(/\ /g, "%20") + " target='_blank'>Cultivar analysis</a>";
+          out.push(url);
+          out.push(url1);
+          l.bindPopup(out.join("<br />"));}}
+
+          ///////////////////////////////////////////////////////////////////////////
+
+          ////// CANOPY VOLUME //////
+            ////// GRID //////
+            ///////////////////////////////////////////////////////////////////////////
+            function popUp_cv(f,l) {
+            var out = [];
+            if (f.properties) {
+              var url = "<a href=/uas_tools/crop_analysis/index.php?crop=Cotton&year=2021&location=Corpus%20Christi&sublocation=Maturity%20Trial";
+              var url1 = "<a href=/uas_tools/variety_analysis/index.php?file_name=61edc8f987a3b_2021_cc_monster_trial_cv_grid_maturity_trial.csv";
+              var parameters = "";
+            	for (var key in f.properties) {//include var to not add key to global scope
+            	    var val = f.properties[key]
+            			//console.log(key);
+                  // if column is a number an the number is not from column FID
+                  if (typeof val === "number" && key != "FID" && key != "rep" && key != "line" && key != "plot_num") {
+                    //alert(key.replaceAt(0, "20")); // reeplace CC with 20
+                    key = key.replaceAt(0, "20"); // reeplace CC with 20
+                    val = val.toFixed(2) + " m^3"
+                  }
+                  // Dont show this attributes
+                  if (key != "plot_num") {
+                  out.push(key + ': ' + val);
+                  }
+
+            	    //out.push(key + ': ' + val);
+            	    parameters += '&' + key.replace(/\ /g, '_') + '=' + val;
+            	}
+              url += parameters.replace(/\ /g, "%20") + " target='_blank'>Growth analysis</a>";
+              url1 += parameters.replace(/\ /g, "%20") + " target='_blank'>Cultivar analysis</a>";
+              out.push(url);
+              out.push(url1);
+              l.bindPopup(out.join("<br />"));}}
+
+          ////// EXG //////
+          ////// GRID //////
+          ///////////////////////////////////////////////////////////////////////////
+          function popUp_exg(f,l) {
+          var out = [];
+          if (f.properties) {
+            var url = "<a href=/uas_tools/crop_analysis/index.php?crop=Cotton&year=2021&location=Corpus%20Christi&sublocation=Maturity%20Trial";
+            var url1 = "<a href=/uas_tools/variety_analysis/index.php?file_name=61ef20d500f8c_2021_cc_monster_trial_exg_rgb_grid_maturity_trial.csv";
+            var parameters = "";
+          	for (var key in f.properties) {//include var to not add key to global scope
+          	    var val = f.properties[key]
+          			//console.log(key);
+                // if column is a number an the number is not from column FID
+                if (typeof val === "number" && key != "FID" && key != "rep" && key != "line" && key != "plot_num") {
+                  //alert(key.replaceAt(0, "20")); // reeplace CC with 20
+                  key = key.replaceAt(0, "20"); // reeplace CC with 20
+                  val = val.toFixed(2)
+                }
+          	    //out.push(key + ': ' + val);
+                // Dont show this attributes
+                if (key != "plot_num") {
+                out.push(key + ': ' + val);
+                }
+
+          	    parameters += '&' + key.replace(/\ /g, '_') + '=' + val;
+          	}
+            url += parameters.replace(/\ /g, "%20") + " target='_blank'>Growth analysis</a>";
+            url1 += parameters.replace(/\ /g, "%20") + " target='_blank'>Cultivar analysis</a>";
+            out.push(url);
+            out.push(url1);
+            l.bindPopup(out.join("<br />"));}}
+
+    var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers, {collapsibleGroups: true});
+    map.addControl(panelLayers);
+
+    // Added
+    function popUp(f,l) {
+    var out = [];
+    if (f.properties) {
+    var parameters = "";
+    for (var key in f.properties) {//include var to not add key to global scope
+      var val = f.properties[key];
+      //var test = typeof val;
+      //alert(test);
+      if (typeof val === "number") {val = val.toFixed(2)}
+      out.push(key + ': ' + val);
+      parameters += '&' + key.replace(/\ /g, '_') + '=' + val;
+    }
+    l.bindPopup(out.join("<br />"));}}
+    // Added
+
+</script>
+
+<!-- <div class="container">
+  <h3 class="img_title">West Texas Cotton UASHub is supported by</h3>
+<img alt="Sponsor" class="logo_merge" src="/resources/images/supported_words.png">
+</div> -->
+
+</body>
+</html>

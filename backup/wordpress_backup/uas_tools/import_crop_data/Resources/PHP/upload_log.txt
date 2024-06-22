@@ -1,0 +1,36 @@
+19.11.2020: select row_data: SELECT * FROM row_data where CropDataSet = Array
+(
+    [file] => Array
+        (
+            [name] => 2016_cc_rice_cc_spring_parking.csv
+            [type] => text/csv
+            [tmp_name] => /tmp/phpvAQhwG
+            [error] => 0
+            [size] => 3404318
+        )
+
+)
+128
+19.11.2020: select row_data: SELECT * FROM row_data where CropDataSet = Array
+(
+    [file] => Array
+        (
+            [name] => 2016_cc_rice_cc_spring_parking.csv
+            [type] => text/csv
+            [tmp_name] => /tmp/phpvAQhwG
+            [error] => 0
+            [size] => 3404318
+        )
+
+)
+128
+19.11.2020: select row_data: SELECT * FROM row_data where CropDataSet = 148
+10.01.2021: sql: SELECT * FROM row_data where CropDataSet = ''
+10.01.2021: sql: SELECT * FROM row_data where CropDataSet = '2'
+12.01.2021: sql: SELECT * FROM row_data where CropDataSet = '2'
+12.01.2021: sql: SELECT CropDataSet FROM row_data ORDER BY ID DESC LIMIT 1
+12.01.2021: sql: SELECT CropDataSet FROM row_data ORDER BY ID DESC LIMIT 1
+12.01.2021: last_CropDataSet: Array
+12.01.2021: sql: SELECT CropDataSet FROM row_data ORDER BY ID DESC LIMIT 1
+12.01.2021: last_CropDataSet: 3
+12.01.2021: sql: SELECT * FROM row_data where CropDataSet = '3'

@@ -1,0 +1,188 @@
+<!DOCTYPE>
+<html lang="html">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Upload LAS</title>
+
+		<script type="text/javascript" src="Resources/JS/jquery.min.js"></script>
+		<script src="Resources/JS/JqueryUI/jquery-ui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="Resources/JS/JqueryUI/jquery-ui.css">
+		<script type="text/javascript" src="Resources/JS/resumable.js"></script>
+		<link rel="stylesheet" type="text/css" href="Resources/style.css">
+		<script type="text/javascript" src="Resources/JS/main.js"></script>
+		<script type="text/javascript" src="Resources/JS/spark-md5.min.js"></script>
+		<script src="Resources/JS/FixedTable/fixed_table_rc.js"></script>
+		<link rel="stylesheet" type="text/css" href="Resources/JS/FixedTable/fixed_table_rc.css">
+		<link rel="stylesheet" href="Resources/JS/Leaflet/leaflet.css" />
+		<script src="Resources/JS/Leaflet/leaflet.js"></script>
+		<link rel="stylesheet" href="Resources/JS/ControlGeocoder/Control.Geocoder.css" />
+		<script src="Resources/JS/ControlGeocoder/Control.Geocoder.js"></script>
+		<style>
+
+			.ft_container{
+				margin: 0 auto;
+				z-index: 1;
+			}
+
+			.ft_rel_container{
+				z-index: 1;
+			}
+
+
+		</style>
+	</head>
+
+	<body>
+		<div id="resumable-list" style="display:none"></div>
+		<form >
+			<h2 style="text-align:center">Upload LAS</h2>
+			<br>
+			<div class ="half-width">
+				<div>
+					<div class="label label-small">Name</div>
+					<div class="input">
+						<div class="input" class="normal"><input type="text" id="name" class="normal"></div>
+					</div>
+				</div>
+
+				<div>
+					<div class="label label-small">Project</div>
+					<div class="input">
+						<select id="project" class="select">
+						</select>
+					</div>
+				</div>
+
+				<div style="clear:both"></div>
+
+				<div>
+					<div class="label label-small">Date</div>
+					<div class="input" class="normal"><input type="text" id="date" class="small" style="width: 100px"></div>
+				</div>
+
+				<div>
+					<div class="label label-small">Lat</div>
+					<div class="input" class="normal"><input type="text" id="lat" class="small" value="30.0122883"></div>
+				</div>
+
+				<div>
+					<div class="label label-small">Lng</div>
+					<div class="input" class="normal"><input type="text" id="lng" class="small" value="-98.6618257"></div>
+				</div>
+			</div>
+
+
+
+			<div class ="half-width">
+				<div>
+					<div class="label">Description</div>
+					<div class="input"><textarea rows="4" cols="75" style="width: 400px" maxlength="1000" id="description" ></textarea></div>
+				</div>
+			</div>
+			<div style="clear:both; margin-bottom: 10px"></div>
+
+			<div id="map"></div>
+			<script>
+				var map = L.map('map', {
+					center: [30.0122883, -98.6618257],
+					zoom: 6,
+					minZoom: 3,
+					maxZoom: 25,
+				});
+
+				var osm_map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+					attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+					zIndex: 0
+				});
+
+				map.setMaxBounds([[84.67351256610522, -174.0234375], [-58.995311187950925, 223.2421875]]);
+
+				var mapbox = L.tileLayer('https://api.mapbox.com/styles/v1/longhuynh/cjehig4jl6ucb2rozj2oy5lfr/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
+					accessToken: 'pk.eyJ1IjoibG9uZ2h1eW5oIiwiYSI6ImNpbDQ1cmR2bDN2ODB1eW0zeG13MWxxaDgifQ.RMNGP_0kdYujZnz4bLoMUg',
+					maxNativeZoom: 19,
+					zIndex: 0
+				});
+
+
+				map.addLayer(mapbox);
+
+				L.Control.geocoder().addTo(map);
+				//var geocoder = L.Control.geocoder().addTo(map);
+
+				var lat = $('#lat').val();
+				var lng = $('#lng').val();
+				var latlng = new L.LatLng(lat, lng);
+				marker = new L.marker(latlng).addTo(map);
+
+				map.on('click', function(e){
+					marker.setLatLng(e.latlng);
+					$('#lat').val(e.latlng.lat);
+					$('#lng').val(e.latlng.lng);
+				});
+
+				$("#lat").on('input',function() {
+					ChangeLocation();
+				});
+
+				$("#lng").on('input',function() {
+					ChangeLocation();
+				});
+
+			</script>
+
+			<div style="clear:both; margin-bottom: 10px"></div>
+			<div style="text-align:center">
+				<img id="upload-button" src="Resources/Images/upload.png" alt="Upload" class="upload-button" title="Upload" style="cursor:pointer" onclick="CreateResumableInstance()">
+			</div>
+			<div style="clear:both; margin-bottom: 10px"></div>
+
+			<fieldset>
+				<legend>Upload Status</legend>
+				<!--
+				<table>
+					<thead>
+						<tr>
+							<th style="width: 200px">Name</th>
+							<th style="width: 200px">File Name</th>
+							<th style="width: 200px">Status</th>
+							<th style="width: 320px">Progress</th>
+							<th style="width: 50px">&nbsp;</th>
+						</tr>
+
+					<thead>
+					<tbody id="upload-files">
+
+					</tbody>
+				</table>
+				-->
+				<div  style="height:30px; line-height: 30px; text-align:center; width: 980px; margin: 0 auto">
+					<div style="width: 200px;float: left; border: 1px solid #CCCCCC; background: #c0c0c0;">Name</div>
+					<div style="width: 200px;float: left; border: 1px solid #CCCCCC; background: #c0c0c0;">File Name</div>
+					<div style="width: 200px;float: left; border: 1px solid #CCCCCC; background: #c0c0c0;">Status</div>
+					<div style="width: 320px;float: left; border: 1px solid #CCCCCC; background: #c0c0c0;">Progress</div>
+					<div style="width: 50px;float: left; border: 1px solid #CCCCCC; background: #c0c0c0;">&nbsp;</div>
+
+				</div>
+				<div style="clear:both"></div>
+				<div id="unfinished-files" style="text-align:center; width: 980px; margin: 0 auto">
+				</div>
+				<div style="clear:both"></div>
+				<div id="upload-files" style="text-align:center;  width: 980px; margin: 0 auto">
+				</div>
+
+			</fieldset>
+			<div style="clear:both; margin: 20px 0"></div>
+
+			<fieldset>
+				<legend>Uploaded LAS</legend>
+
+				<div id="las-wrapper">
+				</div>
+
+
+
+			</fieldset>
+		</form>
+    </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>2021 Corpus Christi Driscoll - Sorghum</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="/css/leaflet.css"/>
+    <link rel="stylesheet" href="/css/leaflet-panel-layers.css"/>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<br/>
+<div id="map"></div>
+
+<script src="/js/leaflet.js"></script>
+<script src="/js/leaflet-panel-layers.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/leaflet-ajax/dist/leaflet.ajax.js"></script>
+<script src="/js/legend.js"></script>
+<link rel="stylesheet" href="/css/legend.css"/>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-74689450-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<script>
+    var map = L.map('map', {
+        center: L.latLng([27.668400,-97.689598]),
+        zoom: 19,
+        minZoom
+    :
+    17,
+        maxZoom
+    :
+    25,
+        attributionControl
+    :
+    false
+    })
+    ;
+
+    var osm_map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        zIndex: 0
+    });
+
+    var mapbox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Imagery from <a href="https://mapbox.com/about/maps/">MapBox</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        subdomains: 'abcd',
+        id: 'mapbox.satellite',
+        //accessToken: 'pk.eyJ1IjoiaGFtZG9yaSIsImEiOiJjaWZmZzBwbjI4ZGdqc21seDFhOHA5dGcxIn0.4An46DNTDt97W992MRRWoQ',
+        accessToken: 'sk.eyJ1Ijoiam9zZWx1aXNsYW5kaXZhcnMiLCJhIjoiY2tvMnpkMG12MHlyNzJwcXd6eDY5enowcSJ9.H8vS09OkK9hVtn8OYE3jrA',
+        maxNativeZoom: 19,
+        zIndex: 0
+    });
+
+    // Layers
+    var layer_20210326_cc_p4r_driscoll_mosaic_shift_sorghum = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Driscoll_Sorghum/Phantom_4_Pro/RGB/03-26-2021/20210326/RGB_Ortho/20210326_cc_p4r_driscoll_mosaic_shift_sorghum/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(27.668311111111,-97.697227777778),L.latLng(27.668191666667,-97.684622222222),L.latLng(27.664583333333,-97.684666666667),L.latLng(27.664702777778,-97.697272222222),L.latLng(27.668311111111,-97.697227777778)])}); 
+var layer_20210407_cc_p4r_driscoll_mosaic_shift_sorghum = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Driscoll_Sorghum/Phantom_4_Pro/RGB/04-07-2021/20210407/RGB_Ortho/20210407_cc_p4r_driscoll_mosaic_shift_sorghum/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 51, bounds: L.latLngBounds([L.latLng(27.668311111111,-97.697227777778),L.latLng(27.668191666667,-97.684622222222),L.latLng(27.664583333333,-97.684666666667),L.latLng(27.664702777778,-97.697272222222),L.latLng(27.668311111111,-97.697227777778)])}); 
+var layer_20210419_cc_p4r_driscoll_mosaic_shift_sorghum = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Driscoll_Sorghum/Phantom_4_Pro/RGB/04-19-2021/20210419/RGB_Ortho/20210419_cc_p4r_driscoll_mosaic_shift_sorghum/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 52, bounds: L.latLngBounds([L.latLng(27.668311111111,-97.697227777778),L.latLng(27.668191666667,-97.684622222222),L.latLng(27.664583333333,-97.684666666667),L.latLng(27.664702777778,-97.697272222222),L.latLng(27.668311111111,-97.697227777778)])}); 
+var layer_20210429_cc_p4r_driscoll_mosaic_shift_sorghum = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Driscoll_Sorghum/Phantom_4_Pro/RGB/04-29-2021/20210429/RGB_Ortho/20210429_cc_p4r_driscoll_mosaic_shift_sorghum/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 53, bounds: L.latLngBounds([L.latLng(27.668311111111,-97.697227777778),L.latLng(27.668191666667,-97.684622222222),L.latLng(27.664583333333,-97.684666666667),L.latLng(27.664702777778,-97.697272222222),L.latLng(27.668311111111,-97.697227777778)])}); 
+var layer_20210505_cc_p4r_driscoll_mosaic_shift_sorghum = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Driscoll_Sorghum/Phantom_4_Pro/RGB/05-05-2021/20210505/RGB_Ortho/20210505_cc_p4r_driscoll_mosaic_shift_sorghum/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 54, bounds: L.latLngBounds([L.latLng(27.668311111111,-97.697227777778),L.latLng(27.668191666667,-97.684622222222),L.latLng(27.664583333333,-97.684666666667),L.latLng(27.664702777778,-97.697272222222),L.latLng(27.668311111111,-97.697227777778)])}); 
+
+
+        map.addLayer(mapbox);
+
+    var baseLayers = [
+        {
+            name: "Open Street Map",
+            layer: osm_map
+        },
+        {
+            name: "Satellite Map",
+            layer: mapbox
+        },
+    ];
+
+    var overLayers = [
+        {
+	group: 'RGB',
+	layers: [
+		{
+			name: '03/26/2021',
+active: 'true',
+			layer: layer_20210326_cc_p4r_driscoll_mosaic_shift_sorghum
+		},
+		{
+			name: '04/07/2021',
+			layer: layer_20210407_cc_p4r_driscoll_mosaic_shift_sorghum
+		},
+		{
+			name: '04/19/2021',
+			layer: layer_20210419_cc_p4r_driscoll_mosaic_shift_sorghum
+		},
+		{
+			name: '04/29/2021',
+			layer: layer_20210429_cc_p4r_driscoll_mosaic_shift_sorghum
+		},
+		{
+			name: '05/05/2021',
+			layer: layer_20210505_cc_p4r_driscoll_mosaic_shift_sorghum
+		},
+	]
+},
+
+    ];
+
+    var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers, {collapsibleGroups: true});
+    map.addControl(panelLayers);
+
+</script>
+
+</body>
+</html>
