@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" name=”viewport” content=”width=device-width, initial-scale=1″>
+  <title>2021 Corpus Christi Cotton</title>
+  <link rel="stylesheet" href="/libraries/leaflet/leaflet.css"/>
+  <link rel="stylesheet" href="/libraries/css/leaflet-panel-layers.css"/>
+
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      }
+
+      #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 1;
+      }
+
+      .container {
+      position: absolute;
+      height: auto;
+      right: 20px;
+      bottom: 1%;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      }
+
+      .logo_merge {
+      width: 420px;
+      z-index: 2;
+      }
+
+      .img_title {
+      background: #444;
+      color: #f6f5f5;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 8px 12px;
+      z-index: 2;
+      width: 397.5px;
+      }
+
+      h3 {
+      padding: 0px;
+      margin: 0px;
+      }
+
+      #cultivarSelect {
+      margin-top: 10px;
+      width: 200px; /* Adjust the width as needed */
+      }
+
+      #cultivarSelect {
+      position: relative;
+      z-index: 3;
+      appearance: none;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #fff;
+      }
+
+      output {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 14px;
+      color: #333;
+      }
+    </style>
+    </head>
+
+<body>
+<br/>
+<div id="map"></div>
+
+<script src="/libraries/js/leaflet.js"></script>
+<script src="/libraries/js/leaflet-panel-layers.js"></script>
+<script src="/libraries/js/jquery.min.js"></script>
+<script src="/libraries/js/leaflet-ajax/dist/leaflet.ajax.js"></script>
+<script src="/libraries/js/legend.js"></script>
+<link rel="stylesheet" href="/libraries/css/legend.css"/>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-74689450-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<script>
+    var map = L.map('map', {
+        center: L.latLng([27.782608,-97.561012]),
+        zoom: 19,
+        minZoom: 17,
+        maxZoom: 23,
+        attributionControl: false});
+
+    var osm_map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        zIndex: 0
+    });
+
+    var googleHybrid = L.tileLayer('https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
+        maxZoom: 23,
+        subdomains:['mt0','mt1','mt2','mt3']
+        });
+
+        // Layers
+              var layer_20210408_cc_p4r_parking_mosaic = L.tileLayer('https://cultivarevaluation.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton/DJI_Phantom_4_RTK/RGB/04-08-2021/20210408/RGB_Ortho/20210408_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(27.783736111111,-97.561691666667),L.latLng(27.783713888889,-97.559691666667),L.latLng(27.781288888889,-97.559725),L.latLng(27.781311111111,-97.561725),L.latLng(27.783736111111,-97.561691666667)])});
+
+    ////// CANOPY COVER //////
+    ////// GRID //////
+    ///////////////////////////////////////////////////////////////////////////
+    var cc_210408_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_cc_Color_210408_grid(feature.properties.CC210408),// CHANGE COLOR PROPPERTIES
+      "fillOpacity": 0.7
+    }}});
+
+    ///////////////////////////////////////////////////////////////////////////
+
+      map.addLayer(googleHybrid);
+
+    var baseLayers = [
+        {
+            name: "Open Street Map",
+            layer: osm_map
+        },
+        {
+            name: "Satellite Map",
+            layer: googleHybrid
+        },
+    ];
+
+    var overLayers = [
+        {
+          	group: 'RGB',
+          	layers: [
+          		{
+          			name: '04/08/2021',
+          active: 'true',
+          			layer: layer_20210408_cc_p4r_parking_mosaic
+          		},
+          	]
+          },
+
+          {
+            ////// CANOPY COVER //////
+            group: 'Canopy Cover',
+            collapsed: true,
+            layers: [
+              ////// GRID //////
+              ///////////////////////////////////////////////////////////////////////////
+              {
+                name: '04/08/2021 - Grid',
+                active: 'true',
+                layer: cc_210408_grid
+              },
+            ]
+            },
+              ];
+
+    ////// GRID //////
+    ///////////////////////////////////////////////////////////////////////////
+    function get_cc_Color_210408_grid(x) {
+      if (x < (0.2070)) {
+        return "#d7191c";  // RED
+      } else if (x >= (0.2070) && x < 0.5910) {
+        return "#fdae61"; // ORANGE
+      } else if (x >= 0.5910 && x < 1.1335) {
+        return "#ffffc0"; // YELLOW
+      } else if (x >= 1.1335 && x < 2.3446) {
+        return "#a6d96a"; // LIGHT GREEN
+      } else if (x >= 2.3446) {
+        return "#1a9641"; // DARK GREEN
+      }
+    }
+
+String.prototype.replaceAt = function(index, replacement) {
+    return this.substr(0, index) + replacement + this.substr(index + replacement.length);
+}
+
+    ////// CANOPY COVER //////
+    ////// GRID //////
+    ///////////////////////////////////////////////////////////////////////////
+    function popUp_cc(f,l) {
+    var out = [];
+    if (f.properties) {
+      var url = "<a href=/uas_tools/crop_analysis/index.php?crop=Cotton&year=2021&location=Corpus%20Christi&sublocation=Maturity%20Trial";
+      var url1 = "<a href=/uas_tools/variety_analysis/index.php?file_name=61edc71eb824f_2021_cc_monster_trial_cc_rgb_grid_maturity_trial.csv";
+    	var parameters = "";
+    	for (var key in f.properties) {//include var to not add key to global scope
+    	    var val = f.properties[key]
+    			//console.log(key);
+          // if column is a number an the number is not from column FID
+    	    if (typeof val === "number" && key != "FID" && key != "rep" && key != "line" && key != "plot_num") {
+            //alert(key.replaceAt(0, "20")); // reeplace CC with 20
+            key = key.replaceAt(0, "20"); // reeplace CC with 20
+
+            if (val > 100){
+              val = 99.99;
+            }
+
+            val = val.toFixed(2) + " %"
+          }
+
+          // Dont show this attributes
+          if (key != "plot_num") {
+          out.push(key + ': ' + val);
+          }
+
+    	    parameters += '&' + key.replace(/\ /g, '_') + '=' + val;
+    	}
+      url += parameters.replace(/\ /g, "%20") + " target='_blank'>Growth analysis</a>";
+      url1 += parameters.replace(/\ /g, "%20") + " target='_blank'>Cultivar analysis</a>";
+      out.push(url);
+      out.push(url1);
+      l.bindPopup(out.join("<br />"));}}
+//
+
+    var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers, {collapsibleGroups: true});
+    map.addControl(panelLayers);
+
+    // Added
+    function popUp(f,l) {
+    var out = [];
+    if (f.properties) {
+    var parameters = "";
+    for (var key in f.properties) {//include var to not add key to global scope
+      var val = f.properties[key];
+      //var test = typeof val;
+      //alert(test);
+      if (typeof val === "number") {val = val.toFixed(2)}
+      out.push(key + ': ' + val);
+      parameters += '&' + key.replace(/\ /g, '_') + '=' + val;
+    }
+    l.bindPopup(out.join("<br />"));}}
+
+    // Load JSON data from the file
+    fetch("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson")
+      .then(response => response.json())
+      .then(jsonData => {
+        // Extracting unique cultivar values
+        const cultivars = [...new Set(jsonData.features.map(feature => feature.properties.cultivar))];
+
+        const sliders = [...new Set(jsonData.features.map(feature => feature.properties.CC210408))];
+
+        // Now, 'cultivars' contains an array of unique cultivar values
+
+        // Populating an HTML select box
+        const selectBox = document.getElementById("cultivarSelect"); // Assuming you have a select box in your HTML with the id "cultivarSelect"
+
+        // Clear existing options
+        selectBox.innerHTML = "";
+
+        // Adding an "All" option
+        const allOption = document.createElement("option");
+        allOption.value = "All";
+        allOption.text = "All";
+        selectBox.appendChild(allOption);
+
+        // Creating options and appending them to the select box
+        cultivars.forEach(cultivar => {
+            const option = document.createElement("option");
+            option.value = cultivar;
+            option.text = cultivar;
+            selectBox.appendChild(option);
+        });
+
+        // Add an event listener to the select box
+        selectBox.addEventListener("change", function () {
+            const selectedCultivar = this.value;
+
+            // Update the style of the cc_210408_grid layer based on the selected cultivar
+            cc_210408_grid.setStyle(function (feature) {
+                let fillColor;
+
+                if (selectedCultivar === "All") {
+                    // If "All" is selected, fill all grids with colors
+                    fillColor = get_cc_Color_210408_grid(feature.properties.CC210408);
+                } else {
+                    // Otherwise, fill grids based on the selected cultivar
+                    fillColor = feature.properties.cultivar === selectedCultivar ? get_cc_Color_210408_grid(feature.properties.CC210408) : 'black';
+                }
+
+                return {
+                    "color": 'black',
+                    "weight": 1,
+                    "opacity": 1,
+                    "fillColor": fillColor,
+                    "fillOpacity": 0.7
+                };
+            });
+        });
+
+        // Add an event listener to the slider
+      //   document.getElementById("valueSlider").addEventListener("input", function () {
+      //     const selectedValue = this.value;
+      //
+      //     console.log("key");
+      //     console.log(selectedValue);
+      //
+      //     // Update the style of the cc_210408_grid layer based on the selected cultivar
+      //     cc_210408_grid.setStyle(function (feature) {
+      //         const fillColor = feature.properties.cultivar === selectedValue ? get_cc_Color_210408_grid(feature.properties.CC210408) : 'black';
+      //
+      //         return {
+      //             "color": 'black',
+      //             "weight": 1,
+      //             "opacity": 1,
+      //             "fillColor": fillColor,
+      //             "fillOpacity": 0.7
+      //         };
+      //     });
+      // });
+
+
+
+
+
+
+
+
+
+
+
+        // Initial update of slider attributes based on the first selected cultivar
+        // updateSliderAttributes(cultivars[0]);
+      })
+      .catch(error => console.error("Error loading JSON data:", error));
+</script>
+
+<div class="container">
+   <!-- Select box with id "cultivarSelect" -->
+   <select id="cultivarSelect"></select>
+</div>
+
+</body>
+</html>

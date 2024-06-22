@@ -1,0 +1,16 @@
+13.11.2020: delete query: 
+13.11.2020: comma_separated: 
+13.11.2020: delete query: 
+13.11.2020: comma_separated: data_visualization,page_access,uas_data_admin,upload_product,upload_raw,user_management,visualization_generator
+13.11.2020: delete query: DELETE FROM page_access WHERE Page NOT IN ('data_visualization,page_access,uas_data_admin,upload_product,upload_raw,user_management,visualization_generator')
+13.11.2020: comma_separated: data_visualization,page_access,uas_data_admin,upload_product,upload_raw,user_management,visualization_generator
+13.11.2020: delete query: DELETE FROM page_access WHERE Page NOT IN ('data_visualization,page_access,uas_data_admin,upload_product,upload_raw,user_management,visualization_generator')
+13.11.2020: comma_separated: data_visualization,page_access,uas_data_admin,upload_product,upload_raw,user_management,visualization_generator
+13.11.2020: delete query: DELETE FROM page_access WHERE Page NOT IN ('data_visualization,page_access,uas_data_admin,upload_product,upload_raw,user_management,visualization_generator')
+13.11.2020: comma_separated: data_visualization,page_access,uas_data_admin,upload_product,upload_raw,user_management,visualization_generator
+13.11.2020: delete query: DELETE FROM page_access WHERE Page NOT IN ('data_visualization,page_access,uas_data_admin,upload_product,upload_raw,user_management,visualization_generator')
+13.11.2020: delete query: DELETE FROM page_access WHERE Page NOT IN ('data_visualization,page_access,uas_data_admin,upload_product,upload_raw,user_management,visualization_generator')
+13.11.2020: delete query: DELETE FROM page_access WHERE Page NOT IN ('data_visualization,page_access,uas_data_admin,upload_product,upload_raw,user_management,visualization_generator')
+13.11.2020: comma_separated: data_visualization','page_access','uas_data_admin','upload_product','upload_raw','user_management','visualization_generator
+13.11.2020: delete query: DELETE FROM page_access WHERE Page NOT IN (.' 'data_visualization','page_access','uas_data_admin','upload_product','upload_raw','user_management','visualization_generator' '.)
+13.11.2020: delete query: DELETE FROM page_access WHERE Page NOT IN ('data_visualization','page_access','uas_data_admin','upload_product','upload_raw','user_management','visualization_generator')

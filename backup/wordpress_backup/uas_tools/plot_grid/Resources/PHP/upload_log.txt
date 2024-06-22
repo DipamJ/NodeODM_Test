@@ -1,0 +1,1 @@
+a13.01.2021: command: python3 '../Python/gen_boundary_new.py' 27.782442416876513 -97.56136607255773 1 10 3 0.2,1,1 0.4,0.4,0.4 0 /var/www/html/wordpress/temp/PlotBoundary/a364b12ba26b1e476420db450a5b05e2/plot_boundary.shp 1 32614

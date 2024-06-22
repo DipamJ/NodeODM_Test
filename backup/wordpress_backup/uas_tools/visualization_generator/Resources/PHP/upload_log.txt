@@ -1,0 +1,132 @@
+18.11.2020: select name: SELECT * FROM product_type ORDER BY Name
+18.11.2020: producttype: R
+18.11.2020: producttype: R
+19.11.2020: search in 2: bigfgiletest4.tif
+19.11.2020: TMSPath: http://basfhub.gdslab.org/uas_data/uploads/products/test4/Inspire_2/MS/11-10-2020/tesflight4/RGB_Ortho/bigfgiletest4/Display/{z}/{x}/{y}.png
+19.11.2020: TMSPath: http://basfhub.gdslab.org/uas_data/uploads/products/test4/Inspire_2/MS/11-10-2020/tesflight4/RGB_Ortho/bigfgiletest4/Display/{z}/{x}/{y}.png
+19.11.2020: $pagepath: /var/www/html/wordpress/temp/test4bigfile/index.html
+19.11.2020: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title>#PAGE-TITLE#</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<link rel="stylesheet" href="/css/leaflet.css" />
+<link rel="stylesheet" href="/css/leaflet-panel-layers.css" />
+
+<style>
+	body { margin:0; padding:0; }
+	#map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+
+<body>
+<br />
+<div id="map"></div>
+
+<script src="/js/leaflet.js"></script>
+<script src="/js/leaflet-panel-layers.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/leaflet-ajax/dist/leaflet.ajax.js"></script>
+<script src="/js/legend.js"></script>
+<link rel="stylesheet" href="/css/legend.css" />
+
+<script>
+  	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  	ga('create', 'UA-74689450-1', 'auto');
+  	ga('send', 'pageview');
+</script>
+
+<script>
+	var map = L.map('map', {
+		center: L.latLng([#PROJECT-CENTER#]),
+		zoom: #DEFAULT-ZOOM#,
+		minZoom: #MIN-ZOOM#,
+		maxZoom: #MAX-ZOOM#,
+		attributionControl: false
+	});
+
+	var osm_map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+		zIndex: 0
+	});
+
+ 	var mapbox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+		attribution: 'Imagery from <a href="https://mapbox.com/about/maps/">MapBox</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+		subdomains: 'abcd',
+		id: 'mapbox.satellite',
+		accessToken: 'pk.eyJ1IjoiaGFtZG9yaSIsImEiOiJjaWZmZzBwbjI4ZGdqc21seDFhOHA5dGcxIn0.4An46DNTDt97W992MRRWoQ',
+		maxNativeZoom: 19,
+		zIndex: 0
+	});
+
+
+	// Layers
+	#LAYERS#
+	
+	
+	map.addLayer(mapbox);
+
+	var baseLayers = [
+		{
+			name: "Open Street Map",
+			layer: osm_map
+		},
+		{
+			name: "Satellie Map",
+			layer: mapbox
+		},
+	];
+
+	var overLayers = [
+		#OVER-LAYERS#
+	];
+
+	var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers, {collapsibleGroups: true});
+	map.addControl(panelLayers);
+	
+</script>
+
+</body>
+</html>
+
+19.11.2020: center: 27.7823,-97.5606
+19.11.2020: center: 27.7823,-97.5606
+19.11.2020: layerText: var layer_bigfgiletest4 = L.tileLayer('http://basfhub.gdslab.org/uas_data/uploads/products/test4/Inspire_2/MS/11-10-2020/tesflight4/RGB_Ortho/bigfgiletest4/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(30.534394444444,-96.447652777778),L.latLng(30.534305555556,-96.443116666667),L.latLng(30.530427777778,-96.443216666667),L.latLng(30.530516666667,-96.447755555556),L.latLng(30.534394444444,-96.447652777778)])}); 
+
+19.11.2020: $boundaryText: , bounds: L.latLngBounds([L.latLng(30.534394444444,-96.447652777778),L.latLng(30.534305555556,-96.443116666667),L.latLng(30.530427777778,-96.443216666667),L.latLng(30.530516666667,-96.447755555556),L.latLng(30.534394444444,-96.447652777778),
+19.11.2020: layerText: var layer_bigfgiletest4 = L.tileLayer('http://basfhub.gdslab.org/uas_data/uploads/products/test4/Inspire_2/MS/11-10-2020/tesflight4/RGB_Ortho/bigfgiletest4/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(30.534394444444,-96.447652777778),L.latLng(30.534305555556,-96.443116666667),L.latLng(30.530427777778,-96.443216666667),L.latLng(30.530516666667,-96.447755555556),L.latLng(30.534394444444,-96.447652777778)])}); 
+
+19.11.2020: $boundaryText: , bounds: L.latLngBounds([L.latLng(30.534394444444,-96.447652777778),L.latLng(30.534305555556,-96.443116666667),L.latLng(30.530427777778,-96.443216666667),L.latLng(30.530516666667,-96.447755555556),L.latLng(30.534394444444,-96.447652777778)])
+19.11.2020: layerText: var layer_bigfgiletest4 = L.tileLayer('http://basfhub.gdslab.org/uas_data/uploads/products/test4/Inspire_2/MS/11-10-2020/tesflight4/RGB_Ortho/bigfgiletest4/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(30.534394444444,-96.447652777778),L.latLng(30.534305555556,-96.443116666667),L.latLng(30.530427777778,-96.443216666667),L.latLng(30.530516666667,-96.447755555556),L.latLng(30.534394444444,-96.447652777778)])}); 
+
+19.11.2020: $product["Boundary"]: 30.534394444444,-96.447652777778;30.534305555556,-96.443116666667;30.530427777778,-96.443216666667;30.530516666667,-96.447755555556;30.534394444444,-96.447652777778
+19.11.2020: layerText: var layer_bigfgiletest4 = L.tileLayer('http://basfhub.gdslab.org/uas_data/uploads/products/test4/Inspire_2/MS/11-10-2020/tesflight4/RGB_Ortho/bigfgiletest4/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(30.534394444444,-96.447652777778),L.latLng(30.534305555556,-96.443116666667),L.latLng(30.530427777778,-96.443216666667),L.latLng(30.530516666667,-96.447755555556),L.latLng(30.534394444444,-96.447652777778)])}); 
+
+19.11.2020: $product["Boundary"]: 30.534394444444,-96.447652777778;30.534305555556,-96.443116666667;30.530427777778,-96.443216666667;30.530516666667,-96.447755555556;30.534394444444,-96.447652777778
+19.11.2020: layerText: var layer_bigfgiletest4 = L.tileLayer('http://basfhub.gdslab.org/uas_data/uploads/products/test4/Inspire_2/MS/11-10-2020/tesflight4/RGB_Ortho/bigfgiletest4/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(30.534394444444,-96.447652777778),L.latLng(30.534305555556,-96.443116666667),L.latLng(30.530427777778,-96.443216666667),L.latLng(30.530516666667,-96.447755555556),L.latLng(30.534394444444,-96.447652777778)])}); 
+
+19.11.2020: $product["Boundary"]: 1
+19.11.2020: layerText: var layer_bigfgiletest4 = L.tileLayer('http://basfhub.gdslab.org/uas_data/uploads/products/test4/Inspire_2/MS/11-10-2020/tesflight4/RGB_Ortho/bigfgiletest4/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(30.534394444444,-96.447652777778),L.latLng(30.534305555556,-96.443116666667),L.latLng(30.530427777778,-96.443216666667),L.latLng(30.530516666667,-96.447755555556),L.latLng(30.534394444444,-96.447652777778)])}); 
+
+19.11.2020: $product["Boundary"]: 1
+19.11.2020: layerText: var layer_bigfgiletest4 = L.tileLayer('http://basfhub.gdslab.org/uas_data/uploads/products/test4/Inspire_2/MS/11-10-2020/tesflight4/RGB_Ortho/bigfgiletest4/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(30.534394444444,-96.447652777778),L.latLng(30.534305555556,-96.443116666667),L.latLng(30.530427777778,-96.443216666667),L.latLng(30.530516666667,-96.447755555556),L.latLng(30.534394444444,-96.447652777778)])}); 
+
+19.11.2020: $product["Boundary"]: 1
+19.11.2020: layerText: var layer_bigfgiletest4 = L.tileLayer('http://basfhub.gdslab.org/uas_data/uploads/products/test4/Inspire_2/MS/11-10-2020/tesflight4/RGB_Ortho/bigfgiletest4/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(30.534394444444,-96.447652777778),L.latLng(30.534305555556,-96.443116666667),L.latLng(30.530427777778,-96.443216666667),L.latLng(30.530516666667,-96.447755555556),L.latLng(30.534394444444,-96.447652777778)])}); 
+
+19.11.2020: $product["Boundary"]: 1
+19.11.2020: layerText: var layer_bigfgiletest4 = L.tileLayer('http://basfhub.gdslab.org/uas_data/uploads/products/test4/Inspire_2/MS/11-10-2020/tesflight4/RGB_Ortho/bigfgiletest4/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(30.534394444444,-96.447652777778),L.latLng(30.534305555556,-96.443116666667),L.latLng(30.530427777778,-96.443216666667),L.latLng(30.530516666667,-96.447755555556),L.latLng(30.534394444444,-96.447652777778)])}); 
+
+19.11.2020: $product["Boundary"]: 1
+21.12.2020: $desFolderPath: http://bhub.gdslab.org//temp/2016_Corpus_Christi_Cotton_and_Sorghum/
+21.12.2020: $viewPath: http://bhub.gdslab.org//temp/2016_Corpus_Christi_Cotton_and_Sorghum/index.html
+21.12.2020: $header_location: http://bhub.gdslab.org/
+21.12.2020: $header_location: http://bhub.gdslab.org
+21.12.2020: $header_location: http://bhub.gdslab.org
+21.12.2020: $header_location: http://bhub.gdslab.org
+21.12.2020: $header_location: http://bhub.gdslab.org/
+21.12.2020: $header_location: http://bhub.gdslab.org/

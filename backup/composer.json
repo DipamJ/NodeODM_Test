@@ -1,0 +1,9 @@
+{
+    "require": {
+        "phan/phan": "^3.2",
+      "ext-mysqli": "*",
+      "ext-json": "*",
+      "ext-imagick": "*",
+      "ext-zip": "*"
+    }
+}

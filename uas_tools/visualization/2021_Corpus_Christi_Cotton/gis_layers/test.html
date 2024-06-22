@@ -1,0 +1,24 @@
+////// CANOPY COVER //////
+////// GRID //////
+///////////////////////////////////////////////////////////////////////////
+function popUp_cc(f,l) {
+var out = [];
+if (f.properties) {
+  var url = "<a href=/uas_tools/crop_analysis/index.php?crop=Cotton&year=2021&location=Corpus%20Christi";
+  var parameters = "";
+  for (var key in f.properties) {//include var to not add key to global scope
+      var val = f.properties[key]
+      //console.log(key);
+      // if column is a number an the number is not from column FID
+      if (typeof val === "number" && key != "FID") {
+        //alert(key.replaceAt(0, "20")); // reeplace CC with 20
+        key = key.replaceAt(0, "20"); // reeplace CC with 20
+        val = val.toFixed(2) + " %"
+      }
+      out.push(key + ': ' + val);
+      parameters += '&' + key.replace(/\ /g, '_') + '=' + val;
+  }
+  url += parameters.replace(/\ /g, "%20") + " target='_blank'>Growth analysis</a>";
+  out.push(url);
+  l.bindPopup(out.join("<br />"));}}
+//

@@ -1,0 +1,7 @@
+Select a project along with a platform and sensor. Then, select plot boundary/grids and orthomosaic(s).
+              Canopy Height Model(s) selection is optional. They are only necessary to generate canopy height or volume.
+              Select the canopy attribute to generate. After clicking the "Generate Results" button,
+              select the file formats to download (Shape, GeoJSON, CSV, and XLSX).
+              Generated files are available to download through the "Download Generated Files"
+
+              button, which will then download a Zip file of the specified attributes and file formats selected.

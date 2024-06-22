@@ -1,0 +1,46 @@
+19.11.2020: select row_data: SELECT * FROM row_data where CropDataSet = Array
+(
+    [file] => Array
+        (
+            [name] => 2016_cc_rice_cc_spring_parking.csv
+            [type] => text/csv
+            [tmp_name] => /tmp/phpvAQhwG
+            [error] => 0
+            [size] => 3404318
+        )
+
+)
+128
+19.11.2020: select row_data: SELECT * FROM row_data where CropDataSet = Array
+(
+    [file] => Array
+        (
+            [name] => 2016_cc_rice_cc_spring_parking.csv
+            [type] => text/csv
+            [tmp_name] => /tmp/phpvAQhwG
+            [error] => 0
+            [size] => 3404318
+        )
+
+)
+128
+19.11.2020: select row_data: SELECT * FROM row_data where CropDataSet = 148
+10.01.2021: sql: SELECT * FROM row_data where CropDataSet = ''
+10.01.2021: sql: SELECT * FROM row_data where CropDataSet = '2'
+12.01.2021: sql: SELECT * FROM row_data where CropDataSet = '2'
+12.01.2021: sql: SELECT CropDataSet FROM row_data ORDER BY ID DESC LIMIT 1
+12.01.2021: sql: SELECT CropDataSet FROM row_data ORDER BY ID DESC LIMIT 1
+12.01.2021: last_CropDataSet: Array
+12.01.2021: sql: SELECT CropDataSet FROM row_data ORDER BY ID DESC LIMIT 1
+12.01.2021: last_CropDataSet: 3
+12.01.2021: sql: SELECT * FROM row_data where CropDataSet = '3'
+18.01.2021: file Resource id #5
+18.01.2021: file Resource id #5
+18.01.2021: file Resource id #4
+18.01.2021: filename2019_lb_dd60_exg_grid.csv
+18.01.2021: filename2019_lb_dd60_exg_grid.csv
+18.01.2021: sql: INSERT INTO crop_data (Name, Location, Crop, Type, Year, Season, SubLocation, MultipleDates, FileName) VALUES ('2019-LB-Cotton-Exg-Spring-Parking', 'LB','Cotton', 'Exg', '2019', 'Spring', 'Parking', 1, 2019_lb_dd60_exg_grid.csv)
+20.01.2021: header: Plot row,Plot col,Grid row,Grid col,Variety,Plot_No,Join_key,20190703,20190713,20190723,20190727,20190802,20190807,20190815,20190912,20190918,20190927,20191004,20191010,20191014,20191022
+
+20.01.2021: no_space_header: Plot_row,Plot_col,Grid_row,Grid_col,Variety,Plot_No,Join_key,20190703,20190713,20190723,20190727,20190802,20190807,20190815,20190912,20190918,20190927,20191004,20191010,20191014,20191022
+

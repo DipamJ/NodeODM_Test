@@ -1,0 +1,511 @@
+10.12.2020: 
+10.12.2020: 
+10.12.2020: select users: select * from users where email = 'jose.landivarscott@agnet.tamu.edu' and password = '8311e08049a4be8231da33917c961522'
+10.12.2020: 
+10.12.2020: basfhub.gdslab.org
+10.12.2020: https://basfhub.gdslab.org/uas_tools/user_management/index.php
+10.12.2020: https://basfhub.gdslab.org/uas_tools/user_management/index.php
+10.12.2020: https://basfhub.gdslab.org
+10.12.2020: select users: select * from users where email = 'jose.landivarscott@agnet.tamu.edu' and password = '8311e08049a4be8231da33917c961522'
+19.01.2021: approved_status: 
+19.01.2021: query1: 
+ UPDATE users 
+ SET first_name = 'New', 
+ last_name = 'User',
+ email = 'tes@gmail.com' 
+ WHERE user_id = '4'
+ 
+19.01.2021: approved_status: 
+19.01.2021: query1: 
+ UPDATE users 
+ SET first_name = 'New', 
+ last_name = 'User',
+ email = 'tes@gmail.com' 
+ WHERE user_id = '4'
+ 
+19.01.2021: approved_status: 
+19.01.2021: query1: 
+ UPDATE users 
+ SET first_name = 'New', 
+ last_name = 'User',
+ email = 'tes@gmail.com' 
+ WHERE user_id = '4'
+ 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+19.01.2021: approved_status: 
+26.01.2021: header_location: http://bhub.gdslab.org
+26.01.2021: header_location: http://bhub.gdslab.org
+26.01.2021: header_location: http://bhub.gdslab.org
+26.01.2021: header_location: http://bhub.gdslab.org
+26.01.2021: header_location: http://bhub.gdslab.org
+26.01.2021: header_location: http://bhub.gdslab.org
+26.01.2021: header_location: http://bhub.gdslab.org
+26.01.2021: header_location: http://bhub.gdslab.org
+29.01.2021: header_location: http://bhub.gdslab.org
+29.01.2021: header_location: http://bhub.gdslab.org
+02.02.2021: approved_status: 
+02.02.2021: approved_status: 
+02.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: UPDATE users SET admin_approved = 'Approved' WHERE user_id = '4'
+03.02.2021: disapproved_status: 
+03.02.2021: approved_status: UPDATE users SET admin_approved = 'Approved' WHERE user_id = '4'
+03.02.2021: disapproved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Disapproved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Disapproved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Disapproved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Disapproved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Disapproved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Disapproved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: userID: 
+03.02.2021: approved_status: Approved
+03.02.2021: userID: 4
+03.02.2021: approved_status: Approved
+03.02.2021: userID: 4
+03.02.2021: approved_status: 
+03.02.2021: userID: 
+03.02.2021: disapproved_status: 
+03.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+03.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+03.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: approved_status: Approved
+03.02.2021: roles_assigned: 
+03.02.2021: approved_status: 
+03.02.2021: roles_assigned: 4,1
+03.02.2021: approved_status: Approved
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 
+03.02.2021: approved_status: 
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 
+03.02.2021: approved_status: 
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 
+03.02.2021: approved_status: 
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 
+03.02.2021: approved_status: 
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 
+03.02.2021: approved_status: 
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: 
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: 
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: 
+03.02.2021: approved_status: 
+03.02.2021: insert: 4,1
+03.02.2021: approved_status: Approved
+03.02.2021: insert: 
+03.02.2021: approved_status: 
+03.02.2021: insert: 4,1
+03.02.2021: approved_status: Approved
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 
+03.02.2021: approved_status: 
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 4,1
+03.02.2021: approved_status: Approved
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 
+03.02.2021: approved_status: 
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 4,1
+03.02.2021: approved_status: Approved
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 
+03.02.2021: approved_status: 
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 4,1
+03.02.2021: approved_status: Approved
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 
+03.02.2021: approved_status: 
+03.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 4,1
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: 4,1
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: 4,1
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: 4,1
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: 4,1
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: 4,1
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: 4,1
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: 4,1
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: 4,1
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: 4,1
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: Array
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: Array
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: insert: Array
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: Array
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: Array
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: Array
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: Array
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: Array
+03.02.2021: insert: Array
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: Array
+03.02.2021: insert: Array
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: Array
+03.02.2021: insert: Array
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: Array
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: Array
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: Array
+03.02.2021: approved_status: 
+03.02.2021: insert: 
+03.02.2021: approved_status: Approved
+03.02.2021: insert: Array
+04.02.2021: approved_status: 
+04.02.2021: insert: 
+04.02.2021: approved_status: Approved
+04.02.2021: insert: 
+04.02.2021: approved_status: 
+04.02.2021: approved_status: Approved
+04.02.2021: insert: 
+04.02.2021: insert: Array
+04.02.2021: approved_status: 
+04.02.2021: insert: 
+04.02.2021: approved_status: Approved
+04.02.2021: insert: Array
+04.02.2021: approved_status: 
+04.02.2021: insert: 
+04.02.2021: approved_status: Approved
+04.02.2021: insert: 
+04.02.2021: approved_status: 
+04.02.2021: insert: 
+04.02.2021: approved_status: Approved
+04.02.2021: insert: 
+04.02.2021: approved_status: 
+04.02.2021: insert: 
+04.02.2021: approved_status: 
+04.02.2021: insert: 
+04.02.2021: approved_status: Approved
+04.02.2021: insert: 
+04.02.2021: approved_status: 
+04.02.2021: insert: 
+04.02.2021: approved_status: Approved
+04.02.2021: insert: 
+04.02.2021: approved_status: 
+04.02.2021: insert: 
+04.02.2021: approved_status: Disapproved
+04.02.2021: insert: 
+04.02.2021: approved_status: 
+04.02.2021: insert: 
+04.02.2021: approved_status: Disapproved
+04.02.2021: insert: 
+04.02.2021: approved_status: 
+04.02.2021: insert: 
+04.02.2021: approved_status: 
+04.02.2021: insert: 
+04.02.2021: approved_status: Approved
+04.02.2021: insert: 
+04.02.2021: approved_status: 
+04.02.2021: insert: 
+04.02.2021: approved_status: Approved
+04.02.2021: insert: 
+04.02.2021: userID: 4
+04.02.2021: approved_status: Approved
+04.02.2021: userID: 
+04.02.2021: approved_status: 
+04.02.2021: userID: 
+04.02.2021: approved_status: 
+04.02.2021: userID: 4
+04.02.2021: approved_status: Approved
+04.02.2021: userID: 
+04.02.2021: approved_status: 
+04.02.2021: userID: 4
+04.02.2021: approved_status: Disapproved
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+04.02.2021: userID: 
+04.02.2021: approved_status: 
+04.02.2021: userID: 4
+04.02.2021: approved_status: Approved
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+04.02.2021: userID: 
+04.02.2021: userRoles: 
+04.02.2021: userID: 4
+04.02.2021: userRoles: 1,2,3,4
+04.02.2021: userID: 
+04.02.2021: userRoles: 
+04.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 
+04.02.2021: userID: 4
+04.02.2021: userRoles: 1,2,3,4
+04.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES 41,2,3,4
+04.02.2021: userID: 
+04.02.2021: userRoles: 
+04.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES (., .)
+04.02.2021: userID: 4
+04.02.2021: userRoles: 1,2,3,4
+04.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES (.4, .1,2,3,4)
+04.02.2021: userID: 
+04.02.2021: userRoles: 
+04.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES (, )
+04.02.2021: userID: 4
+04.02.2021: userRoles: 1,2,3,4
+04.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES (4, 1,2,3,4)
+04.02.2021: delete_query: DELETE FROM users_roles WHERE user_id = '4'
+04.02.2021: insert: INSERT INTO users_roles(user_id, role_id) VALUES ('4', '1'), ('4', '2'), ('4', '3'), ('4', '4')
+04.02.2021: editing user
+04.02.2021: query: 
+ UPDATE users
+ SET first_name = 'New',
+ last_name = 'User',
+ email = 'tes@gmail.com'
+ WHERE user_id = '4'
+ 
+04.02.2021: editing user
+04.02.2021: query: 
+ UPDATE users
+ SET first_name = 'New',
+ last_name = 'User',
+ email = 'tes@gmail.com'
+ WHERE user_id = '4'
+ 
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '6'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '6'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '6'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '6'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+04.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+08.02.2021: approved_status: 
+08.02.2021: approved_status: Approved
+08.02.2021: approved_status: 
+08.02.2021: approved_status: Disapproved
+08.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+08.02.2021: approved_status: 
+08.02.2021: approved_status: Approved
+08.02.2021: approved_status: 
+08.02.2021: approved_status: Disapproved
+08.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+08.02.2021: approved_status: 
+08.02.2021: approved_status: Approved
+08.02.2021: approved_status: 
+08.02.2021: approved_status: Approved
+08.02.2021: approved_status: 
+08.02.2021: approved_status: Disapproved
+08.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+08.02.2021: approved_status: 
+08.02.2021: approved_status: Disapproved
+08.02.2021: disapproved_status: UPDATE users SET admin_approved = 'Disapproved' WHERE user_id = '4'
+08.02.2021: approved_status: 
+08.02.2021: approved_status: Approved
+12.04.2021: Status: Approved
+12.04.2021: Status: Approved
+12.04.2021: Status: Approved
+12.04.2021: Status: Disapproved
+12.04.2021: Status: Disapproved

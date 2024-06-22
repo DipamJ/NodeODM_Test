@@ -1,0 +1,8 @@
+17.06.2024: sql: SELECT Name, Value FROM system_management WHERE ID = 1
+17.06.2024: sql: SELECT Name, Value FROM system_management WHERE ID = 1
+17.06.2024: sql: SELECT Name, Value FROM system_management WHERE ID = 1
+17.06.2024: sql: SELECT Name, Value FROM system_management WHERE ID = 1
+17.06.2024: sql: SELECT Name, Value FROM system_management WHERE ID = 1
+17.06.2024: sql: SELECT Name, Value FROM system_management WHERE ID = 1
+17.06.2024: sql: SELECT Name, Value FROM system_management WHERE ID = 1
+17.06.2024: sql: SELECT Name, Value FROM system_management WHERE ID = 1

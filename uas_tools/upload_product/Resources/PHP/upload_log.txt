@@ -1,0 +1,169 @@
+26.09.2022: Temp Dir Removed.
+26.09.2022: File has been added.
+26.09.2022: Temp Dir Removed.
+26.09.2022: File has been added.
+26.09.2022: Temp Dir Removed.
+26.09.2022: File has been added.
+26.09.2022: Temp Dir Removed.
+26.09.2022: File has been added.
+26.09.2022: Temp Dir Removed.
+26.09.2022: File has been added.
+26.09.2022: Temp Dir Removed.
+26.09.2022: File has been added.
+01.02.2023: Temp Dir Removed.
+01.02.2023: File has been added.
+01.02.2023: Temp Dir Removed.
+01.02.2023: File has been added.
+01.02.2023: Temp Dir Removed.
+01.02.2023: File has been added.
+01.02.2023: Temp Dir Removed.
+01.02.2023: File has been added.
+01.02.2023: Temp Dir Removed.
+01.02.2023: File has been added.
+01.02.2023: Temp Dir Removed.
+01.02.2023: File has been added.
+01.02.2023: Temp Dir Removed.
+01.02.2023: File has been added.
+02.03.2023: Temp Dir Removed.
+02.03.2023: File has been added.
+09.03.2023: Temp Dir Removed.
+09.03.2023: File has been added.
+18.10.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.10.2023: Temp Dir Removed.
+20.10.2023: File has been added.
+23.10.2023: Temp Dir Removed.
+23.10.2023: File has been added.
+23.10.2023: Temp Dir Removed.
+23.10.2023: File has been added.
+23.10.2023: Temp Dir Removed.
+23.10.2023: File has been added.
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+18.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+19.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+20.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x
+21.12.2023: $command convert: vipsthumbnail "20210326_cc_p4r_driscoll_mosaic.tif" -o "20210326_cc_p4r_driscoll_mosaic.tif[background=255]" --size=300x

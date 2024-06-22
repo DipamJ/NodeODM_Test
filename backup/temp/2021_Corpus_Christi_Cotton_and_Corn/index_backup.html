@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>2021 Corpus Christi Cotton and Corn</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="/css/leaflet.css"/>
+    <link rel="stylesheet" href="/css/leaflet-panel-layers.css"/>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<br/>
+<div id="map"></div>
+
+<script src="/js/leaflet.js"></script>
+<script src="/js/leaflet-panel-layers.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/leaflet-ajax/dist/leaflet.ajax.js"></script>
+<script src="/js/legend.js"></script>
+<link rel="stylesheet" href="/css/legend.css"/>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-74689450-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<script>
+    var map = L.map('map', {
+        center: L.latLng([27.782608,-97.561012]),
+        zoom: 19,
+        minZoom
+    :
+    17,
+        maxZoom
+    :
+    25,
+        attributionControl
+    :
+    false
+    })
+    ;
+
+    var osm_map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        zIndex: 0
+    });
+
+    var mapbox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Imagery from <a href="https://mapbox.com/about/maps/">MapBox</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        subdomains: 'abcd',
+        id: 'mapbox.satellite',
+        //accessToken: 'pk.eyJ1IjoiaGFtZG9yaSIsImEiOiJjaWZmZzBwbjI4ZGdqc21seDFhOHA5dGcxIn0.4An46DNTDt97W992MRRWoQ',
+        accessToken: 'sk.eyJ1Ijoiam9zZWx1aXNsYW5kaXZhcnMiLCJhIjoiY2tvMnpkMG12MHlyNzJwcXd6eDY5enowcSJ9.H8vS09OkK9hVtn8OYE3jrA',
+        maxNativeZoom: 19,
+        zIndex: 0
+    });
+
+    // Layers
+    map.createPane('pane_plot_grid');
+map.getPane('pane_plot_grid').style.zIndex = 50;
+map.getPane('pane_plot_grid').style.pointerEvents = 'none';
+var layer_plot_grid = new L.GeoJSON.AJAX('/uas_data/uploads/products/2021_Corpus_Christi_Cotton_and_Corn/05/26/2021//GeoJSON/plot_grid/plot_grid_converted.geojson');
+map.createPane('pane_2021_cc_brewer_cc_rgb_plot');
+map.getPane('pane_2021_cc_brewer_cc_rgb_plot').style.zIndex = 51;
+map.getPane('pane_2021_cc_brewer_cc_rgb_plot').style.pointerEvents = 'none';
+var layer_2021_cc_brewer_cc_rgb_plot = new L.GeoJSON.AJAX('/uas_data/uploads/products/2021_Corpus_Christi_Cotton_and_Corn/05/27/2021//GeoJSON/2021_cc_brewer_cc_rgb_plot/2021_cc_brewer_cc_rgb_plot_converted.geojson');
+var layer_20210408_cc_p4r_parking_mosaic = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton_and_Corn/Phantom_4_Pro/RGB/04-08-2021/20210408/RGB_Ortho/20210408_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 52, bounds: L.latLngBounds([L.latLng(27.783736111111,-97.561691666667),L.latLng(27.783713888889,-97.559691666667),L.latLng(27.781288888889,-97.559725),L.latLng(27.781311111111,-97.561725),L.latLng(27.783736111111,-97.561691666667)])});
+var layer_20210412_cc_p4r_parking_mosaic = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton_and_Corn/Phantom_4_Pro/RGB/04-12-2021/20210412/RGB_Ortho/20210412_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 53, bounds: L.latLngBounds([L.latLng(27.783725,-97.561691666667),L.latLng(27.783705555556,-97.559675),L.latLng(27.781269444444,-97.559708333333),L.latLng(27.781291666667,-97.561722222222),L.latLng(27.783725,-97.561691666667)])});
+var layer_20210420_cc_p4r_parking_mosaic = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton_and_Corn/Phantom_4_Pro/RGB/04-20-2021/20210420/RGB_Ortho/20210420_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 54, bounds: L.latLngBounds([L.latLng(27.783725,-97.561691666667),L.latLng(27.783705555556,-97.559680555556),L.latLng(27.781280555556,-97.559711111111),L.latLng(27.7813,-97.561722222222),L.latLng(27.783725,-97.561691666667)])});
+var layer_20210429_cc_p4r_parking_mosaic = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton_and_Corn/Phantom_4_Pro/RGB/04-29-2021/20210429/RGB_Ortho/20210429_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 55, bounds: L.latLngBounds([L.latLng(27.783733333333,-97.561688888889),L.latLng(27.783713888889,-97.559686111111),L.latLng(27.781283333333,-97.559716666667),L.latLng(27.781302777778,-97.561719444444),L.latLng(27.783733333333,-97.561688888889)])});
+var layer_20210506_cc_p4r_parking_mosaic = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton_and_Corn/Phantom_4_Pro/RGB/05-06-2021/20210506/RGB_Ortho/20210506_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 56, bounds: L.latLngBounds([L.latLng(27.783733333333,-97.5617),L.latLng(27.783711111111,-97.559688888889),L.latLng(27.781291666667,-97.559722222222),L.latLng(27.781313888889,-97.561730555556),L.latLng(27.783733333333,-97.5617)])});
+var layer_20210514_cc_p4r_parking_mosaic = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton_and_Corn/Phantom_4_Pro/RGB/05-14-2021/20210514/RGB_Ortho/20210514_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 57, bounds: L.latLngBounds([L.latLng(27.783741666667,-97.561688888889),L.latLng(27.783719444444,-97.559694444444),L.latLng(27.781288888889,-97.559725),L.latLng(27.781311111111,-97.561722222222),L.latLng(27.783741666667,-97.561688888889)])});
+
+
+        map.addLayer(mapbox);
+
+    var baseLayers = [
+        {
+            name: "Open Street Map",
+            layer: osm_map
+        },
+        {
+            name: "Satellite Map",
+            layer: mapbox
+        },
+    ];
+
+    var overLayers = [
+        {
+	group: 'GeoJSON',
+	layers: [
+		{
+			name: '05/26/2021',
+active: 'true',
+			layer: layer_plot_grid
+		},
+		{
+			name: '05/27/2021',
+			layer: layer_2021_cc_brewer_cc_rgb_plot
+		},
+	]
+},
+{
+	group: 'RGB',
+	layers: [
+		{
+			name: '04/08/2021',
+			layer: layer_20210408_cc_p4r_parking_mosaic
+		},
+		{
+			name: '04/12/2021',
+			layer: layer_20210412_cc_p4r_parking_mosaic
+		},
+		{
+			name: '04/20/2021',
+			layer: layer_20210420_cc_p4r_parking_mosaic
+		},
+		{
+			name: '04/29/2021',
+			layer: layer_20210429_cc_p4r_parking_mosaic
+		},
+		{
+			name: '05/06/2021',
+			layer: layer_20210506_cc_p4r_parking_mosaic
+		},
+		{
+			name: '05/14/2021',
+			layer: layer_20210514_cc_p4r_parking_mosaic
+		},
+	]
+},
+
+    ];
+
+    var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers, {collapsibleGroups: true});
+    map.addControl(panelLayers);
+
+</script>
+
+</body>
+</html>

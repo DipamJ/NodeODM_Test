@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>2021 McGregor Wheat</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="/css/leaflet.css"/>
+    <link rel="stylesheet" href="/css/leaflet-panel-layers.css"/>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<br/>
+<div id="map"></div>
+
+<script src="/js/leaflet.js"></script>
+<script src="/js/leaflet-panel-layers.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/leaflet-ajax/dist/leaflet.ajax.js"></script>
+<script src="/js/legend.js"></script>
+<link rel="stylesheet" href="/css/legend.css"/>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-74689450-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<script>
+    var map = L.map('map', {
+        center: L.latLng([31.373542,-97.451632]),
+        zoom: 19,
+        minZoom
+    :
+    17,
+        maxZoom
+    :
+    25,
+        attributionControl
+    :
+    false
+    })
+    ;
+
+    var osm_map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        zIndex: 0
+    });
+
+    var mapbox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Imagery from <a href="https://mapbox.com/about/maps/">MapBox</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        subdomains: 'abcd',
+        id: 'mapbox.satellite',
+        //accessToken: 'pk.eyJ1IjoiaGFtZG9yaSIsImEiOiJjaWZmZzBwbjI4ZGdqc21seDFhOHA5dGcxIn0.4An46DNTDt97W992MRRWoQ',
+        accessToken: 'sk.eyJ1Ijoiam9zZWx1aXNsYW5kaXZhcnMiLCJhIjoiY2tvMnpkMG12MHlyNzJwcXd6eDY5enowcSJ9.H8vS09OkK9hVtn8OYE3jrA',
+        maxNativeZoom: 19,
+        zIndex: 0
+    });
+
+    // Layers
+    var layer_20201215_mcg_p4p_wheat_mosaic = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_McGregor_Wheat/Phantom_4_Pro/RGB/12-15-2020/20201215/RGB_Ortho/20201215_mcg_p4p_wheat_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(31.372994444444,-97.451891666667),L.latLng(31.372963888889,-97.449402777778),L.latLng(31.371322222222,-97.449430555556),L.latLng(31.371352777778,-97.451919444444),L.latLng(31.372994444444,-97.451891666667)])}); 
+var layer_20210107_mcg_p4p_wheat_mosaic = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_McGregor_Wheat/Phantom_4_Pro/RGB/01-07-2021/20210107/RGB_Ortho/20210107_mcg_p4p_wheat_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 51, bounds: L.latLngBounds([L.latLng(31.373016666667,-97.451902777778),L.latLng(31.372986111111,-97.449475),L.latLng(31.371311111111,-97.449502777778),L.latLng(31.371341666667,-97.451930555556),L.latLng(31.373016666667,-97.451902777778)])}); 
+var layer_20210122_mcg_p4p_wheat_mosaic = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_McGregor_Wheat/Phantom_4_Pro/RGB/01-22-2021/20210122/RGB_Ortho/20210122_mcg_p4p_wheat_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 52, bounds: L.latLngBounds([L.latLng(31.372994444444,-97.451908333333),L.latLng(31.372963888889,-97.449447222222),L.latLng(31.371333333333,-97.449472222222),L.latLng(31.371363888889,-97.451936111111),L.latLng(31.372994444444,-97.451908333333)])}); 
+var layer_20210203_mcg_p4p_wheat_mosaic = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_McGregor_Wheat/Phantom_4_Pro/RGB/02-03-2021/20210203/RGB_Ortho/20210203_mcg_p4p_wheat_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 53, bounds: L.latLngBounds([L.latLng(31.373005555556,-97.451894444444),L.latLng(31.372975,-97.449472222222),L.latLng(31.371319444444,-97.4495),L.latLng(31.37135,-97.451922222222),L.latLng(31.373005555556,-97.451894444444)])}); 
+var layer_20210308_mcg_p4p_wheat_mosaic = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_McGregor_Wheat/Phantom_4_Pro/RGB/03-08-2021/20210308/RGB_Ortho/20210308_mcg_p4p_wheat_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 54, bounds: L.latLngBounds([L.latLng(31.373,-97.451897222222),L.latLng(31.372969444444,-97.449433333333),L.latLng(31.371294444444,-97.449461111111),L.latLng(31.371325,-97.451925),L.latLng(31.373,-97.451897222222)])}); 
+var layer_20210316_mcg_p4p_wheat_mosaic = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_McGregor_Wheat/Phantom_4_Pro/RGB/03-16-2021/20210316/RGB_Ortho/20210316_mcg_p4p_wheat_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 55, bounds: L.latLngBounds([L.latLng(31.373008333333,-97.451936111111),L.latLng(31.372977777778,-97.449375),L.latLng(31.371255555556,-97.449402777778),L.latLng(31.371286111111,-97.451963888889),L.latLng(31.373008333333,-97.451936111111)])}); 
+var layer_20210326_mcg_p4p_wheat_mosaic = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_McGregor_Wheat/Phantom_4_Pro/RGB/03-26-2021/20210326/RGB_Ortho/20210326_mcg_p4p_wheat_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 56, bounds: L.latLngBounds([L.latLng(31.373011111111,-97.45195),L.latLng(31.372980555556,-97.449436111111),L.latLng(31.371280555556,-97.449463888889),L.latLng(31.371311111111,-97.451977777778),L.latLng(31.373011111111,-97.45195)])}); 
+var layer_20210412_mcg_p4p_wheat_mosaic = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_McGregor_Wheat/Phantom_4_Pro/RGB/04-12-2021/20210412/RGB_Ortho/20210412_mcg_p4p_wheat_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 57, bounds: L.latLngBounds([L.latLng(31.373022222222,-97.451944444444),L.latLng(31.372988888889,-97.4494),L.latLng(31.371269444444,-97.449427777778),L.latLng(31.3713,-97.451972222222),L.latLng(31.373022222222,-97.451944444444)])}); 
+
+
+        map.addLayer(mapbox);
+
+    var baseLayers = [
+        {
+            name: "Open Street Map",
+            layer: osm_map
+        },
+        {
+            name: "Satellite Map",
+            layer: mapbox
+        },
+    ];
+
+    var overLayers = [
+        {
+	group: 'RGB',
+	layers: [
+		{
+			name: '12/15/2020',
+active: 'true',
+			layer: layer_20201215_mcg_p4p_wheat_mosaic
+		},
+		{
+			name: '01/07/2021',
+			layer: layer_20210107_mcg_p4p_wheat_mosaic
+		},
+		{
+			name: '01/22/2021',
+			layer: layer_20210122_mcg_p4p_wheat_mosaic
+		},
+		{
+			name: '02/03/2021',
+			layer: layer_20210203_mcg_p4p_wheat_mosaic
+		},
+		{
+			name: '03/08/2021',
+			layer: layer_20210308_mcg_p4p_wheat_mosaic
+		},
+		{
+			name: '03/16/2021',
+			layer: layer_20210316_mcg_p4p_wheat_mosaic
+		},
+		{
+			name: '03/26/2021',
+			layer: layer_20210326_mcg_p4p_wheat_mosaic
+		},
+		{
+			name: '04/12/2021',
+			layer: layer_20210412_mcg_p4p_wheat_mosaic
+		},
+	]
+},
+
+    ];
+
+    var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers, {collapsibleGroups: true});
+    map.addControl(panelLayers);
+
+</script>
+
+</body>
+</html>

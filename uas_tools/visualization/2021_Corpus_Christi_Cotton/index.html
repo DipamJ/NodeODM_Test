@@ -1,0 +1,729 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" name=”viewport” content=”width=device-width, initial-scale=1″>
+  <title>2021 Corpus Christi Cotton</title>
+  <link rel="stylesheet" href="/libraries/leaflet/leaflet.css"/>
+  <link rel="stylesheet" href="/libraries/css/leaflet-panel-layers.css"/>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .container {
+          position: absolute;
+          height: auto;
+          right: 20px;
+          bottom: 1%;
+          z-index: 2;
+        }
+
+        .logo_merge {
+            width: 420px;
+            z-index: 2;
+        }
+
+        .img_title{
+          background: #444;
+          color: #f6f5f5;
+          font-size: 15px;
+          font-weight: 700;
+          padding: 8px 12px;
+          z-index: 2;
+          width: 397.5px;
+        }
+
+        h3{
+          padding: 0px;
+          margin: 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+<br/>
+<div id="map"></div>
+
+<script src="/libraries/js/leaflet.js"></script>
+<script src="/libraries/js/leaflet-panel-layers.js"></script>
+<script src="/libraries/js/jquery.min.js"></script>
+<script src="/libraries/js/leaflet-ajax/dist/leaflet.ajax.js"></script>
+<script src="/libraries/js/legend.js"></script>
+<link rel="stylesheet" href="/libraries/css/legend.css"/>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-74689450-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<script>
+    var map = L.map('map', {
+        center: L.latLng([27.782608,-97.561012]),
+        zoom: 19,
+        minZoom: 17,
+        maxZoom: 23,
+        attributionControl: false});
+
+    var osm_map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        zIndex: 0
+    });
+
+    var googleHybrid = L.tileLayer('https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
+        maxZoom: 23,
+        subdomains:['mt0','mt1','mt2','mt3']
+        });
+
+        // Layers
+              var layer_20210408_cc_p4r_parking_mosaic = L.tileLayer('https://cultivarevaluation.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Cotton/DJI_Phantom_4_RTK/RGB/04-08-2021/20210408/RGB_Ortho/20210408_cc_p4r_parking_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(27.783736111111,-97.561691666667),L.latLng(27.783713888889,-97.559691666667),L.latLng(27.781288888889,-97.559725),L.latLng(27.781311111111,-97.561725),L.latLng(27.783736111111,-97.561691666667)])});
+
+
+//
+// onEachFeature:popUp_cc
+//
+
+////// CANOPY COVER //////
+////// GRID //////
+///////////////////////////////////////////////////////////////////////////
+var cc_210408_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210408_grid(feature.properties.CC210408),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210412_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210412_grid(feature.properties.CC210412),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210420_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210420_grid(feature.properties.CC210420),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210429_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210429_grid(feature.properties.CC210429),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210506_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210506_grid(feature.properties.CC210506),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210514_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210514_grid(feature.properties.CC210514),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210520_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210520_grid(feature.properties.CC210520),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210524_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210524_grid(feature.properties.CC210524),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210602_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210602_grid(feature.properties.CC210602),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210609_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210609_grid(feature.properties.CC210609),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210614_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210614_grid(feature.properties.CC210614),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210623_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210623_grid(feature.properties.CC210623),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210629_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210629_grid(feature.properties.CC210629),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210708_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210708_grid(feature.properties.CC210708),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210712_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210712_grid(feature.properties.CC210712),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210720_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210720_grid(feature.properties.CC210720),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210728_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210728_grid(feature.properties.CC210728),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210810_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210810_grid(feature.properties.CC210810),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+
+var cc_210817_grid = new L.GeoJSON.AJAX("gis_layers/2021_cc_monster_trial_cc_rgb_grid_maturity_trial.geojson", {onEachFeature:popUp_cc, zIndex: 101, style: function (feature){// THIRD
+return {
+  "color": 'black',
+  "weight": 1,
+  "opacity": 1,
+  "fillColor": get_cc_Color_210817_grid(feature.properties.CC210817),// CHANGE COLOR PROPPERTIES
+  "fillOpacity": 0.7
+}}});
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+
+      map.addLayer(googleHybrid);
+
+    var baseLayers = [
+        {
+            name: "Open Street Map",
+            layer: osm_map
+        },
+        {
+            name: "Satellite Map",
+            layer: googleHybrid
+        },
+    ];
+
+    var overLayers = [
+        {
+	group: 'RGB',
+	layers: [
+		{
+			name: '04/08/2021',
+active: 'true',
+			layer: layer_20210408_cc_p4r_parking_mosaic
+		},
+	]
+},
+
+{
+  ////// CANOPY COVER //////
+  group: 'Canopy Cover',
+  collapsed: true,
+  layers: [
+    ////// GRID //////
+    ///////////////////////////////////////////////////////////////////////////
+    {
+      name: '04/08/2021 - Grid',
+      layer: cc_210408_grid
+    },
+    {
+      name: '04/12/2021 - Grid',
+      layer: cc_210412_grid
+    },
+    {
+  		name: '04/20/2021 - Grid',
+  		layer: cc_210420_grid
+  	},
+    {
+  		name: '04/29/2021 - Grid',
+  		layer: cc_210429_grid
+  	},
+    {
+  		name: '05/06/2021 - Grid',
+  		layer: cc_210506_grid
+  	},
+    {
+      name: '05/14/2021 - Grid',
+      layer: cc_210514_grid
+    },
+    {
+      name: '05/20/2021 - Grid',
+      layer: cc_210520_grid
+    },
+    {
+      name: '05/24/2021 - Grid',
+      layer: cc_210524_grid
+    },
+    {
+      name: '06/02/2021 - Grid',
+      layer: cc_210602_grid
+    },
+    {
+      name: '06/09/2021 - Grid',
+      layer: cc_210609_grid
+    },
+    {
+      name: '06/14/2021 - Grid',
+      layer: cc_210614_grid
+    },
+    {
+      name: '06/23/2021 - Grid',
+      layer: cc_210623_grid
+    },
+    {
+      name: '06/29/2021 - Grid',
+      layer: cc_210629_grid
+    },
+    {
+      name: '07/08/2021 - Grid',
+      layer: cc_210708_grid
+    },
+    {
+      name: '07/12/2021 - Grid',
+      layer: cc_210712_grid
+    },
+    {
+      name: '07/20/2021 - Grid',
+      layer: cc_210720_grid
+    },
+    {
+      name: '07/28/2021 - Grid',
+      layer: cc_210728_grid
+    },
+    {
+      name: '08/10/2021 - Grid',
+      layer: cc_210810_grid
+    },
+    {
+      name: '08/17/2021 - Grid',
+      layer: cc_210817_grid
+    },
+    ///////////////////////////////////////////////////////////////////////////
+  ]
+  },
+
+
+
+    ];
+
+    ////// GRID //////
+    ///////////////////////////////////////////////////////////////////////////
+    function get_cc_Color_210408_grid(x) {
+      if (x < (0.2070)) {
+        return "#d7191c";  // RED
+      } else if (x >= (0.2070) && x < 0.5910) {
+        return "#fdae61"; // ORANGE
+      } else if (x >= 0.5910 && x < 1.1335) {
+        return "#ffffc0"; // YELLOW
+      } else if (x >= 1.1335 && x < 2.3446) {
+        return "#a6d96a"; // LIGHT GREEN
+      } else if (x >= 2.3446) {
+        return "#1a9641"; // DARK GREEN
+      }
+    }
+
+    function get_cc_Color_210412_grid(x) {
+      if (x < (0.64)) {
+        return "#d7191c";  // RED
+      } else if (x >= (0.64) && x < 1.62) {
+        return "#fdae61"; // ORANGE
+      } else if (x >= 1.62 && x < 2.99) {
+        return "#ffffc0"; // YELLOW
+      } else if (x >= 2.99 && x < 6.46) {
+        return "#a6d96a"; // LIGHT GREEN
+      } else if (x >= 6.46) {
+        return "#1a9641"; // DARK GREEN
+      }
+    }
+
+    function get_cc_Color_210420_grid(x) {
+      if (x < (1.90)) {
+        return "#d7191c";  // RED
+      } else if (x >= (1.90) && x < 4.34) {
+        return "#fdae61"; // ORANGE
+      } else if (x >= 4.34 && x < 8.13) {
+        return "#ffffc0"; // YELLOW
+      } else if (x >= 8.13 && x < 15.23) {
+        return "#a6d96a"; // LIGHT GREEN
+      } else if (x >= 15.23) {
+        return "#1a9641"; // DARK GREEN
+      }
+    }
+
+    function get_cc_Color_210429_grid(x) {
+      if (x < (6.31)) {
+        return "#d7191c";  // RED
+      } else if (x >= (6.31) && x < 12.69) {
+        return "#fdae61"; // ORANGE
+      } else if (x >= 12.69 && x < 24.60) {
+        return "#ffffc0"; // YELLOW
+      } else if (x >= 24.60 && x < 48.40) {
+        return "#a6d96a"; // LIGHT GREEN
+      } else if (x >= 48.40) {
+        return "#1a9641"; // DARK GREEN
+      }
+    }
+
+    function get_cc_Color_210506_grid(x) {
+    if (x < (4.36)) {
+      return "#d7191c";  // RED
+    } else if (x >= (4.36) && x < 9.35) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 9.35 && x < 14.40) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 14.40 && x < 20.15) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 20.15) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cc_Color_210514_grid(x) {
+    if (x < (10)) {
+      return "#d7191c";  // RED
+    } else if (x >= (10) && x < 19) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 19 && x < 29) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 29 && x < 38) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 38) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cc_Color_210520_grid(x) {
+    if (x < (16)) {
+      return "#d7191c";  // RED
+    } else if (x >= (16) && x < 30) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 30 && x < 43) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 43 && x < 56) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 56) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cc_Color_210524_grid(x) {
+    if (x < (24)) {
+      return "#d7191c";  // RED
+    } else if (x >= (24) && x < 42) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 42 && x < 58) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 58 && x < 73) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 73) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cc_Color_210602_grid(x) {
+    if (x < 29) {
+      return "#d7191c";  // RED
+    } else if (x >= 29 && x < 51) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 51 && x < 67) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 67 && x < 81) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 81) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cc_Color_210609_grid(x) {
+    if (x < 33) {
+      return "#d7191c";  // RED
+    } else if (x >= 33 && x < 58) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 58 && x < 76) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 76 && x < 88) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 88) {
+      return "#1a9641"; // DARK GREEN
+    }
+    }
+
+    function get_cc_Color_210614_grid(x) {
+    if (x < 27) {
+      return "#d7191c";  // RED
+    } else if (x >= 27 && x < 53) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 53 && x < 72) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 72 && x < 87) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 87) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cc_Color_210623_grid(x) {
+    if (x < 27) {
+      return "#d7191c";  // RED
+    } else if (x >= 27 && x < 53) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 53 && x < 72) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 72 && x < 87) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 87) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cc_Color_210629_grid(x) {
+    if (x < 26.7) {
+      return "#d7191c";  // RED
+    } else if (x >= 26.7 && x < 56.6) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 56.6 && x < 76.4) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 76.4 && x < 90.4) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 90.4) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cc_Color_210708_grid(x) {
+    if (x < 26.7) {
+      return "#d7191c";  // RED
+    } else if (x >= 26.7 && x < 56.6) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 56.6 && x < 76.4) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 76.4 && x < 90.4) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 90.4) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cc_Color_210712_grid(x) {
+    if (x < 25.8) {
+      return "#d7191c";  // RED
+    } else if (x >= 25.8 && x < 54.2) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 54.2 && x < 77.8) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 77.8 && x < 91.7) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 91.7) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cc_Color_210720_grid(x) {
+    if (x < 33.2) {
+      return "#d7191c";  // RED
+    } else if (x >= 33.2 && x < 60.3) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 60.3 && x < 78.6) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 78.6 && x < 91) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 91) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cc_Color_210728_grid(x) {
+    if (x < 33.6) {
+      return "#d7191c";  // RED
+    } else if (x >= 33.6 && x < 58.9) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 58.9 && x < 77.6) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 77.6 && x < 90) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 90) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cc_Color_210810_grid(x) { // Needs to be changed
+    if (x < 28) {
+      return "#d7191c";  // RED
+    } else if (x >= 28 && x < 45) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 45 && x < 59) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 59 && x < 73) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 73) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+    function get_cc_Color_210817_grid(x) { // Needs to be changed
+    if (x < 1.7) {
+      return "#d7191c";  // RED
+    } else if (x >= 1.7 && x < 4.4) {
+      return "#fdae61"; // ORANGE
+    } else if (x >= 4.4 && x < 8.4) {
+      return "#ffffc0"; // YELLOW
+    } else if (x >= 8.4 && x < 14.7) {
+      return "#a6d96a"; // LIGHT GREEN
+    } else if (x >= 14.7) {
+      return "#1a9641"; // DARK GREEN
+    }}
+
+String.prototype.replaceAt = function(index, replacement) {
+    return this.substr(0, index) + replacement + this.substr(index + replacement.length);
+}
+
+    ////// CANOPY COVER //////
+    ////// GRID //////
+    ///////////////////////////////////////////////////////////////////////////
+    function popUp_cc(f,l) {
+    var out = [];
+    if (f.properties) {
+      var url = "<a href=/uas_tools/crop_analysis/index.php?crop=Cotton&year=2021&location=Corpus%20Christi&sublocation=Maturity%20Trial";
+      var url1 = "<a href=/uas_tools/variety_analysis/index.php?file_name=61edc71eb824f_2021_cc_monster_trial_cc_rgb_grid_maturity_trial.csv";
+    	var parameters = "";
+    	for (var key in f.properties) {//include var to not add key to global scope
+    	    var val = f.properties[key]
+    			//console.log(key);
+          // if column is a number an the number is not from column FID
+    	    if (typeof val === "number" && key != "FID" && key != "rep" && key != "line" && key != "plot_num") {
+            //alert(key.replaceAt(0, "20")); // reeplace CC with 20
+            key = key.replaceAt(0, "20"); // reeplace CC with 20
+
+            if (val > 100){
+              val = 99.99;
+            }
+
+            val = val.toFixed(2) + " %"
+          }
+
+          // Dont show this attributes
+          if (key != "plot_num") {
+          out.push(key + ': ' + val);
+          }
+
+    	    parameters += '&' + key.replace(/\ /g, '_') + '=' + val;
+    	}
+      url += parameters.replace(/\ /g, "%20") + " target='_blank'>Growth analysis</a>";
+      url1 += parameters.replace(/\ /g, "%20") + " target='_blank'>Cultivar analysis</a>";
+      out.push(url);
+      out.push(url1);
+      l.bindPopup(out.join("<br />"));}}
+//
+
+    var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers, {collapsibleGroups: true});
+    map.addControl(panelLayers);
+
+    // Added
+    function popUp(f,l) {
+    var out = [];
+    if (f.properties) {
+    var parameters = "";
+    for (var key in f.properties) {//include var to not add key to global scope
+      var val = f.properties[key];
+      //var test = typeof val;
+      //alert(test);
+      if (typeof val === "number") {val = val.toFixed(2)}
+      out.push(key + ': ' + val);
+      parameters += '&' + key.replace(/\ /g, '_') + '=' + val;
+    }
+    l.bindPopup(out.join("<br />"));}}
+    // Added
+
+</script>
+
+<!-- <div class="container">
+  <h3 class="img_title">West Texas Cotton UASHub is supported by</h3>
+<img alt="Sponsor" class="logo_merge" src="/resources/images/supported_words.png">
+</div> -->
+
+</body>
+</html>

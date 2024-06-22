@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title>2019 Amarillo Wheat - Irrigation Land</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<link rel="stylesheet" href="/css/leaflet.css" />
+<link rel="stylesheet" href="/css/leaflet-panel-layers.css" />
+
+<style>
+	body { margin:0; padding:0; }
+	#map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+
+<body>
+<br />
+<div id="map"></div>
+
+<script src="/js/leaflet.js"></script>
+<script src="/js/leaflet-panel-layers.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/leaflet-ajax/dist/leaflet.ajax.js"></script>
+<script src="/js/legend.js"></script>
+<link rel="stylesheet" href="/css/legend.css" />
+
+<script>
+  	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  	ga('create', 'UA-74689450-1', 'auto');
+  	ga('send', 'pageview');
+</script>
+
+<script>
+	var map = L.map('map', {
+		center: L.latLng([35.190802777778,-102.08544444444]),
+		zoom: 19,
+		minZoom: 17,
+		maxZoom: 25,
+		attributionControl: false
+	});
+
+	var osm_map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+		zIndex: 0
+	});
+
+ 	var mapbox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+		attribution: 'Imagery from <a href="https://mapbox.com/about/maps/">MapBox</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+		subdomains: 'abcd',
+		id: 'mapbox.satellite',
+		accessToken: 'pk.eyJ1IjoiaGFtZG9yaSIsImEiOiJjaWZmZzBwbjI4ZGdqc21seDFhOHA5dGcxIn0.4An46DNTDt97W992MRRWoQ',
+		maxNativeZoom: 19,
+		zIndex: 0
+	});
+
+
+	// Layers
+	var layer_20190117_ar_p4p_wheat_irr_mosaic = L.tileLayer('http://bhub.gdslab.org/uas_data/uploads/products/2019_Amarillo_Wheat_Irrigation_Land/Phantom_4_Pro/RGB/1-17-2019/20190117/RGB_Ortho/20190117_ar_p4p_wheat_irr_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(35.1908,-102.08541944444),L.latLng(35.190741666667,-102.08296944444),L.latLng(35.190147222222,-102.08298888889),L.latLng(35.190205555556,-102.08544166667),L.latLng(35.1908,-102.08541944444)])}); 
+var layer_20190226_ar_p4p_wheat_irr_mosaic = L.tileLayer('http://bhub.gdslab.org/uas_data/uploads/products/2019_Amarillo_Wheat_Irrigation_Land/Phantom_4_Pro/RGB/2-26-2019/20190226/RGB_Ortho/20190226_ar_p4p_wheat_irr_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 51, bounds: L.latLngBounds([L.latLng(35.191047222222,-102.0855),L.latLng(35.190980555556,-102.08275),L.latLng(35.189972222222,-102.08278611111),L.latLng(35.190036111111,-102.08553611111),L.latLng(35.191047222222,-102.0855)])}); 
+var layer_20190324_ar_p4p_wheat_irr_mosaic = L.tileLayer('http://bhub.gdslab.org/uas_data/uploads/products/2019_Amarillo_Wheat_Irrigation_Land/Phantom_4_Pro/RGB/3-24-2019/20190324/RGB_Ortho/20190324_ar_p4p_wheat_irr_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 52, bounds: L.latLngBounds([L.latLng(35.1909,-102.08550555556),L.latLng(35.190838888889,-102.08290277778),L.latLng(35.190033333333,-102.08293055556),L.latLng(35.190094444444,-102.08553611111),L.latLng(35.1909,-102.08550555556)])}); 
+var layer_20190416_ar_p4p_wheat_irr_mosaic = L.tileLayer('http://bhub.gdslab.org/uas_data/uploads/products/2019_Amarillo_Wheat_Irrigation_Land/Phantom_4_Pro/RGB/4-16-2019/20190416/RGB_Ortho/20190416_ar_p4p_wheat_irr_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 53, bounds: L.latLngBounds([L.latLng(35.190863888889,-102.08549166667),L.latLng(35.190802777778,-102.08293055556),L.latLng(35.190088888889,-102.08295555556),L.latLng(35.19015,-102.08551666667),L.latLng(35.190863888889,-102.08549166667)])}); 
+var layer_20190513_ar_m2p_wheat_irr_mosaic = L.tileLayer('http://bhub.gdslab.org/uas_data/uploads/products/2019_Amarillo_Wheat_Irrigation_Land/Phantom_4_Pro/RGB/5-13-2019/20190513/RGB_Ortho/20190513_ar_m2p_wheat_irr_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 54, bounds: L.latLngBounds([L.latLng(35.190838888889,-102.08547777778),L.latLng(35.190777777778,-102.08290277778),L.latLng(35.190063888889,-102.08292777778),L.latLng(35.190125,-102.08550277778),L.latLng(35.190838888889,-102.08547777778)])}); 
+var layer_20190603_ar_m2p_wheat_irr_mosaic = L.tileLayer('http://bhub.gdslab.org/uas_data/uploads/products/2019_Amarillo_Wheat_Irrigation_Land/Phantom_4_Pro/RGB/6-3-2019/20190603/RGB_Ortho/20190603_ar_m2p_wheat_irr_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 55, bounds: L.latLngBounds([L.latLng(35.190869444444,-102.08547222222),L.latLng(35.190808333333,-102.08291666667),L.latLng(35.190094444444,-102.08294166667),L.latLng(35.190155555556,-102.08549722222),L.latLng(35.190869444444,-102.08547222222)])}); 
+var layer_20190617_ar_m2p_wheat_irr_mosaic = L.tileLayer('http://bhub.gdslab.org/uas_data/uploads/products/2019_Amarillo_Wheat_Irrigation_Land/Phantom_4_Pro/RGB/6-17-2019/20190617/RGB_Ortho/20190617_ar_m2p_wheat_irr_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 56, bounds: L.latLngBounds([L.latLng(35.190844444444,-102.08547777778),L.latLng(35.190783333333,-102.08290555556),L.latLng(35.190083333333,-102.08293055556),L.latLng(35.190144444444,-102.08550277778),L.latLng(35.190844444444,-102.08547777778)])}); 
+var layer_20190630_ar_m2p_wheat_irr_mosaic = L.tileLayer('http://bhub.gdslab.org/uas_data/uploads/products/2019_Amarillo_Wheat_Irrigation_Land/Phantom_4_Pro/RGB/6-30-2019/20190630/RGB_Ortho/20190630_ar_m2p_wheat_irr_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 57, bounds: L.latLngBounds([L.latLng(35.190802777778,-102.08544444444),L.latLng(35.190744444444,-102.08294166667),L.latLng(35.190147222222,-102.08296111111),L.latLng(35.190208333333,-102.08546388889),L.latLng(35.190802777778,-102.08544444444)])}); 
+
+	
+	
+	map.addLayer(mapbox);
+
+	var baseLayers = [
+		{
+			name: "Open Street Map",
+			layer: osm_map
+		},
+		{
+			name: "Satellie Map",
+			layer: mapbox
+		},
+	];
+
+	var overLayers = [
+		{
+	group: 'RGB',
+	layers: [
+		{
+			name: '1/17/2019',
+active: 'true',
+			layer: layer_20190117_ar_p4p_wheat_irr_mosaic
+		},
+		{
+			name: '2/26/2019',
+			layer: layer_20190226_ar_p4p_wheat_irr_mosaic
+		},
+		{
+			name: '3/24/2019',
+			layer: layer_20190324_ar_p4p_wheat_irr_mosaic
+		},
+		{
+			name: '4/16/2019',
+			layer: layer_20190416_ar_p4p_wheat_irr_mosaic
+		},
+		{
+			name: '5/13/2019',
+			layer: layer_20190513_ar_m2p_wheat_irr_mosaic
+		},
+		{
+			name: '6/3/2019',
+			layer: layer_20190603_ar_m2p_wheat_irr_mosaic
+		},
+		{
+			name: '6/17/2019',
+			layer: layer_20190617_ar_m2p_wheat_irr_mosaic
+		},
+		{
+			name: '6/30/2019',
+			layer: layer_20190630_ar_m2p_wheat_irr_mosaic
+		},
+	]
+},
+
+	];
+
+	var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers, {collapsibleGroups: true});
+	map.addControl(panelLayers);
+	
+</script>
+
+</body>
+</html>

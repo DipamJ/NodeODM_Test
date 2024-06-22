@@ -1,0 +1,27 @@
+Will upload the image! 
+selected_orthomosaic_FilePath= /var/www/html/uas_data/uploads/products/2023_Amarillo_Wheat_Irrigation_Land/DJI_Matrice_300_RTK/Micasense_Altum_PT/06-21-2023/20230621/RGB_Ortho/20230621_ar_mic_wheat_irr_mosaic/20230621_ar_mic_wheat_irr_mosaic.tif
+img_file= /var/www/html/uas_data/uploads/products/2023_Amarillo_Wheat_Irrigation_Land/DJI_Matrice_300_RTK/Micasense_Altum_PT/06-21-2023/20230621/RGB_Ortho/20230621_ar_mic_wheat_irr_mosaic/20230621_ar_mic_wheat_irr_mosaic.tif
+Uploaded the image: /var/www/html/uas_data/uploads/products/2023_Amarillo_Wheat_Irrigation_Land/DJI_Matrice_300_RTK/Micasense_Altum_PT/06-21-2023/20230621/RGB_Ortho/20230621_ar_mic_wheat_irr_mosaic/20230621_ar_mic_wheat_irr_mosaic.tif
+/home/ubuntu/web/uas_data/download/product/2023_Amarillo_Wheat_-_Irrigation_Land/20230621_ar_mic_wheat_irr_mosaic/ndvi folder does not exist. 
+/home/ubuntu/web/uas_data/download/product/2023_Amarillo_Wheat_-_Irrigation_Land/20230621_ar_mic_wheat_irr_mosaic/ndvi folder was created. 
+Will be saving cc the results to: /home/ubuntu/web/uas_data/download/product/2023_Amarillo_Wheat_-_Irrigation_Land/20230621_ar_mic_wheat_irr_mosaic/ndvi 
+/home/ubuntu/web/uas_data/download/product/2023_Amarillo_Wheat_-_Irrigation_Land/20230621_ar_mic_wheat_irr_mosaic/ndre folder does not exist. 
+/home/ubuntu/web/uas_data/download/product/2023_Amarillo_Wheat_-_Irrigation_Land/20230621_ar_mic_wheat_irr_mosaic/ndre folder was created. 
+Will be saving cc the results to: /home/ubuntu/web/uas_data/download/product/2023_Amarillo_Wheat_-_Irrigation_Land/20230621_ar_mic_wheat_irr_mosaic/ndre 
+/home/ubuntu/web/uas_data/download/product/2023_Amarillo_Wheat_-_Irrigation_Land/20230621_ar_mic_wheat_irr_mosaic/msavi folder does not exist. 
+/home/ubuntu/web/uas_data/download/product/2023_Amarillo_Wheat_-_Irrigation_Land/20230621_ar_mic_wheat_irr_mosaic/msavi folder was created. 
+Will be saving cc the results to: /home/ubuntu/web/uas_data/download/product/2023_Amarillo_Wheat_-_Irrigation_Land/20230621_ar_mic_wheat_irr_mosaic/msavi 
+Generating VIs for the image: /var/www/html/uas_data/uploads/products/2023_Amarillo_Wheat_Irrigation_Land/DJI_Matrice_300_RTK/Micasense_Altum_PT/06-21-2023/20230621/RGB_Ortho/20230621_ar_mic_wheat_irr_mosaic/20230621_ar_mic_wheat_irr_mosaic.tif 
+Saving NDVI...  
+Saving NDRE...  
+Saving MSAVI...  
+Done with VIs...  
+Will upload the shp file...  
+Uploading the SHP file (path): /var/www/html/uas_data/uploads/products/2023_Amarillo_Wheat_Irrigation_Land/10/20/2022//SHAPE/2023_ar_irr_plot_boundary_clipped/2023_ar_irr_plot_boundary_clipped.shp 
+Done uploading the boundary file ... 
+Using EPSG: 32613 
+GENERATE - shp_file: /var/www/html/uas_data/uploads/products/2023_Amarillo_Wheat_Irrigation_Land/10/20/2022//SHAPE/2023_ar_irr_plot_boundary_clipped/2023_ar_irr_plot_boundary_clipped.shp 
+GENERATE - out_dir: /home/ubuntu/web/uas_data/download/product/2023_Amarillo_Wheat_-_Irrigation_Land/20230621_ar_mic_wheat_irr_mosaic 
+GENERATE -  chm_file  
+Done with NDVI attributes  
+Done with NDRE attributes  

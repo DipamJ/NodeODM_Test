@@ -1,0 +1,19 @@
+25.01.2021: sql: insert into flight (Name, Date, Project, Platform, Sensor, Altitude, Forward, Side) values ('test', '01-11-2021', 1, %, %, 30, 85, 85)
+25.01.2021: sql: insert into flight (Name, Date, Project, Platform, Sensor, Altitude, Forward, Side) values ('test', '01-11-2021', 1, 16, 10, 30, 85, 85)
+26.01.2021: header_location: http://bhub.gdslab.org
+26.01.2021: 1 select raw uploaded: select raw_data_upload_status.*, project.Name as ProjectName,  platform.Name as PlatformName, sensor.Name as SensorName, replace(flight.Date, '-', '/') as Date, flight.Name as FlightName from raw_data_upload_status, flight, project, platform, sensor where flight.Project = project.ID and flight.Platform = platform.ID and flight.Sensor = sensor.ID and raw_data_upload_status.status = 'Finished' and flight.ID = raw_data_upload_status.Flight and flight.Project like '%' and flight.Platform like '%' and flight.Sensor like '%' order by ProjectName, PlatformName, SensorName, Date, FlightName, raw_data_upload_status.FileName
+26.01.2021: header_location: http://bhub.gdslab.org
+26.01.2021: 1 select raw uploaded: select raw_data_upload_status.*, project.Name as ProjectName,  platform.Name as PlatformName, sensor.Name as SensorName, replace(flight.Date, '-', '/') as Date, flight.Name as FlightName from raw_data_upload_status, flight, project, platform, sensor where flight.Project = project.ID and flight.Platform = platform.ID and flight.Sensor = sensor.ID and raw_data_upload_status.status = 'Finished' and flight.ID = raw_data_upload_status.Flight and flight.Project like '%' and flight.Platform like '%' and flight.Sensor like '%' order by ProjectName, PlatformName, SensorName, Date, FlightName, raw_data_upload_status.FileName
+26.01.2021: header_location: http://bhub.gdslab.org
+28.01.2021: typeName: 
+28.01.2021: typeType: 
+28.01.2021: R
+28.01.2021: typeName: test
+28.01.2021: typeType: R
+28.01.2021: sql: insert into product_type (Name, Type) values ('test', 'R')
+28.01.2021: R
+28.01.2021: test2
+28.01.2021: R
+31.08.2021: sql: insert into project (Name, Crop, PlantingDate, HarvestDate, Description, CenterLat, CenterLng, MinZoom, MaxZoom, DefaultZoom, VisualizationPage)  values ('2020 Dawson County Irr. RACE Trial', 48, '05-21-2020', '', '', 32.765202, -101.947990, 17, 25, 19, '')
+31.08.2021: sql: insert into project (Name, Crop, PlantingDate, HarvestDate, Description, CenterLat, CenterLng, MinZoom, MaxZoom, DefaultZoom, VisualizationPage)  values ('2020 Dawson County Irr. RACE Trial', 48, '05-21-2020', '', '', 32.765202, -101.947990, 17, 25, 19, '')
+31.08.2021: sql: insert into project (Name, Crop, PlantingDate, HarvestDate, Description, CenterLat, CenterLng, MinZoom, MaxZoom, DefaultZoom, VisualizationPage)  values ('2020 Dawson County Irr. RACE Trial', 48, '05-21-2020', '', '', 32.765202, -101.947990, 17, 25, 19, '')

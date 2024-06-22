@@ -1,0 +1,9 @@
+17.01.2021: id: 9
+17.01.2021: type: 
+17.01.2021: id: 9
+17.01.2021: sql: delete * from crop_data where id = 9
+17.01.2021: sql: select Filename from crop_data where id = 11
+17.01.2021: file_pointer: /web/temp/CropData/2019_lb_dd60_exg_grid.csv
+26.01.2021: header_location: http://bhub.gdslab.org
+26.01.2021: header_location: http://bhub.gdslab.org
+26.01.2021: header_location: http://bhub.gdslab.org

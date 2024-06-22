@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" name=”viewport” content=”width=device-width, initial-scale=1″>
+  <title>2022 Corpus Christi Cotton</title>
+  <link rel="stylesheet" href="/libraries/leaflet/leaflet.css"/>
+  <link rel="stylesheet" href="/libraries/css/leaflet-panel-layers.css"/>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .container {
+          position: absolute;
+          height: auto;
+          right: 20px;
+          bottom: 1%;
+          z-index: 2;
+        }
+
+        .logo_merge {
+            width: 420px;
+            z-index: 2;
+        }
+
+        .img_title{
+          background: #444;
+          color: #f6f5f5;
+          font-size: 15px;
+          font-weight: 700;
+          padding: 8px 12px;
+          z-index: 2;
+          width: 397.5px;
+        }
+
+        h3{
+          padding: 0px;
+          margin: 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+<br/>
+<div id="map"></div>
+
+<script src="/libraries/js/leaflet.js"></script>
+<script src="/libraries/js/leaflet-panel-layers.js"></script>
+<script src="/libraries/js/jquery.min.js"></script>
+<script src="/libraries/js/leaflet-ajax/dist/leaflet.ajax.js"></script>
+<script src="/libraries/js/legend.js"></script>
+<link rel="stylesheet" href="/libraries/css/legend.css"/>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-74689450-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<script>
+    var map = L.map('map', {
+        center: L.latLng([27.782608,-97.561012]),
+        zoom: 19,
+        minZoom
+    :
+    17,
+        maxZoom
+    :
+    22,
+        attributionControl
+    :
+    false
+    })
+    ;
+
+    var osm_map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        zIndex: 0
+    });
+
+    var googleHybrid = L.tileLayer('https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
+        maxZoom: 20,
+        subdomains:['mt0','mt1','mt2','mt3']
+        });
+
+      // Layers
+      var layer_20220408_cc_p4r_parking_mosaic_clipped = L.tileLayer('https://agrilife-project1.uashubs.com/uas_data/uploads/products/2022_Corpus_Christi_Cotton/DJI_Phantom_4_RTK/RGB/04-08-2022/20220408/RGB_Ortho/20220408_cc_p4r_parking_mosaic_clipped/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(27.782908333333,-97.561388888889),L.latLng(27.782902777778,-97.560930555556),L.latLng(27.782788888889,-97.560933333333),L.latLng(27.782794444444,-97.561391666667),L.latLng(27.782908333333,-97.561388888889)])}); 
+var layer_20220427_cc_p4r_parking_mosaic_clipped = L.tileLayer('https://agrilife-project1.uashubs.com/uas_data/uploads/products/2022_Corpus_Christi_Cotton/DJI_Phantom_4_RTK/RGB/04-27-2022/20220427/RGB_Ortho/20220427_cc_p4r_parking_mosaic_clipped/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 51, bounds: L.latLngBounds([L.latLng(27.782908333333,-97.561388888889),L.latLng(27.782902777778,-97.560930555556),L.latLng(27.782788888889,-97.560933333333),L.latLng(27.782794444444,-97.561391666667),L.latLng(27.782908333333,-97.561388888889)])}); 
+var layer_20220523_cc_p4r_parking_mosaic_clipped = L.tileLayer('https://agrilife-project1.uashubs.com/uas_data/uploads/products/2022_Corpus_Christi_Cotton/DJI_Phantom_4_RTK/RGB/05-23-2022/20220523/RGB_Ortho/20220523_cc_p4r_parking_mosaic_clipped/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 52, bounds: L.latLngBounds([L.latLng(27.782908333333,-97.561391666667),L.latLng(27.782902777778,-97.560930555556),L.latLng(27.782788888889,-97.560933333333),L.latLng(27.782794444444,-97.561391666667),L.latLng(27.782908333333,-97.561391666667)])}); 
+
+
+      map.addLayer(googleHybrid);
+
+    var baseLayers = [
+        {
+            name: "Open Street Map",
+            layer: osm_map
+        },
+        {
+            name: "Satellite Map",
+            layer: googleHybrid
+        },
+    ];
+
+    var overLayers = [
+        {
+	group: 'RGB',
+	layers: [
+		{
+			name: '04/08/2022',
+active: 'true',
+			layer: layer_20220408_cc_p4r_parking_mosaic_clipped
+		},
+		{
+			name: '04/27/2022',
+			layer: layer_20220427_cc_p4r_parking_mosaic_clipped
+		},
+		{
+			name: '05/23/2022',
+			layer: layer_20220523_cc_p4r_parking_mosaic_clipped
+		},
+	]
+},
+
+    ];
+
+    var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers, {collapsibleGroups: true});
+    map.addControl(panelLayers);
+
+</script>
+
+<div class="container">
+  <h3 class="img_title">West Texas Cotton UASHub is supported by</h3>
+<img alt="Sponsor" class="logo_merge" src="/resources/images/supported_words.png">
+</div>
+
+</body>
+</html>
