@@ -1,0 +1,65 @@
+16.10.2020: User pressed submit button 
+16.10.2020: User pressed submit button 
+16.10.2020: User pressed submit button 
+16.10.2020: DB connection successfull 
+16.10.2020: User pressed submit button 
+16.10.2020: DB connection successfull 
+16.10.2020: User pressed submit button 
+16.10.2020: DB connection successfull 
+16.10.2020: User pressed submit button 
+16.10.2020: DB connection successfull 
+16.10.2020: User pressed submit button 
+16.10.2020: DB connection successfull 
+16.10.2020: User pressed submit button 
+16.10.2020: DB connection successfull 
+16.10.2020: Insert to tbl_users: INSERT INTO tbl_users(user_role_id, first_name, last_name, email, password)
+       #VALUES ('2','asd','aa','ssssaaaaaaaa@gmail.com',md5('3r9gS%Q#jG@t'))
+       VALUES('3','asd', 'aa', 'ssssaaaaaaaa@gmail.com',md5('3r9gS%Q#jG@t'))
+16.10.2020: New user created successfully
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('45', '1')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('45', '12')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('45', '3')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('45', '34')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('45', '1')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('45', '12')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '1')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '1')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '1')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '1')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '1')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '1')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '1')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '1')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '1')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '1')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '1')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '1')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '4')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '3')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('45', '2')
+16.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('45', '2')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '1')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '12')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) values ('73', '123')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('3')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('2')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('3')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('4')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('73', '2')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('73', '3')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('73', '4')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('74', '5')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('81', '3')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('81', '4')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('81', '3')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('81', '5')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('45', '1')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('45', '2')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('45', '3')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('45', '4')
+19.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('45', '5')
+22.10.2020: select users: select * from tbl_users where email = 'landivarscott@gmail.com' and password = 'df000a091bca6a2d85f9209ca544ad0c'
+23.10.2020: Insert new role to user: INSERT INTO tbl_user_roles(user_id, role_id) VALUES ('74', '2')

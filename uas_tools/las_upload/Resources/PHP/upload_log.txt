@@ -1,0 +1,38 @@
+02.02.2021: header_location: http://bhub.gdslab.org
+02.02.2021: header_location: http://bhub.gdslab.org
+02.02.2021: sql: INSERT INTO pointcloud (Name, Project, Description, Date, Lat, Lng, FileName, Size, ChunkCount, Status, Identifier, TempFolder) VALUES ('test2', 1, '', '02/02/2021', 27.7823, -97.5606, 'cotton_ex.las', 79247944, 75, 'Uploading', '79247944-cotton_exlas', '/var/www/html/temp/79247944-cotton_exlas/')
+02.02.2021: command: /usr/bin/PotreeConverter /var/www/html/uas_data/uploads/pointclouds/test1/cotton_ex.las -o /var/www/html/uas_data/uploads/pointclouds/test1/Display -p test1 >> /var/www/html/uas_data/uploads/pointclouds/test1/convert_log.txt
+02.02.2021: result: 127
+02.02.2021: command: /usr/bin/PotreeConverter /var/www/html/uas_data/uploads/pointclouds/test1/cotton_ex.las -o /var/www/html/uas_data/uploads/pointclouds/test1/Display -p test1 >> /var/www/html/uas_data/uploads/pointclouds/test1/convert_log.txt
+02.02.2021: command: /PotreeConverter /var/www/html/uas_data/uploads/pointclouds/test1/cotton_ex.las -o /var/www/html/uas_data/uploads/pointclouds/test1/Display -p test1 >> /var/www/html/uas_data/uploads/pointclouds/test1/convert_log.txt
+02.02.2021: result: 134
+02.02.2021: sql: SELECT *, TIME_TO_SEC(TIMEDIFF(NOW(),LastUpdate)) as TimeSinceLastUpdate FROM pointcloud WHERE Status = 'Unfinished' OR Status = 'Uploading' OR Status = 'Paused'
+02.02.2021: sql: SELECT *, TIME_TO_SEC(TIMEDIFF(NOW(),LastUpdate)) as TimeSinceLastUpdate FROM pointcloud WHERE Status = 'Unfinished' OR Status = 'Uploading' OR Status = 'Paused'
+02.02.2021: sql: SELECT *, TIME_TO_SEC(TIMEDIFF(NOW(),LastUpdate)) as TimeSinceLastUpdate FROM pointcloud WHERE Status = 'Unfinished' OR Status = 'Uploading' OR Status = 'Paused'
+02.02.2021: sql: SELECT *, TIME_TO_SEC(TIMEDIFF(NOW(),LastUpdate)) as TimeSinceLastUpdate FROM pointcloud WHERE Status = 'Unfinished' OR Status = 'Uploading' OR Status = 'Paused'
+02.02.2021: sql: SELECT *, TIME_TO_SEC(TIMEDIFF(NOW(),LastUpdate)) as TimeSinceLastUpdate FROM pointcloud WHERE Status = 'Unfinished' OR Status = 'Uploading' OR Status = 'Paused'
+02.02.2021: sql: SELECT *, TIME_TO_SEC(TIMEDIFF(NOW(),LastUpdate)) as TimeSinceLastUpdate FROM pointcloud WHERE Status = 'Unfinished' OR Status = 'Uploading' OR Status = 'Paused'
+02.02.2021: sql: SELECT *, TIME_TO_SEC(TIMEDIFF(NOW(),LastUpdate)) as TimeSinceLastUpdate FROM pointcloud WHERE Status = 'Unfinished' OR Status = 'Uploading' OR Status = 'Paused'
+02.02.2021: sql: SELECT *, TIME_TO_SEC(TIMEDIFF(NOW(),LastUpdate)) as TimeSinceLastUpdate FROM pointcloud WHERE Status = 'Unfinished' OR Status = 'Uploading' OR Status = 'Paused'
+02.02.2021: sql: SELECT *, TIME_TO_SEC(TIMEDIFF(NOW(),LastUpdate)) as TimeSinceLastUpdate FROM pointcloud WHERE Status = 'Unfinished' OR Status = 'Uploading' OR Status = 'Paused'
+02.02.2021: sql: SELECT *, TIME_TO_SEC(TIMEDIFF(NOW(),LastUpdate)) as TimeSinceLastUpdate FROM pointcloud WHERE Status = 'Unfinished' OR Status = 'Uploading' OR Status = 'Paused'
+02.02.2021: sql: SELECT *, TIME_TO_SEC(TIMEDIFF(NOW(),LastUpdate)) as TimeSinceLastUpdate FROM pointcloud WHERE Status = 'Unfinished' OR Status = 'Uploading' OR Status = 'Paused'
+02.02.2021: sql: SELECT *, TIME_TO_SEC(TIMEDIFF(NOW(),LastUpdate)) as TimeSinceLastUpdate FROM pointcloud WHERE Status = 'Unfinished' OR Status = 'Uploading' OR Status = 'Paused'
+02.02.2021: sql: SELECT *, TIME_TO_SEC(TIMEDIFF(NOW(),LastUpdate)) as TimeSinceLastUpdate FROM pointcloud WHERE Status = 'Unfinished' OR Status = 'Uploading' OR Status = 'Paused'
+02.02.2021: sql: SELECT *, TIME_TO_SEC(TIMEDIFF(NOW(),LastUpdate)) as TimeSinceLastUpdate FROM pointcloud WHERE Status = 'Unfinished' OR Status = 'Uploading' OR Status = 'Paused'
+02.02.2021: sql: SELECT *, TIME_TO_SEC(TIMEDIFF(NOW(),LastUpdate)) as TimeSinceLastUpdate FROM pointcloud WHERE Status = 'Unfinished' OR Status = 'Uploading' OR Status = 'Paused'
+02.02.2021: sql: SELECT *, TIME_TO_SEC(TIMEDIFF(NOW(),LastUpdate)) as TimeSinceLastUpdate FROM pointcloud WHERE Status = 'Unfinished' OR Status = 'Uploading' OR Status = 'Paused'
+09.02.2021: result: 0
+09.02.2021: http://bhub.gdslab.org
+09.02.2021: file_folder: /var/www/html/uas_data/uploads/pointclouds/test1test1
+01.03.2021: header_location: https://chub.gdslab.org
+30.06.2021: dest_dir: /var/www/wtxcotton.uashubs.com/uashub/web/uas_data/uploads/pointclouds/Cotton
+30.06.2021: added
+30.06.2021: command: /home/ubuntu/PotreeConverter/build/PotreeConverter /var/www/wtxcotton.uashubs.com/uashub/web/uas_data/uploads/pointclouds/Cotton/cotton_ex.las -o /var/www/wtxcotton.uashubs.com/uashub/web/uas_data/uploads/pointclouds/Cotton/Display -p Cotton >> /var/www/wtxcotton.uashubs.com/uashub/web/uas_data/uploads/pointclouds/Cotton/convert_log.txt
+30.06.2021: command: /home/ubuntu/PotreeConverter/build/PotreeConverter /var/www/wtxcotton.uashubs.com/uashub/web/uas_data/uploads/pointclouds/Cotton/cotton_ex.las -o /var/www/wtxcotton.uashubs.com/uashub/web/uas_data/uploads/pointclouds/Cotton/Display -p Cotton >> /var/www/wtxcotton.uashubs.com/uashub/web/uas_data/uploads/pointclouds/Cotton/convert_log.txt
+10.09.2021: dest_dir: /var/www/html/uas_data/uploads/pointclouds/Test
+10.09.2021: dest_dir: /var/www/html/uas_data/uploads/pointclouds/Test
+10.09.2021: added
+10.09.2021: added
+10.09.2021: dest_dir: /var/www/html/uas_data/uploads/pointclouds/Cotton
+10.09.2021: added

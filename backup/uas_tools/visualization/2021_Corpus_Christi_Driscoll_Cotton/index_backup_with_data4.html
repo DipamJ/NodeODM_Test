@@ -1,0 +1,957 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>2021 Corpus Christi Driscoll - Cotton</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="/css/leaflet.css"/>
+    <link rel="stylesheet" href="/css/leaflet-panel-layers.css"/>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<br/>
+<div id="map"></div>
+
+<script src="/js/leaflet.js"></script>
+<script src="/js/leaflet-panel-layers.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/leaflet-ajax/dist/leaflet.ajax.js"></script>
+<script src="/js/legend.js"></script>
+<link rel="stylesheet" href="/css/legend.css"/>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-74689450-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<script>
+    var map = L.map('map', {
+        center: L.latLng([27.668400,-97.689598]),
+        zoom: 17,
+        minZoom
+    :
+    15,
+        maxZoom
+    :
+    22,
+        attributionControl
+    :
+    false
+    })
+    ;
+
+    var osm_map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        zIndex: 0
+    });
+
+    var mapbox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Imagery from <a href="https://mapbox.com/about/maps/">MapBox</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        subdomains: 'abcd',
+        id: 'mapbox.satellite',
+        //accessToken: 'pk.eyJ1IjoiaGFtZG9yaSIsImEiOiJjaWZmZzBwbjI4ZGdqc21seDFhOHA5dGcxIn0.4An46DNTDt97W992MRRWoQ',
+        accessToken: 'sk.eyJ1Ijoiam9zZWx1aXNsYW5kaXZhcnMiLCJhIjoiY2tvMnpkMG12MHlyNzJwcXd6eDY5enowcSJ9.H8vS09OkK9hVtn8OYE3jrA',
+        maxNativeZoom: 19,
+        zIndex: 0
+    });
+
+// Layers
+var layer_20210326_cc_p4r_driscoll_mosaic_shift_cotton = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Driscoll_Cotton/Phantom_4_Pro/RGB/03-26-2021/20210326/RGB_Ortho/20210326_cc_p4r_driscoll_mosaic_shift_cotton/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(27.672366666667,-97.695925),L.latLng(27.672261111111,-97.684619444444),L.latLng(27.667897222222,-97.684672222222),L.latLng(27.668005555556,-97.695977777778),L.latLng(27.672366666667,-97.695925)])});
+var layer_20210407_cc_p4r_driscoll_mosaic_shift_cotton = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Driscoll_Cotton/Phantom_4_Pro/RGB/04-07-2021/20210407/RGB_Ortho/20210407_cc_p4r_driscoll_mosaic_shift_cotton/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 51, bounds: L.latLngBounds([L.latLng(27.672366666667,-97.695925),L.latLng(27.672261111111,-97.684619444444),L.latLng(27.667897222222,-97.684672222222),L.latLng(27.668005555556,-97.695975),L.latLng(27.672366666667,-97.695925)])});
+var layer_20210419_cc_p4r_driscoll_mosaic_shift_cotton = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Driscoll_Cotton/Phantom_4_Pro/RGB/04-19-2021/20210419/RGB_Ortho/20210419_cc_p4r_driscoll_mosaic_shift_cotton/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 52, bounds: L.latLngBounds([L.latLng(27.672366666667,-97.695925),L.latLng(27.672261111111,-97.684619444444),L.latLng(27.667897222222,-97.684672222222),L.latLng(27.668005555556,-97.695975),L.latLng(27.672366666667,-97.695925)])});
+var layer_20210429_cc_p4r_driscoll_mosaic_shift_cotton = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Driscoll_Cotton/Phantom_4_Pro/RGB/04-29-2021/20210429/RGB_Ortho/20210429_cc_p4r_driscoll_mosaic_shift_cotton/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 53, bounds: L.latLngBounds([L.latLng(27.672366666667,-97.695925),L.latLng(27.672261111111,-97.684619444444),L.latLng(27.667897222222,-97.684672222222),L.latLng(27.668005555556,-97.695975),L.latLng(27.672366666667,-97.695925)])});
+var layer_20210505_cc_p4r_driscoll_mosaic_shift_cotton = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Driscoll_Cotton/Phantom_4_Pro/RGB/05-05-2021/20210505/RGB_Ortho/20210505_cc_p4r_driscoll_mosaic_shift_cotton/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 54, bounds: L.latLngBounds([L.latLng(27.672366666667,-97.695925),L.latLng(27.672261111111,-97.684619444444),L.latLng(27.667897222222,-97.684672222222),L.latLng(27.668005555556,-97.695977777778),L.latLng(27.672366666667,-97.695925)])});
+var layer_20210513_cc_p4r_driscoll_mosaic_shift_cotton = L.tileLayer('https://agrilife.uashubs.com/uas_data/uploads/products/2021_Corpus_Christi_Driscoll_Cotton/Phantom_4_Pro/RGB/05-13-2021/20210513/RGB_Ortho/20210513_cc_p4r_driscoll_mosaic_shift_cotton/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 54, bounds: L.latLngBounds([L.latLng(27.672366666667,-97.695925),L.latLng(27.672261111111,-97.684619444444),L.latLng(27.667897222222,-97.684672222222),L.latLng(27.668005555556,-97.695977777778),L.latLng(27.672366666667,-97.695925)])});
+
+
+////// CANOPY COVER //////
+    ///////////////////////////////////////////////////////////////////////////
+    var cc_210326 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_canopy_cover_cotton.geojson", {onEachFeature:popUp_cc_210326, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_cc_Color(feature.properties.CC210326),// CHANGE COLOR PROPPERTIES
+      "fillOpacity": 0.7
+    }}});
+
+    var cc_210407 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_canopy_cover_cotton.geojson", {onEachFeature:popUp_cc_210407, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_cc_Color(feature.properties.CC210407),// CHANGE COLOR PROPPERTIES
+      "fillOpacity": 0.7
+    }}});
+
+    var cc_210419 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_canopy_cover_cotton.geojson", {onEachFeature:popUp_cc_210419, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_cc_Color(feature.properties.CC210419),// CHANGE COLOR PROPPERTIES
+      "fillOpacity": 0.7
+    }}});
+
+    var cc_210429 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_canopy_cover_cotton.geojson", {onEachFeature:popUp_cc_210429, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_cc_Color(feature.properties.CC210429),// CHANGE COLOR PROPPERTIES
+      "fillOpacity": 0.7
+    }}});
+
+    var cc_210505 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_canopy_cover_cotton.geojson", {onEachFeature:popUp_cc_210505, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_cc_Color(feature.properties.CC210505),// CHANGE COLOR PROPPERTIES
+      "fillOpacity": 0.7
+    }}});
+
+    var cc_210513 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_canopy_cover_cotton.geojson", {onEachFeature:popUp_cc_210513, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_cc_Color(feature.properties.CC210513),// CHANGE COLOR PROPPERTIES
+      "fillOpacity": 0.7
+    }}});
+    ///////////////////////////////////////////////////////////////////////////
+
+    ////// ExG //////
+    ///////////////////////////////////////////////////////////////////////////
+    var exg_210326 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_exg_cotton.geojson", {onEachFeature:popUp_exg_210326, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_exg_Color(feature.properties.EG210326),// CHANGE COLOR PROPPERTIES
+      "fillOpacity": 0.7
+    }}});
+
+    var exg_210407 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_exg_cotton.geojson", {onEachFeature:popUp_exg_210407, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_exg_Color(feature.properties.EG210407),// CHANGE COLOR PROPPERTIES
+      "fillOpacity": 0.7
+    }}});
+
+    var exg_210419 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_exg_cotton.geojson", {onEachFeature:popUp_exg_210419, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_exg_Color(feature.properties.EG210419),// CHANGE COLOR PROPPERTIES
+      "fillOpacity": 0.7
+    }}});
+
+    var exg_210429 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_exg_cotton.geojson", {onEachFeature:popUp_exg_210429, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_exg_Color(feature.properties.EG210429),// CHANGE COLOR PROPPERTIES
+      "fillOpacity": 0.7
+    }}});
+
+    var exg_210505 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_exg_cotton.geojson", {onEachFeature:popUp_exg_210505, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_exg_Color(feature.properties.EG210505),// CHANGE COLOR PROPPERTIES
+      "fillOpacity": 0.7
+    }}});
+
+    var exg_210513 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_exg_cotton.geojson", {onEachFeature:popUp_exg_210513, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_exg_Color(feature.properties.EG210513),// CHANGE COLOR PROPPERTIES
+      "fillOpacity": 0.7
+    }}});
+    ///////////////////////////////////////////////////////////////////////////
+
+    ////// CANOPY HEIGHT //////
+    ///////////////////////////////////////////////////////////////////////////
+    // var ch_210326 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_ch_cv_cotton.geojson", {onEachFeature:popUp_ch_210326, zIndex: 101, style: function (feature){// THIRD
+    // return {
+    //   "color": 'black',
+    //   "weight": 1,
+    //   "opacity": 1,
+    //   "fillColor": get_exg_Color(feature.properties.CH210326),
+    //   "fillOpacity": 0.7
+    // }}});
+
+    var ch_210407 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_ch_cv_cotton.geojson", {onEachFeature:popUp_ch_210407, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_ch_Color(feature.properties.CH210407),
+      "fillOpacity": 0.7
+    }}});
+
+    var ch_210419 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_ch_cv_cotton.geojson", {onEachFeature:popUp_ch_210419, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_ch_Color(feature.properties.CH210419),
+      "fillOpacity": 0.7
+    }}});
+
+    var ch_210429 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_ch_cv_cotton.geojson", {onEachFeature:popUp_ch_210429, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_ch_Color(feature.properties.CH210429),
+      "fillOpacity": 0.7
+    }}});
+
+    var ch_210505 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_ch_cv_cotton.geojson", {onEachFeature:popUp_ch_210505, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_ch_Color(feature.properties.CH210505),
+      "fillOpacity": 0.7
+    }}});
+
+    var ch_210513 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_ch_cv_cotton.geojson", {onEachFeature:popUp_ch_210513, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_ch_Color(feature.properties.CH210513),
+      "fillOpacity": 0.7
+    }}});
+    ///////////////////////////////////////////////////////////////////////////
+
+    ////// CANOPY VOLUME //////
+    ///////////////////////////////////////////////////////////////////////////
+    // var ch_210326 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_ch_cv_cotton.geojson", {onEachFeature:popUp_ch_210326, zIndex: 101, style: function (feature){// THIRD
+    // return {
+    //   "color": 'black',
+    //   "weight": 1,
+    //   "opacity": 1,
+    //   "fillColor": get_exg_Color(feature.properties.CH210326),
+    //   "fillOpacity": 0.7
+    // }}});
+
+    var cv_210407 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_ch_cv_cotton.geojson", {onEachFeature:popUp_cv_210407, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_cv_Color(feature.properties.CV210407),
+      "fillOpacity": 0.7
+    }}});
+
+    var cv_210419 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_ch_cv_cotton.geojson", {onEachFeature:popUp_cv_210419, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_cv_Color(feature.properties.CV210419),
+      "fillOpacity": 0.7
+    }}});
+
+    var cv_210429 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_ch_cv_cotton.geojson", {onEachFeature:popUp_cv_210429, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_cv_Color(feature.properties.CV210429),
+      "fillOpacity": 0.7
+    }}});
+
+    var cv_210505 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_ch_cv_cotton.geojson", {onEachFeature:popUp_cv_210505, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_cv_Color(feature.properties.CV210505),
+      "fillOpacity": 0.7
+    }}});
+
+    var cv_210513 = new L.GeoJSON.AJAX("gis_layers/2021_cc_driscoll_10m_grid_ch_cv_cotton.geojson", {onEachFeature:popUp_cv_210513, zIndex: 101, style: function (feature){// THIRD
+    return {
+      "color": 'black',
+      "weight": 1,
+      "opacity": 1,
+      "fillColor": get_cv_Color(feature.properties.CV210513),
+      "fillOpacity": 0.7
+    }}});
+    ///////////////////////////////////////////////////////////////////////////
+
+        map.addLayer(mapbox);
+
+    var baseLayers = [
+        {
+            name: "Open Street Map",
+            layer: osm_map
+        },
+        {
+            name: "Satellite Map",
+            layer: mapbox
+        },
+    ];
+
+    var overLayers = [
+        {
+	group: 'RGB',
+	layers: [
+		{
+			name: '03/26/2021',
+active: 'true',
+			layer: layer_20210326_cc_p4r_driscoll_mosaic_shift_cotton
+		},
+		{
+			name: '04/07/2021',
+			layer: layer_20210407_cc_p4r_driscoll_mosaic_shift_cotton
+		},
+		{
+			name: '04/19/2021',
+			layer: layer_20210419_cc_p4r_driscoll_mosaic_shift_cotton
+		},
+		{
+			name: '04/29/2021',
+			layer: layer_20210429_cc_p4r_driscoll_mosaic_shift_cotton
+		},
+    {
+			name: '05/05/2021',
+			layer: layer_20210505_cc_p4r_driscoll_mosaic_shift_cotton
+		},
+    {
+      name: '05/13/2021',
+      layer: layer_20210513_cc_p4r_driscoll_mosaic_shift_cotton
+    },
+	]
+},
+
+{
+      ////// CANOPY COVER //////
+      group: 'Canopy Cover',
+      layers: [
+        ///////////////////////////////////////////////////////////////////////////
+        {
+          name: '03/26/2021',
+          layer: cc_210326
+        },
+        {
+        	name: '04/07/2021',
+        	layer: cc_210407
+        },
+        {
+        	name: '04/19/2021',
+        	layer: cc_210419
+        },
+        {
+          name: '04/29/2021',
+          layer: cc_210429
+        },
+        {
+          name: '05/05/2021',
+          layer: cc_210505
+        },
+        {
+          name: '05/13/2021',
+          layer: cc_210513
+        },
+      ]
+},
+        ///////////////////////////////////////////////////////////////////////////
+{
+      ////// ExG //////
+      group: 'ExG',
+      layers: [
+      ///////////////////////////////////////////////////////////////////////////
+        {
+          name: '03/26/2021',
+          layer: exg_210326
+        },
+        {
+        	name: '04/07/2021',
+        	layer: exg_210407
+        },
+        {
+        	name: '04/19/2021',
+        	layer: exg_210419
+        },
+        {
+          name: '04/29/2021',
+          layer: exg_210429
+        },
+        {
+          name: '05/05/2021',
+          layer: exg_210505
+        },
+        {
+          name: '05/13/2021',
+          layer: exg_210513
+        },
+      ]
+},
+      ///////////////////////////////////////////////////////////////////////////
+
+{
+      ////// CANOPY HEIGHT //////
+      group: 'Canopy Height',
+      layers: [
+        ///////////////////////////////////////////////////////////////////////////
+        // {
+        //   name: '03/26/2021',
+        //   layer: ch_210326
+        // },
+        {
+        	name: '04/07/2021',
+        	layer: ch_210407
+        },
+        {
+        	name: '04/19/2021',
+        	layer: ch_210419
+        },
+        {
+          name: '04/29/2021',
+          layer: ch_210429
+        },
+        {
+          name: '05/05/2021',
+          layer: ch_210505
+        },
+        {
+          name: '05/13/2021',
+          layer: ch_210513
+        },
+      ]
+},
+      ///////////////////////////////////////////////////////////////////////////
+
+      {
+            ////// CANOPY VOLUME //////
+            group: 'Canopy Volume',
+            layers: [
+              ///////////////////////////////////////////////////////////////////////////
+              // {
+              //   name: '03/26/2021',
+              //   layer: ch_210326
+              // },
+              {
+              	name: '04/07/2021',
+              	layer: cv_210407
+              },
+              {
+              	name: '04/19/2021',
+              	layer: cv_210419
+              },
+              {
+                name: '04/29/2021',
+                layer: cv_210429
+              },
+              {
+                name: '05/05/2021',
+                layer: cv_210505
+              },
+              {
+                name: '05/13/2021',
+                layer: cv_210513
+              },
+            ]
+      },
+            ///////////////////////////////////////////////////////////////////////////
+
+    ];
+
+    var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers, {collapsibleGroups: true});
+    map.addControl(panelLayers);
+
+    // COLOR PROPERTIES
+  function get_cc_Color(x) {
+  	if (x < 2) {
+  		return "#d7191c";  // RED
+  	} else if (x >= 2 && x < 4) {
+  		return "#fdae61"; // ORANGE
+  	} else if (x >= 4 && x < 6) {
+  		return "#ffffc0"; // YELLOW
+  	} else if (x >= 6 && x < 8) {
+  		return "#a6d96a"; // LIGHT GREEN
+  	} else if (x >= 8) {
+  		return "#1a9641"; // DARK GREEN
+  	}
+  }
+
+  function get_exg_Color(x) {
+		if (x < 0.06) {
+			return "#d7191c";
+		} else if (x >= 0.06 && x < 0.12) {
+			return "#fdae61";
+		} else if (x >= 0.12 && x < 0.18) {
+			return "#ffffc0";
+		} else if (x >= 0.18 && x < 0.24) {
+			return "#a6d96a";
+		} else if (x >= 0.24) {
+			return "#1a9641";
+		}
+	}
+
+  function get_ch_Color(x) {
+		if (x < 0.2) {
+			return "#d7191c";
+		} else if (x >= 0.2 && x < 0.4) {
+			return "#fdae61";
+		} else if (x >= 0.4 && x < 0.6) {
+			return "#ffffc0";
+		} else if (x >= 0.6 && x < 0.8) {
+			return "#a6d96a";
+		} else if (x >= 0.8) {
+			return "#1a9641";
+		}
+	}
+
+  function get_cv_Color(x) {
+		if (x < 0.06) {
+			return "#d7191c";
+		} else if (x >= 0.06 && x < 0.12) {
+			return "#fdae61";
+		} else if (x >= 0.12 && x < 0.18) {
+			return "#ffffc0";
+		} else if (x >= 0.18 && x < 0.24) {
+			return "#a6d96a";
+		} else if (x >= 0.24) {
+			return "#1a9641";
+		}
+	}
+  ///////////////////////////////////////////////////////////////////////////
+
+  ////// CANOPY COVER //////
+  ///////////////////////////////////////////////////////////////////////////
+  function popUp_cc_210326(f,l) {// FIRST
+  var out = [];
+  if (f.properties) {
+    // row_num = (f.properties["Plot col"]-1)%4 + 1
+    // out.push("Row #: "+ f.properties["Row name"]);
+    // out.push("Column #: "+ f.properties["Col"]);
+    // out.push("Plot Name: "+ f.properties["plot_name"]);
+    // out.push("Plot #: "+ f.properties["plot_num"]);
+    //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+    // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+    // out.push("Row #: : "+ f.properties["Plot col"] );
+    // out.push("Grid #: : "+ f.properties["Grid row"] );
+    out.push("Grid ID: : "+ f.properties["FID"]);
+    out.push("Canopy Cover: "+ f.properties["CC210326"].toFixed(2) + " %");
+    l.bindPopup(out.join("<br />"));}}
+
+  function popUp_cc_210407(f,l) {// SECOND
+  var out = [];
+  if (f.properties) {
+    // row_num = (f.properties["Plot col"]-1)%4 + 1
+    // out.push("Row #: "+ f.properties["Row name"]);
+    // out.push("Column #: "+ f.properties["Col"]);
+    // out.push("Plot Name: "+ f.properties["plot_name"]);
+    // out.push("Plot #: "+ f.properties["plot_num"]);
+    //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+    // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+    // out.push("Row #: : "+ f.properties["Plot col"] );
+    // out.push("Grid #: : "+ f.properties["Grid row"] );
+    out.push("Grid ID: : "+ f.properties["FID"]);
+    out.push("Canopy Cover: "+ f.properties["CC210407"].toFixed(2) + " %");
+    l.bindPopup(out.join("<br />"));}}
+
+  function popUp_cc_210419(f,l) {// THIRD
+  var out = [];
+  if (f.properties) {
+  // row_num = (f.properties["Plot col"]-1)%4 + 1
+  // out.push("Row #: "+ f.properties["Row name"]);
+  // out.push("Column #: "+ f.properties["Col"]);
+  // out.push("Plot Name: "+ f.properties["plot_name"]);
+  // out.push("Plot #: "+ f.properties["plot_num"]);
+  //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  // out.push("Row #: : "+ f.properties["Plot col"] );
+  // out.push("Grid #: : "+ f.properties["Grid row"] );
+  out.push("Grid ID: : "+ f.properties["FID"]);
+  out.push("Canopy Cover: "+ f.properties["CC210419"].toFixed(2) + " %");
+  l.bindPopup(out.join("<br />"));}}
+
+  function popUp_cc_210429(f,l) {// THIRD
+  var out = [];
+  if (f.properties) {
+  // row_num = (f.properties["Plot col"]-1)%4 + 1
+  // out.push("Row #: "+ f.properties["Row name"]);
+  // out.push("Column #: "+ f.properties["Col"]);
+  // out.push("Plot Name: "+ f.properties["plot_name"]);
+  // out.push("Plot #: "+ f.properties["plot_num"]);
+  //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  // out.push("Row #: : "+ f.properties["Plot col"] );
+  // out.push("Grid #: : "+ f.properties["Grid row"] );
+  out.push("Grid ID: : "+ f.properties["FID"]);
+  out.push("Canopy Cover: "+ f.properties["CC210429"].toFixed(2) + " %");
+  l.bindPopup(out.join("<br />"));}}
+
+  function popUp_cc_210505(f,l) {// THIRD
+  var out = [];
+  if (f.properties) {
+  // row_num = (f.properties["Plot col"]-1)%4 + 1
+  // out.push("Row #: "+ f.properties["Row name"]);
+  // out.push("Column #: "+ f.properties["Col"]);
+  // out.push("Plot Name: "+ f.properties["plot_name"]);
+  // out.push("Plot #: "+ f.properties["plot_num"]);
+  //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  // out.push("Row #: : "+ f.properties["Plot col"] );
+  // out.push("Grid #: : "+ f.properties["Grid row"] );
+  out.push("Grid ID: : "+ f.properties["FID"]);
+  out.push("Canopy Cover: "+ f.properties["CC210505"].toFixed(2) + " %");
+  l.bindPopup(out.join("<br />"));}}
+
+  function popUp_cc_210513(f,l) {// THIRD
+  var out = [];
+  if (f.properties) {
+  // row_num = (f.properties["Plot col"]-1)%4 + 1
+  // out.push("Row #: "+ f.properties["Row name"]);
+  // out.push("Column #: "+ f.properties["Col"]);
+  // out.push("Plot Name: "+ f.properties["plot_name"]);
+  // out.push("Plot #: "+ f.properties["plot_num"]);
+  //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  // out.push("Row #: : "+ f.properties["Plot col"] );
+  // out.push("Grid #: : "+ f.properties["Grid row"] );
+  out.push("Grid ID: : "+ f.properties["FID"]);
+  out.push("Canopy Cover: "+ f.properties["CC210513"].toFixed(2) + " %");
+  l.bindPopup(out.join("<br />"));}}
+  ///////////////////////////////////////////////////////////////////////////
+
+  ////// ExG //////
+  ///////////////////////////////////////////////////////////////////////////
+  function popUp_exg_210326(f,l) {// FIRST
+  var out = [];
+  if (f.properties) {
+    // row_num = (f.properties["Plot col"]-1)%4 + 1
+    // out.push("Row #: "+ f.properties["Row name"]);
+    // out.push("Column #: "+ f.properties["Col"]);
+    // out.push("Plot Name: "+ f.properties["plot_name"]);
+    // out.push("Plot #: "+ f.properties["plot_num"]);
+    //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+    // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+    // out.push("Row #: : "+ f.properties["Plot col"] );
+    // out.push("Grid #: : "+ f.properties["Grid row"] );
+    out.push("Grid ID: : "+ f.properties["FID"]);
+    out.push("ExG: "+ f.properties["EG210326"].toFixed(2));
+    l.bindPopup(out.join("<br />"));}}
+
+  function popUp_exg_210407(f,l) {// SECOND
+  var out = [];
+  if (f.properties) {
+    // row_num = (f.properties["Plot col"]-1)%4 + 1
+    // out.push("Row #: "+ f.properties["Row name"]);
+    // out.push("Column #: "+ f.properties["Col"]);
+    // out.push("Plot Name: "+ f.properties["plot_name"]);
+    // out.push("Plot #: "+ f.properties["plot_num"]);
+    //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+    // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+    // out.push("Row #: : "+ f.properties["Plot col"] );
+    // out.push("Grid #: : "+ f.properties["Grid row"] );
+    out.push("Grid ID: : "+ f.properties["FID"]);
+    out.push("ExG: "+ f.properties["EG210407"].toFixed(2));
+    l.bindPopup(out.join("<br />"));}}
+
+  function popUp_exg_210419(f,l) {// THIRD
+  var out = [];
+  if (f.properties) {
+  // row_num = (f.properties["Plot col"]-1)%4 + 1
+  // out.push("Row #: "+ f.properties["Row name"]);
+  // out.push("Column #: "+ f.properties["Col"]);
+  // out.push("Plot Name: "+ f.properties["plot_name"]);
+  // out.push("Plot #: "+ f.properties["plot_num"]);
+  //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  // out.push("Row #: : "+ f.properties["Plot col"] );
+  // out.push("Grid #: : "+ f.properties["Grid row"] );
+  out.push("Grid ID: : "+ f.properties["FID"]);
+  out.push("ExG: "+ f.properties["EG210419"].toFixed(2));
+  l.bindPopup(out.join("<br />"));}}
+
+  function popUp_exg_210429(f,l) {
+  var out = [];
+  if (f.properties) {
+  // row_num = (f.properties["Plot col"]-1)%4 + 1
+  // out.push("Row #: "+ f.properties["Row name"]);
+  // out.push("Column #: "+ f.properties["Col"]);
+  // out.push("Plot Name: "+ f.properties["plot_name"]);
+  // out.push("Plot #: "+ f.properties["plot_num"]);
+  //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  // out.push("Row #: : "+ f.properties["Plot col"] );
+  // out.push("Grid #: : "+ f.properties["Grid row"] );
+  out.push("Grid ID: : "+ f.properties["FID"]);
+  out.push("ExG: "+ f.properties["EG210429"].toFixed(2));
+  l.bindPopup(out.join("<br />"));}}
+
+  function popUp_exg_210505(f,l) {
+  var out = [];
+  if (f.properties) {
+  // row_num = (f.properties["Plot col"]-1)%4 + 1
+  // out.push("Row #: "+ f.properties["Row name"]);
+  // out.push("Column #: "+ f.properties["Col"]);
+  // out.push("Plot Name: "+ f.properties["plot_name"]);
+  // out.push("Plot #: "+ f.properties["plot_num"]);
+  //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  // out.push("Row #: : "+ f.properties["Plot col"] );
+  // out.push("Grid #: : "+ f.properties["Grid row"] );
+  out.push("Grid ID: : "+ f.properties["FID"]);
+  out.push("ExG: "+ f.properties["EG210505"].toFixed(2));
+  l.bindPopup(out.join("<br />"));}}
+
+  function popUp_exg_210513(f,l) {
+  var out = [];
+  if (f.properties) {
+  // row_num = (f.properties["Plot col"]-1)%4 + 1
+  // out.push("Row #: "+ f.properties["Row name"]);
+  // out.push("Column #: "+ f.properties["Col"]);
+  // out.push("Plot Name: "+ f.properties["plot_name"]);
+  // out.push("Plot #: "+ f.properties["plot_num"]);
+  //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  // out.push("Row #: : "+ f.properties["Plot col"] );
+  // out.push("Grid #: : "+ f.properties["Grid row"] );
+  out.push("Grid ID: : "+ f.properties["FID"]);
+  out.push("ExG: "+ f.properties["EG210513"].toFixed(2));
+  l.bindPopup(out.join("<br />"));}}
+  ///////////////////////////////////////////////////////////////////////////
+
+  ////// CANOPY HEIGHT //////
+  ///////////////////////////////////////////////////////////////////////////
+  // function popUp_ch_210326(f,l) {
+  // var out = [];
+  // if (f.properties) {
+  //   // row_num = (f.properties["Plot col"]-1)%4 + 1
+  //   // out.push("Row #: "+ f.properties["Row name"]);
+  //   // out.push("Column #: "+ f.properties["Col"]);
+  //   // out.push("Plot Name: "+ f.properties["plot_name"]);
+  //   // out.push("Plot #: "+ f.properties["plot_num"]);
+  //   //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  //   // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  //   // out.push("Row #: : "+ f.properties["Plot col"] );
+  //   // out.push("Grid #: : "+ f.properties["Grid row"] );
+  //   out.push("Grid ID: : "+ f.properties["FID"]);
+  //   out.push("Canopy Height: "+ f.properties["CH210326"].toFixed(2) + " m");
+  //   l.bindPopup(out.join("<br />"));}}
+
+  function popUp_ch_210407(f,l) {
+  var out = [];
+  if (f.properties) {
+    // row_num = (f.properties["Plot col"]-1)%4 + 1
+    // out.push("Row #: "+ f.properties["Row name"]);
+    // out.push("Column #: "+ f.properties["Col"]);
+    // out.push("Plot Name: "+ f.properties["plot_name"]);
+    // out.push("Plot #: "+ f.properties["plot_num"]);
+    //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+    // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+    // out.push("Row #: : "+ f.properties["Plot col"] );
+    // out.push("Grid #: : "+ f.properties["Grid row"] );
+    out.push("Grid ID: : "+ f.properties["FID"]);
+    out.push("Canopy Height: "+ f.properties["CH210407"].toFixed(2) + " m");
+    l.bindPopup(out.join("<br />"));}}
+
+  function popUp_ch_210419(f,l) {
+  var out = [];
+  if (f.properties) {
+  // row_num = (f.properties["Plot col"]-1)%4 + 1
+  // out.push("Row #: "+ f.properties["Row name"]);
+  // out.push("Column #: "+ f.properties["Col"]);
+  // out.push("Plot Name: "+ f.properties["plot_name"]);
+  // out.push("Plot #: "+ f.properties["plot_num"]);
+  //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  // out.push("Row #: : "+ f.properties["Plot col"] );
+  // out.push("Grid #: : "+ f.properties["Grid row"] );
+  out.push("Grid ID: : "+ f.properties["FID"]);
+  out.push("Canopy Height: "+ f.properties["CH210419"].toFixed(2) + " m");
+  l.bindPopup(out.join("<br />"));}}
+
+  function popUp_ch_210429(f,l) {
+  var out = [];
+  if (f.properties) {
+  // row_num = (f.properties["Plot col"]-1)%4 + 1
+  // out.push("Row #: "+ f.properties["Row name"]);
+  // out.push("Column #: "+ f.properties["Col"]);
+  // out.push("Plot Name: "+ f.properties["plot_name"]);
+  // out.push("Plot #: "+ f.properties["plot_num"]);
+  //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  // out.push("Row #: : "+ f.properties["Plot col"] );
+  // out.push("Grid #: : "+ f.properties["Grid row"] );
+  out.push("Grid ID: : "+ f.properties["FID"]);
+  out.push("Canopy Height: "+ f.properties["CH210429"].toFixed(2) + " m");
+  l.bindPopup(out.join("<br />"));}}
+
+  function popUp_ch_210505(f,l) {
+  var out = [];
+  if (f.properties) {
+  // row_num = (f.properties["Plot col"]-1)%4 + 1
+  // out.push("Row #: "+ f.properties["Row name"]);
+  // out.push("Column #: "+ f.properties["Col"]);
+  // out.push("Plot Name: "+ f.properties["plot_name"]);
+  // out.push("Plot #: "+ f.properties["plot_num"]);
+  //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  // out.push("Row #: : "+ f.properties["Plot col"] );
+  // out.push("Grid #: : "+ f.properties["Grid row"] );
+  out.push("Grid ID: : "+ f.properties["FID"]);
+  out.push("Canopy Height: "+ f.properties["CH210505"].toFixed(2) + " m");
+  l.bindPopup(out.join("<br />"));}}
+
+  function popUp_ch_210513(f,l) {
+  var out = [];
+  if (f.properties) {
+  // row_num = (f.properties["Plot col"]-1)%4 + 1
+  // out.push("Row #: "+ f.properties["Row name"]);
+  // out.push("Column #: "+ f.properties["Col"]);
+  // out.push("Plot Name: "+ f.properties["plot_name"]);
+  // out.push("Plot #: "+ f.properties["plot_num"]);
+  //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  // out.push("Row #: : "+ f.properties["Plot col"] );
+  // out.push("Grid #: : "+ f.properties["Grid row"] );
+  out.push("Grid ID: : "+ f.properties["FID"]);
+  out.push("Canopy Height: "+ f.properties["CH210513"].toFixed(2) + " m");
+  l.bindPopup(out.join("<br />"));}}
+  ///////////////////////////////////////////////////////////////////////////
+
+  ////// CANOPY VOLUME //////
+  ///////////////////////////////////////////////////////////////////////////
+  // function popUp_ch_210326(f,l) {
+  // var out = [];
+  // if (f.properties) {
+  //   // row_num = (f.properties["Plot col"]-1)%4 + 1
+  //   // out.push("Row #: "+ f.properties["Row name"]);
+  //   // out.push("Column #: "+ f.properties["Col"]);
+  //   // out.push("Plot Name: "+ f.properties["plot_name"]);
+  //   // out.push("Plot #: "+ f.properties["plot_num"]);
+  //   //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  //   // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  //   // out.push("Row #: : "+ f.properties["Plot col"] );
+  //   // out.push("Grid #: : "+ f.properties["Grid row"] );
+  //   out.push("Grid ID: : "+ f.properties["FID"]);
+  //   out.push("Canopy Height: "+ f.properties["CH210326"].toFixed(2) + " m");
+  //   l.bindPopup(out.join("<br />"));}}
+
+  function popUp_cv_210407(f,l) {
+  var out = [];
+  if (f.properties) {
+    // row_num = (f.properties["Plot col"]-1)%4 + 1
+    // out.push("Row #: "+ f.properties["Row name"]);
+    // out.push("Column #: "+ f.properties["Col"]);
+    // out.push("Plot Name: "+ f.properties["plot_name"]);
+    // out.push("Plot #: "+ f.properties["plot_num"]);
+    //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+    // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+    // out.push("Row #: : "+ f.properties["Plot col"] );
+    // out.push("Grid #: : "+ f.properties["Grid row"] );
+    out.push("Grid ID: : "+ f.properties["FID"]);
+    out.push("Canopy Volume: "+ f.properties["CV210407"].toFixed(2) + " m³");
+    l.bindPopup(out.join("<br />"));}}
+
+  function popUp_cv_210419(f,l) {
+  var out = [];
+  if (f.properties) {
+  // row_num = (f.properties["Plot col"]-1)%4 + 1
+  // out.push("Row #: "+ f.properties["Row name"]);
+  // out.push("Column #: "+ f.properties["Col"]);
+  // out.push("Plot Name: "+ f.properties["plot_name"]);
+  // out.push("Plot #: "+ f.properties["plot_num"]);
+  //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  // out.push("Row #: : "+ f.properties["Plot col"] );
+  // out.push("Grid #: : "+ f.properties["Grid row"] );
+  out.push("Grid ID: : "+ f.properties["FID"]);
+  out.push("Canopy Volume: "+ f.properties["CV210419"].toFixed(2) + " m³");
+  l.bindPopup(out.join("<br />"));}}
+
+  function popUp_cv_210429(f,l) {
+  var out = [];
+  if (f.properties) {
+  // row_num = (f.properties["Plot col"]-1)%4 + 1
+  // out.push("Row #: "+ f.properties["Row name"]);
+  // out.push("Column #: "+ f.properties["Col"]);
+  // out.push("Plot Name: "+ f.properties["plot_name"]);
+  // out.push("Plot #: "+ f.properties["plot_num"]);
+  //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  // out.push("Row #: : "+ f.properties["Plot col"] );
+  // out.push("Grid #: : "+ f.properties["Grid row"] );
+  out.push("Grid ID: : "+ f.properties["FID"]);
+  out.push("Canopy Volume: "+ f.properties["CV210429"].toFixed(2) + " m³");
+  l.bindPopup(out.join("<br />"));}}
+
+  function popUp_cv_210505(f,l) {
+  var out = [];
+  if (f.properties) {
+  // row_num = (f.properties["Plot col"]-1)%4 + 1
+  // out.push("Row #: "+ f.properties["Row name"]);
+  // out.push("Column #: "+ f.properties["Col"]);
+  // out.push("Plot Name: "+ f.properties["plot_name"]);
+  // out.push("Plot #: "+ f.properties["plot_num"]);
+  //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  // out.push("Row #: : "+ f.properties["Plot col"] );
+  // out.push("Grid #: : "+ f.properties["Grid row"] );
+  out.push("Grid ID: : "+ f.properties["FID"]);
+  out.push("Canopy Volume: "+ f.properties["CV210505"].toFixed(2) + " m³");
+  l.bindPopup(out.join("<br />"));}}
+
+  function popUp_cv_210513(f,l) {
+  var out = [];
+  if (f.properties) {
+  // row_num = (f.properties["Plot col"]-1)%4 + 1
+  // out.push("Row #: "+ f.properties["Row name"]);
+  // out.push("Column #: "+ f.properties["Col"]);
+  // out.push("Plot Name: "+ f.properties["plot_name"]);
+  // out.push("Plot #: "+ f.properties["plot_num"]);
+  //out.push("Plot ID: : "+ f.properties["Plot_ID"]);
+  // out.push("Plot Name: : "+ f.properties["Plot_name"]);
+  // out.push("Row #: : "+ f.properties["Plot col"] );
+  // out.push("Grid #: : "+ f.properties["Grid row"] );
+  out.push("Grid ID: : "+ f.properties["FID"]);
+  out.push("Canopy Volume: "+ f.properties["CV210513"].toFixed(2) + " m³");
+  l.bindPopup(out.join("<br />"));}}
+  ///////////////////////////////////////////////////////////////////////////
+</script>
+</body>
+</html>

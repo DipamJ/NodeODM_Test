@@ -1,0 +1,10 @@
+05.11.2020: 
+    SELECT r.role_name FROM users_roles AS ur
+        JOIN roles AS r ON r.role_id = ur.role_id
+    WHERE ur.user_id = ?
+
+05.11.2020: 
+    SELECT r.role_name FROM users_roles AS ur
+        JOIN roles AS r ON r.role_id = ur.role_id
+    WHERE ur.user_id = ?
+

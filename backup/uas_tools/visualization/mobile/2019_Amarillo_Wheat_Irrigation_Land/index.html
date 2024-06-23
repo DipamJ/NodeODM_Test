@@ -1,0 +1,390 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="utf-8" name=”viewport” content=”width=device-width, initial-scale=1″>
+    <title>2019 Amarillo Wheat - Irrigation Land</title>
+    <link rel="stylesheet" href="/css/leaflet.css"/>
+    <link rel="stylesheet" href="/css/leaflet-panel-layers.css"/>
+
+    <script src="/js/leaflet.js"></script>
+    <script src="/js/leaflet-panel-layers.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/leaflet-ajax/dist/leaflet.ajax.js"></script>
+    <script src="/js/legend.js"></script>
+    <link rel="stylesheet" href="/css/legend.css"/>
+
+    <script>
+        function fileSelected() {
+            var count = document.getElementById('fileToUpload').files.length;
+            document.getElementById('details').innerHTML = "";
+
+            for (var index = 0; index < count; index++) {
+                var file = document.getElementById('fileToUpload').files[index];
+                var fileSize = 0;
+
+                if (file.size > 1024 * 1024)
+                    fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
+                else
+                    fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+
+                document.getElementById('details').innerHTML += 'Name: ' + file.name + '<br>Size: ' + fileSize + '<br>Type: ' + file.type;
+                document.getElementById('details').innerHTML += '<p>';
+            }
+        }
+
+        function uploadFile() {
+            var fd = new FormData();
+            var count = document.getElementById('fileToUpload').files.length;
+
+            for (var index = 0; index < count; index++) {
+                var file = document.getElementById('fileToUpload').files[index];
+                fd.append('myFile', file);
+            }
+
+            fd.append('notes', document.getElementById('notes').value);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.upload.addEventListener("progress", uploadProgress, false);
+            xhr.addEventListener("load", uploadComplete, false);
+            xhr.addEventListener("error", uploadFailed, false);
+            xhr.addEventListener("abort", uploadCanceled, false);
+            xhr.open("POST", "savetofile.php");
+            xhr.send(fd);
+        }
+
+        function uploadProgress(evt) {
+
+            if (evt.lengthComputable) {
+                var percentComplete = Math.round(evt.loaded * 100 / evt.total);
+                document.getElementById('progress').innerHTML = percentComplete.toString() + '%';
+            } else {
+                document.getElementById('progress').innerHTML = 'unable to compute';
+            }
+        }
+
+        function uploadComplete(evt) {
+            /* This event is raised when the server send back a response */
+            alert(evt.target.responseText);
+        }
+
+        function uploadFailed(evt) {
+            alert("There was an error attempting to upload the file.");
+        }
+
+        function uploadCanceled(evt) {
+            alert("The upload has been canceled by the user or the browser dropped the connection.");
+        }
+
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            /*position: absolute;*/
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form {
+            z-index: 2;
+            position: absolute;
+            background-color: silver;
+            border-style: double;
+            border-color: black;
+        }
+
+        textarea {
+            background-color: lightblue;
+        }
+    </style>
+
+    <script>
+        function all() {
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-74689450-1', 'auto');
+            ga('send', 'pageview');
+
+            var map = L.map('map', {
+                center: L.latLng([35.1905,-102.084]),
+                zoom: 19,
+                minZoom
+        :
+            17,
+                maxZoom
+        :
+            25,
+                attributionControl
+        :
+            false
+        })
+            ;
+
+            var osm_map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                zIndex: 0
+            });
+
+            var mapbox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+                attribution: 'Imagery from <a href="https://mapbox.com/about/maps/">MapBox</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                subdomains: 'abcd',
+                id: 'mapbox.satellite',
+                accessToken: 'pk.eyJ1IjoiaGFtZG9yaSIsImEiOiJjaWZmZzBwbjI4ZGdqc21seDFhOHA5dGcxIn0.4An46DNTDt97W992MRRWoQ',
+                maxNativeZoom: 19,
+                zIndex: 0
+            });
+
+            // Layers
+            var layer_20190117_ar_p4p_wheat_irr_mosaic = L.tileLayer('https://chub.gdslab.org/uas_data/uploads/products/2019_Amarillo_Wheat_Irrigation_Land/Phantom_4_Pro/RGB/1-17-2019/20190117/RGB_Ortho/20190117_ar_p4p_wheat_irr_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(35.1908,-102.08541944444),L.latLng(35.190741666667,-102.08296944444),L.latLng(35.190147222222,-102.08298888889),L.latLng(35.190205555556,-102.08544166667),L.latLng(35.1908,-102.08541944444)])}); 
+var layer_20190226_ar_p4p_wheat_irr_mosaic = L.tileLayer('https://chub.gdslab.org/uas_data/uploads/products/2019_Amarillo_Wheat_Irrigation_Land/Phantom_4_Pro/RGB/2-26-2019/20190226/RGB_Ortho/20190226_ar_p4p_wheat_irr_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 51, bounds: L.latLngBounds([L.latLng(35.191047222222,-102.0855),L.latLng(35.190980555556,-102.08275),L.latLng(35.189972222222,-102.08278611111),L.latLng(35.190036111111,-102.08553611111),L.latLng(35.191047222222,-102.0855)])}); 
+var layer_20190324_ar_p4p_wheat_irr_mosaic = L.tileLayer('https://chub.gdslab.org/uas_data/uploads/products/2019_Amarillo_Wheat_Irrigation_Land/Phantom_4_Pro/RGB/3-24-2019/20190324/RGB_Ortho/20190324_ar_p4p_wheat_irr_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 52, bounds: L.latLngBounds([L.latLng(35.1909,-102.08550555556),L.latLng(35.190838888889,-102.08290277778),L.latLng(35.190033333333,-102.08293055556),L.latLng(35.190094444444,-102.08553611111),L.latLng(35.1909,-102.08550555556)])}); 
+var layer_20190416_ar_p4p_wheat_irr_mosaic = L.tileLayer('https://chub.gdslab.org/uas_data/uploads/products/2019_Amarillo_Wheat_Irrigation_Land/Phantom_4_Pro/RGB/4-16-2019/20190416/RGB_Ortho/20190416_ar_p4p_wheat_irr_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 53, bounds: L.latLngBounds([L.latLng(35.190863888889,-102.08549166667),L.latLng(35.190802777778,-102.08293055556),L.latLng(35.190088888889,-102.08295555556),L.latLng(35.19015,-102.08551666667),L.latLng(35.190863888889,-102.08549166667)])}); 
+var layer_20190513_ar_m2p_wheat_irr_mosaic = L.tileLayer('https://chub.gdslab.org/uas_data/uploads/products/2019_Amarillo_Wheat_Irrigation_Land/Phantom_4_Pro/RGB/5-13-2019/20190513/RGB_Ortho/20190513_ar_m2p_wheat_irr_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 54, bounds: L.latLngBounds([L.latLng(35.190838888889,-102.08547777778),L.latLng(35.190777777778,-102.08290277778),L.latLng(35.190063888889,-102.08292777778),L.latLng(35.190125,-102.08550277778),L.latLng(35.190838888889,-102.08547777778)])}); 
+var layer_20190603_ar_m2p_wheat_irr_mosaic = L.tileLayer('https://chub.gdslab.org/uas_data/uploads/products/2019_Amarillo_Wheat_Irrigation_Land/Phantom_4_Pro/RGB/6-3-2019/20190603/RGB_Ortho/20190603_ar_m2p_wheat_irr_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 55, bounds: L.latLngBounds([L.latLng(35.190869444444,-102.08547222222),L.latLng(35.190808333333,-102.08291666667),L.latLng(35.190094444444,-102.08294166667),L.latLng(35.190155555556,-102.08549722222),L.latLng(35.190869444444,-102.08547222222)])}); 
+var layer_20190617_ar_m2p_wheat_irr_mosaic = L.tileLayer('https://chub.gdslab.org/uas_data/uploads/products/2019_Amarillo_Wheat_Irrigation_Land/Phantom_4_Pro/RGB/6-17-2019/20190617/RGB_Ortho/20190617_ar_m2p_wheat_irr_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 56, bounds: L.latLngBounds([L.latLng(35.190844444444,-102.08547777778),L.latLng(35.190783333333,-102.08290555556),L.latLng(35.190083333333,-102.08293055556),L.latLng(35.190144444444,-102.08550277778),L.latLng(35.190844444444,-102.08547777778)])}); 
+var layer_20190630_ar_m2p_wheat_irr_mosaic = L.tileLayer('https://chub.gdslab.org/uas_data/uploads/products/2019_Amarillo_Wheat_Irrigation_Land/Phantom_4_Pro/RGB/6-30-2019/20190630/RGB_Ortho/20190630_ar_m2p_wheat_irr_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 57, bounds: L.latLngBounds([L.latLng(35.190802777778,-102.08544444444),L.latLng(35.190744444444,-102.08294166667),L.latLng(35.190147222222,-102.08296111111),L.latLng(35.190208333333,-102.08546388889),L.latLng(35.190802777778,-102.08544444444)])}); 
+
+
+                map.addLayer(mapbox);
+
+            var baseLayers = [
+                {
+                    name: "Open Street Map",
+                    layer: osm_map
+                },
+                {
+                    name: "Satellite Map",
+                    layer: mapbox
+                },
+            ];
+
+            var overLayers = [
+                {
+	group: 'RGB',
+	layers: [
+		{
+			name: '1/17/2019',
+active: 'true',
+			layer: layer_20190117_ar_p4p_wheat_irr_mosaic
+		},
+		{
+			name: '2/26/2019',
+			layer: layer_20190226_ar_p4p_wheat_irr_mosaic
+		},
+		{
+			name: '3/24/2019',
+			layer: layer_20190324_ar_p4p_wheat_irr_mosaic
+		},
+		{
+			name: '4/16/2019',
+			layer: layer_20190416_ar_p4p_wheat_irr_mosaic
+		},
+		{
+			name: '5/13/2019',
+			layer: layer_20190513_ar_m2p_wheat_irr_mosaic
+		},
+		{
+			name: '6/3/2019',
+			layer: layer_20190603_ar_m2p_wheat_irr_mosaic
+		},
+		{
+			name: '6/17/2019',
+			layer: layer_20190617_ar_m2p_wheat_irr_mosaic
+		},
+		{
+			name: '6/30/2019',
+			layer: layer_20190630_ar_m2p_wheat_irr_mosaic
+		},
+	]
+},
+
+            ];
+
+            var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers, {collapsibleGroups: true});
+            map.addControl(panelLayers);
+
+            //Added
+            //function geoFindMe() {
+            //Inicia el mapa
+            //var map = L.map('map').setView([0 , 0], 13);
+
+            //L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '© <a href="https://osm.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
+
+
+            //const mapLink = document.querySelector('#map-link');
+
+            const marker = L.marker([0, 0]).bindPopup("You are here").addTo(map);  //Inicia el marcador
+            //const marker = L.marker([27.7823, -97.5606]).bindPopup("You are here").addTo(map);  //Inicia el marcador
+
+
+            //let firstime = true;
+
+            //Si funciona hace lo que dice:
+
+            function success(position) {
+                const latitude = position.coords.latitude; //establece la latitud con su variable
+                const longitude = position.coords.longitude;//establece la longitud con su variable
+
+                marker.setLatLng([latitude, longitude]).addTo(map);
+
+                status.textContent = '';
+
+                // if(firstime){
+                //   map.setView([latitude, longitude], 15);
+                //   firstime = false;
+                // }
+            }
+
+            //Error checking
+            function error() {
+                status.textContent = 'Unable to retrieve your location';
+            }
+
+            //If geolocation is not supported
+            if (!navigator.geolocation) {
+                status.textContent = 'Geolocation is not supported by your browser';
+            } else {
+                status.textContent = 'Locating…';
+                navigator.geolocation.watchPosition(success, error, {
+                    timeout: Infinity,
+                    enableHighAccuracy: true,
+                    maximumAge: 0
+                });
+            }
+
+            //setInterval(geoFindMe, 1000); // to set how often you want a function to load in ms.
+
+            //}
+
+            //Esto no se pa que es, creo que es para cuando se le hace click, haga a la funcion
+
+            //document.querySelector('#find-me').addEventListener('click', geoFindMe);
+
+            //
+
+            // // Added
+            // function fileSelected() {
+            //     var count = document.getElementById('fileToUpload').files.length;
+            //     document.getElementById('details').innerHTML = "";
+            //
+            //     for (var index = 0; index < count; index++) {
+            //         var file = document.getElementById('fileToUpload').files[index];
+            //         var fileSize = 0;
+            //
+            //         if (file.size > 1024 * 1024)
+            //             fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
+            //         else
+            //             fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+            //
+            //         document.getElementById('details').innerHTML += 'Name: ' + file.name + '<br>Size: ' + fileSize + '<br>Type: ' + file.type;
+            //         document.getElementById('details').innerHTML += '<p>';
+            //     }
+            // }
+            //
+            // function uploadFile() {
+            //     var fd = new FormData();
+            //     var count = document.getElementById('fileToUpload').files.length;
+            //
+            //     for (var index = 0; index < count; index++) {
+            //         var file = document.getElementById('fileToUpload').files[index];
+            //         fd.append('myFile', file);
+            //     }
+            //
+            //     fd.append('notes', document.getElementById('notes').value);
+            //
+            //     var xhr = new XMLHttpRequest();
+            //
+            //     xhr.upload.addEventListener("progress", uploadProgress, false);
+            //     xhr.addEventListener("load", uploadComplete, false);
+            //     xhr.addEventListener("error", uploadFailed, false);
+            //     xhr.addEventListener("abort", uploadCanceled, false);
+            //     xhr.open("POST", "savetofile.php");
+            //     xhr.send(fd);
+            // }
+            //
+            // function uploadProgress(evt) {
+            //
+            //     if (evt.lengthComputable) {
+            //         var percentComplete = Math.round(evt.loaded * 100 / evt.total);
+            //         document.getElementById('progress').innerHTML = percentComplete.toString() + '%';
+            //     } else {
+            //         document.getElementById('progress').innerHTML = 'unable to compute';
+            //     }
+            // }
+            //
+            // function uploadComplete(evt) {
+            //     /* This event is raised when the server send back a response */
+            //     alert(evt.target.responseText);
+            // }
+            //
+            // function uploadFailed(evt) {
+            //     alert("There was an error attempting to upload the file.");
+            // }
+            //
+            // function uploadCanceled(evt) {
+            //     alert("The upload has been canceled by the user or the browser dropped the connection.");
+            // }
+            // //
+        }
+    </script>
+</head>
+
+<body onload="all();">
+<!--<button id="button" type="button" onclick="alert('Hello world!')">Click Me!</button>-->
+<br/>
+<div id="map"></div>
+
+<br><br><br><br>
+
+<!-- Added -->
+<form action="savetofile.php" enctype="multipart/form-data" id="form1" method="post">
+
+    <div>
+        <label for="fileToUpload">Take or select photo(s)</label><br/>
+
+        <!--        <input type="file" accept="image/*" capture>-->
+
+        <!--        <input accept="image/*" capture="camera" id="fileToUpload" name="fileToUpload" onchange="fileSelected();"-->
+        <input accept="image/*" capture id="fileToUpload" name="fileToUpload" onchange="fileSelected();"
+               type="file"/>
+    </div>
+
+    <div>
+        <!-- <br><br> -->
+        <label for="notes">Notes:</label>
+        <textarea cols="50" id="notes" maxlength="2000" name="notes" placeholder="Please enter any additional information here"
+                  rows="4" onchange="this.form.submit()"></textarea>
+        <br><br>
+    </div>
+
+    <div id="details"></div>
+
+    <div>
+        <input onclick="uploadFile()" type="button" value="Upload"/>
+    </div>
+
+    <div id="progress"></div>
+
+</form>
+<!-- Added -->
+
+</body>
+</html>

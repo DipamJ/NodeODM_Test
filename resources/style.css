@@ -1,0 +1,15 @@
+.btn-primary {
+    color: #fff !important;
+    background: linear-gradient(#2c539e,#254488) !important;
+    padding-right: .8rem !important;
+    padding-left: .8rem !important;
+    border-radius: 5px !important;
+}
+.btn-primary:hover{
+    color: #fff !important;
+    background: linear-gradient(#254488,#2c539e) !important;
+}
+
+a {
+    color: #2c539e !important;
+}

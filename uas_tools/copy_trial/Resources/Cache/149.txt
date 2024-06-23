@@ -1,0 +1,1 @@
+[{"Name":"\ufeffrow","ValueList":["1"]},{"Name":"col","ValueList":["1"]},{"Name":"rep","ValueList":["0"]},{"Name":"line","ValueList":["1"]},{"Name":"grid","ValueList":["1","2","3","4"]},{"Name":"entry","ValueList":["F"]},{"Name":"name","ValueList":["PHY_499"]},{"Name":"breeder","ValueList":["Filler"]},{"Name":"irrigation","ValueList":["No"]}]

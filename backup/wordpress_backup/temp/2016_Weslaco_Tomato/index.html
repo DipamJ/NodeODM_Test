@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title>2016 Weslaco Tomato</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<link rel="stylesheet" href="/css/leaflet.css" />
+<link rel="stylesheet" href="/css/leaflet-panel-layers.css" />
+
+<style>
+	body { margin:0; padding:0; }
+	#map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+
+<body>
+<br />
+<div id="map"></div>
+
+<script src="/js/leaflet.js"></script>
+<script src="/js/leaflet-panel-layers.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/leaflet-ajax/dist/leaflet.ajax.js"></script>
+<script src="/js/legend.js"></script>
+<link rel="stylesheet" href="/css/legend.css" />
+
+<script>
+  	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  	ga('create', 'UA-74689450-1', 'auto');
+  	ga('send', 'pageview');
+</script>
+
+<script>
+	var map = L.map('map', {
+		center: L.latLng([26.157172222222,-97.963688888889]),
+		zoom: 19,
+		minZoom: 17,
+		maxZoom: 25,
+		attributionControl: false
+	});
+
+	var osm_map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+		zIndex: 0
+	});
+
+ 	var mapbox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+		attribution: 'Imagery from <a href="https://mapbox.com/about/maps/">MapBox</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+		subdomains: 'abcd',
+		id: 'mapbox.satellite',
+		accessToken: 'pk.eyJ1IjoiaGFtZG9yaSIsImEiOiJjaWZmZzBwbjI4ZGdqc21seDFhOHA5dGcxIn0.4An46DNTDt97W992MRRWoQ',
+		maxNativeZoom: 19,
+		zIndex: 0
+	});
+
+
+	// Layers
+	var layer_20160323_S110_Tomato_40m_mosaic = L.tileLayer('http://bhub.gdslab.org/uas_data/uploads/products/2016_Weslaco_Tomato/Phantom_4_Pro/RGB/3-23-2016/20160323/RGB_Ortho/20160323_S110_Tomato_40m_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 50, bounds: L.latLngBounds([L.latLng(26.157347222222,-97.963608333333),L.latLng(26.157333333333,-97.961902777778),L.latLng(26.156191666667,-97.961913888889),L.latLng(26.156202777778,-97.963619444444),L.latLng(26.157347222222,-97.963608333333)])}); 
+var layer_20160414_P4_Tomato_30m_mosaic = L.tileLayer('http://bhub.gdslab.org/uas_data/uploads/products/2016_Weslaco_Tomato/Phantom_4_Pro/RGB/4-14-2016/20160414/RGB_Ortho/20160414_P4_Tomato_30m_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 51, bounds: L.latLngBounds([L.latLng(26.157361111111,-97.963775),L.latLng(26.157347222222,-97.961894444444),L.latLng(26.155933333333,-97.961908333333),L.latLng(26.155947222222,-97.963786111111),L.latLng(26.157361111111,-97.963775)])}); 
+var layer_20160510_wl_iris_tomato_mosaic = L.tileLayer('http://bhub.gdslab.org/uas_data/uploads/products/2016_Weslaco_Tomato/Phantom_4_Pro/RGB/5-10-2016/20160510/RGB_Ortho/20160510_wl_iris_tomato_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 52, bounds: L.latLngBounds([L.latLng(26.157288888889,-97.963588888889),L.latLng(26.157277777778,-97.961961111111),L.latLng(26.156108333333,-97.961972222222),L.latLng(26.156119444444,-97.9636),L.latLng(26.157288888889,-97.963588888889)])}); 
+var layer_20160616_wl_p4_tomato_50m_mosaic = L.tileLayer('http://bhub.gdslab.org/uas_data/uploads/products/2016_Weslaco_Tomato/Phantom_4_Pro/RGB/6-16-2016/20160616/RGB_Ortho/20160616_wl_p4_tomato_50m_mosaic/Display/{z}/{x}/{y}.png', {tms: true, zIndex: 53, bounds: L.latLngBounds([L.latLng(26.157172222222,-97.963688888889),L.latLng(26.157161111111,-97.96205),L.latLng(26.1562,-97.962058333333),L.latLng(26.156213888889,-97.963697222222),L.latLng(26.157172222222,-97.963688888889)])}); 
+
+	
+	
+	map.addLayer(mapbox);
+
+	var baseLayers = [
+		{
+			name: "Open Street Map",
+			layer: osm_map
+		},
+		{
+			name: "Satellie Map",
+			layer: mapbox
+		},
+	];
+
+	var overLayers = [
+		{
+	group: 'RGB',
+	layers: [
+		{
+			name: '3/23/2016',
+active: 'true',
+			layer: layer_20160323_S110_Tomato_40m_mosaic
+		},
+		{
+			name: '4/14/2016',
+			layer: layer_20160414_P4_Tomato_30m_mosaic
+		},
+		{
+			name: '5/10/2016',
+			layer: layer_20160510_wl_iris_tomato_mosaic
+		},
+		{
+			name: '6/16/2016',
+			layer: layer_20160616_wl_p4_tomato_50m_mosaic
+		},
+	]
+},
+
+	];
+
+	var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers, {collapsibleGroups: true});
+	map.addControl(panelLayers);
+	
+</script>
+
+</body>
+</html>
